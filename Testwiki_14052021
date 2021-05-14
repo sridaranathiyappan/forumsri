@@ -1,0 +1,32 @@
+
+Content
+
+[[_TOC_]
+
+
+# Key Objective:
+The Key Objective of this document is to derive the possible solutions to optmize the retailer order taking mechanism 
+
+# Proposed Requirement
+The given solution will be applicable for the retailers.In client context all the retailer channels associated with the distributors of mutliple brands can able to use this below features
+
+Retailer should be given the provision to search an item based on multiple mode of approach
+
+   * Barcode based Item search 
+   * Image scan based Item search 
+   * Featured Items based on Last 4 Visits
+   * Image Scan based stock take 
+   * Order recommendation 
+
+### Existing Solution : 
+   * Whenever User navigate to module : Shop by category , currently user allowed to select the company & search item based on itemcode / desc 
+
+### Current End user Challenges : 
+    * Retailer has to search item one by one based on Wildcard search and place an order which leads to wrong selection of item (Human error) and its an time taking process which will make the retailer restless to use the application during the market time to place any order
+
+## Barcode Based Item search
+Reference URL : 
+    * https://www.journaldev.com/18198/qr-code-barcode-scanner-android#barcode-scanner-for-android-from-camera
+
+    * Using Barcode Scan, Super markets / Hyper market can scan the items based on the barcode tagged against each sku (Item) stored in master tables and capture the order for the required items 
+    * Each Item stored in product master table should carry the correct Barcode code (EAN number)

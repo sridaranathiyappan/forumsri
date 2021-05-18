@@ -127,6 +127,9 @@ My Invoice screen will give the visibility of all Invoices . Invoice  status wil
 #### Navigation Link :
 Browse the App URL ->Login Screen->Schemes
 
+![image](https://user-images.githubusercontent.com/84070217/118630764-764f3780-b7ec-11eb-8757-bfedd975501f.png)
+
+![image](https://user-images.githubusercontent.com/84070217/118630808-8109cc80-b7ec-11eb-8e4f-c44cd1533d78.png)
 
 
 #### Screen Brief : 
@@ -136,6 +139,8 @@ Browse the App URL ->Login Screen->Schemes
 ### 2.2.5 Notifications:
 #### Navigation Link :
 Browse the App URL ->Login Screen->Notifications 
+
+![image](https://user-images.githubusercontent.com/84070217/118630912-9c74d780-b7ec-11eb-97e5-ce26158e1f59.png)
 
 
 #### Screen Brief : 

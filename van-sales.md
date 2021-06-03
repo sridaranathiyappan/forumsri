@@ -5,24 +5,24 @@
 * Who will do the Van-sale ?	
 * What is the difference between Vansale and Presale ?
 
-# What is the meaning of Vansales ?	
+## What is the meaning of Vansales ?	
 
 
 
 
 
-# What will get created through Vansale ?
+## What will get created through Vansale ?
 
 
 
 
 
-# Who will do the Van-sale ?
+## Who will do the Van-sale ?
 
 
 
 
-# What is the difference between Vansale and Presale ?	
+## What is the difference between Vansale and Presale ?	
 
 
 

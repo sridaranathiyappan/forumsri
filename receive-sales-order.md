@@ -6,8 +6,6 @@
 * What is the difference Receive Sales Order vs Sales Order module ?
 
 
-# Receive Sales Order
-
 ## What is the meaning of Receive Sales Order ?	
 
 

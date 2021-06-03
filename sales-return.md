@@ -5,7 +5,7 @@
 * What are the impact of sales Return?	
 * What is the difference between purchase return and sales return?
 
-# What is the meaning of Sales Return?	
+## What is the meaning of Sales Return?	
 
 "Businesses often return goods that are already sold.A sales return is merchandise sent back by a buyer to the seller, usually for one of the following reasons:
 1.Excess quantity shipped
@@ -15,15 +15,15 @@
 5.Product specifications are incorrect
 6.Wrong items shipped"
 
-# Who creates Sales Return?	
+## Who creates Sales Return?	
 The seller creates sales return after receiving the sold goods from a buyer.
 
-# What are the impact of sales Return?	
+## What are the impact of sales Return?	
 The seller records this return as a debit to a Sales Returns account and a credit to the Revenue account;
  the total amount of sales returns in this account is a deduction from the reported amount of gross sales in a period, which yields a net sales figure. 
 The credit to the revenue account reduces the amount of accounts receivable outstanding.
 
-# What is the difference between purchase return and sales return?	
+## What is the difference between purchase return and sales return?	
 When goods are returned to the suppliers, it is called as purchase return or return outwards but When goods are returned from the customers, 
 it is called sales return or return inwards.
 

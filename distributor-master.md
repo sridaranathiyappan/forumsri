@@ -22,7 +22,7 @@
 
 
 # Precondition for Creating a Distributor 
-Before creating a direct sales invoice, you need to 
+Before creating a distributor , you need to 
 * Create [Geography Hierarchy](Geography Hierarchy)
 * Create [State](State) 
 * Create [Tax](Tax Master) & [Channel Hierarchy](Channel Hierarchy)

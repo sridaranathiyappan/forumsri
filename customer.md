@@ -143,35 +143,35 @@ If customer has to be blocked for sales or Deactivation from the system , there 
    -Aadhaar No
    -Is Drug License Required
   
-## 4. [FD-BR-CM-0004](FD-BR-CM-0004) - Detail view actions
+### 4. [FD-BR-CM-0004](FD-BR-CM-0004) - Detail view actions
    1. Detail view of customer record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through    [Workflow](Workflow). 
    2. From the customer list view, select the desired record. Details view of customer master record should follow the Field access rule for the login user related profile. 
 
-## 5. [FD-BR-CM-0005](FD-BR-CM-0005) - Create Sales Order 
+### 5. [FD-BR-CM-0005](FD-BR-CM-0005) - Create Sales Order 
    1. Allow creation of Sales Order for the Created Customer through [Sales order](Sales Order Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
 
-## 6. [FD-BR-CM-0006](FD-BR-CM-0006) - Create Sales Invoice 
+### 6. [FD-BR-CM-0006](FD-BR-CM-0006) - Create Sales Invoice 
    1. Allow creation of Sales Invoice for the Created Customer through [Sales Invoice] (Sales Invoice Module) 
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
       
-## 7. [FD-BR-CM-0007](FD-BR-CM-0007) - Create Sales Return
+### 7. [FD-BR-CM-0007](FD-BR-CM-0007) - Create Sales Return
    1. Allow creation of Sales Return for the Created Customer through [Sales Return][(Sales Return Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
 
-## 8. [FD-BR-CM-0008](FD-BR-CM-0008) - Create Sales Collections 
+### 8. [FD-BR-CM-0008](FD-BR-CM-0008) - Create Sales Collections 
    1. Allow creation of Sales Collection against outstanding bills for the Created Customer through [Sales Collections[(Sales Collections Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Collections should be restricted to user without distributor association. 
 
-## 9. [FD-BR-CM-0009](FD-BR-CM-0009) - Customer Deactivation
+### 9. [FD-BR-CM-0009](FD-BR-CM-0009) - Customer Deactivation
    1. Allow Deactivation of Customer through Customer Management Module 
    2. User Distributor association with required Admin profile access is mandatory for Deactivation of Customer transaction. 
    3. Deactivation of customer should be restricted to user with Admin profile Access 

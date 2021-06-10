@@ -26,9 +26,12 @@ Reatiler Name|Address|Conatct Number|Channel of the retailers|GSTIN number|and o
 
 ## Story 1: Creating the  Customer
 1.New customer contacts the Salesman for placing an order for the desired product. Salesman creates a new customer profile and subsequently place an order for him. 
+
 2.Salesman adds required information of the customer in the system while creating a new profile. Customer details like First Name, Last Name, Email Address,TIN,Phone number,shipping address details are mandatory while creating a new customer into the system
+
 3.Given profile information can be edited any number of times by the Salesman if the customer requests for it. 
-4.There should also be an provision for the salesman to create the customer do the Order placement at the same time, Salesman also optionally adds the Credit Card(s) , Netbanking account details to the the customer profile. In order to active the online payments in future  
+
+4.There should also be an provision for the salesman to create the customer and do the Order placement at the same time, Salesman also optionally adds the Credit Card(s) , Netbanking account details to the the customer profile. In order to active the online payments in future  
 
 ## Story 2: Finding the Customer
 If any existing customer contacts the user through any channel(Phone, Email, IM), the user locates the existing customer profile by Name, phone and/or email, user id,TIN number and take the request 
@@ -100,7 +103,13 @@ If customer has to be blocked for sales or Deactivation from the system , there 
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-### 2. [FD-BR-CM-0002](#FD-BR-CM-0002) - List view of Customer Master
+### 2. [FD-BR-CM-0002](#FD-BR-CM-0002) - Add new customer 
+   1. Allow creation of Customer for the Created Customer through [Sales Invoice] (Sales Invoice Module) 
+   2. User Distributor association is mandatory for creating an customer
+   3. Creation of Customer should be restricted to user without distributor association
+   4.Customer Codification should be an configuration to manage it as either Auto generated or Manual codification
+
+### 3. [FD-BR-CM-0003](#FD-BR-CM-0003) - List view of Customer Master
    1. Listing page is default landing page of the customer where newly created Customers are listed with selected information.
    2. Custom filter to be available for all modules
    3. Default list view fields for Customers Filters view 
@@ -134,33 +143,47 @@ If customer has to be blocked for sales or Deactivation from the system , there 
    -Aadhaar No
    -Is Drug License Required
   
-## 3. [FD-BR-CM-0003](FD-BR-CM-0003) - Detail view actions
+## 4. [FD-BR-CM-0004](FD-BR-CM-0004) - Detail view actions
    1. Detail view of customer record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through    [Workflow](Workflow). 
    2. From the customer list view, select the desired record. Details view of customer master record should follow the Field access rule for the login user related profile. 
 
-## 4. [FD-BR-CM-0004](FD-BR-CM-0004) - Create Sales Order 
+## 5. [FD-BR-CM-0005](FD-BR-CM-0005) - Create Sales Order 
    1. Allow creation of Sales Order for the Created Customer through [Sales order](Sales Order Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
 
-## 5. [FD-BR-CM-0005](FD-BR-CM-0005) - Create Sales Invoice 
+## 6. [FD-BR-CM-0006](FD-BR-CM-0006) - Create Sales Invoice 
    1. Allow creation of Sales Invoice for the Created Customer through [Sales Invoice] (Sales Invoice Module) 
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
       
-## 6. [FD-BR-CM-0005](FD-BR-CM-0005) - Create Sales Return
+## 7. [FD-BR-CM-0007](FD-BR-CM-0007) - Create Sales Return
    1. Allow creation of Sales Return for the Created Customer through [Sales Return][(Sales Return Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Invoice should be restricted to user without distributor association. 
 
-## 7. [FD-BR-CM-0006](FD-BR-CM-0006) - Create Sales Collections 
+## 8. [FD-BR-CM-0008](FD-BR-CM-0008) - Create Sales Collections 
    1. Allow creation of Sales Collection against outstanding bills for the Created Customer through [Sales Collections[(Sales Collections Module)
    2. User Distributor association is mandatory for creating transaction. 
    3. Corporate User are indirect users create transaction related to specific associated distributor. 
    4. Creation of Sales Collections should be restricted to user without distributor association. 
+
+## 9. [FD-BR-CM-0009](FD-BR-CM-0009) - Customer Deactivation
+   1. Allow Deactivation of Customer through Customer Management Module 
+   2. User Distributor association with required Admin profile access is mandatory for Deactivation of Customer transaction. 
+   3. Deactivation of customer should be restricted to user with Admin profile Access 
+   4. Conditional check point should be there to validate any Outstanding credit / sales open order available for this outlet and accordingly it should allow for the deactivation 
+
+
+
+
+
+
+
+ 
  
 
 

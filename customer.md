@@ -54,6 +54,10 @@ If customer has to be blocked for sales or Deactivation from the system , there 
 There should be an provison to upload the master data through Excel upload and there should be validation check point on excel upload process to manage the data points for the mandate fields
 Also there should be an user roles & rights permisison access in order to authorise the specific user to manage the customer related approvals 
 
+### App Usage process 
+
+  [[To be Added]]
+
 
 # Precondition for Creating a Customer  
 

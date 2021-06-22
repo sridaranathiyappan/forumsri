@@ -6,7 +6,7 @@
 
 ## Who is a Customer for Manfacturer /Distributor /Retailer?	
 ### Manfacturer 
-The distribtutor who buys the goods or services from a Manfacturer or business in order to sell it to the Retailers
+The distributor who buys the goods or services from a Manfacturer or business in order to sell it to the Retailers
 
 ### Distributor
 The firm or Sub distributor who buys the goods or services from a Distributor in order to sell it to the Retailers or Institutions 

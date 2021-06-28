@@ -22,10 +22,11 @@ Distributor Name|Address|Conatct Number|Channel of the Distributor | GSTIN numbe
 
 **Creating the  Distributor**
 
- New Distributor creation request will be raised by company sales team to the admin team with required distributor details 
-Sales Admin adds the required information of the Distributor in the system while creating a new distributor masters. Distributor details like Distributor Name, Address, Email Address,TIN,Phone number,shipping address details are mandatory while creating a new Distributor into the system
-Given master information can be edited any number of times by the Sales admin if the Distributor requests for it. 
-There should also be an provision for the Sales admin to create the Distributor  and do the Order placement at the same time, Salesman also optionally adds the Credit Card(s) , Netbanking account details to the Distributor master. In order to active the online payments for the primary purchase in future  
+* New Distributor creation request will be raised by company sales team to the admin team with required distributor details 
+* Sales Admin adds the required information of the Distributor in the system while creating a new distributor masters. Distributor details like Distributor Name, Address, Email Address,TIN,Phone number,shipping address details are mandatory while creating a new Distributor into the system
+* Given master information can be edited any number of times by the Sales admin if the Distributor requests for it. 
+* There should also be an provision for the Sales admin to create the Distributor  and do the Order placement at the same time, Salesman also optionally adds the Credit Card(s) , Netbanking account details to the Distributor master. 
+* In order to active the online payments for the primary purchase in future.
 
 **Finding the Distributor**
 
@@ -45,8 +46,30 @@ Also there should be an user roles & rights permisison access in order to author
 
 ### App Usage process 
 
-  [[To be Added]]
 
+## Events at Front End
+- User chooses the Distributor Addition menu item to create an New Distributor 
+- User enters the Distributor name,ID,Address,Phonenumber,Email,Shipping Address and TIN number
+- User selects the supply chain from the drop down list
+- User selects the Customer Group  from the drop down list
+- User selects the Geography from the drop down list
+- User clicks on 'Save' option and the customer details will get added to the customer master
+
+## Events at Business logic layer (overview)
+- Providing the front end access control based on user profile to create an Distributor 
+- Generate record reference number for record creation Internal reference. Every request should have this reference to process, manipulate or produce data. 
+
+- Validate the data submitted from front end - Datatype & security related. 
+- Validate the data submitted from front end - Business related 
+
+## Flow of Related Events 
+- Creation of Distributor
+- Creation of User
+- Distributor User Mapping 
+- Distributor and Sub Distributor Mapping
+- Creation and mapping of Vendor
+- CP user and Distributor Mapping 
+- CD Key for Integration
 
 # Precondition for Creating a Distributor   
 
@@ -59,72 +82,73 @@ Also there should be an user roles & rights permisison access in order to author
 * Create [Payment Mode](Payment Mode) 
 * Create [Type of Services]
 * Create [Distributor Type]
+* Create [Credit Limit]
 
 
 ## 2.Fill in the required mandated  fields on the Distributor Master page as necessary.
 
--Distributor Code
--Distributor Name
--Street
--City
--District
--State
--Region
--Country
--Contact Person
--Email
--Phone
--Pincode
--Forum Code
--Active
--Date Format
--Reports to
--Alternate mobile
--Customer Code Prefix
--Disclaimer Acceptance
--MOQ UOM
--Overall MOQ Quantity
--Bill Print Format
--iStore
--ECO Green
--TCS Collectable
--Aadhar No
--TCS Percentage
--Nil Tax Certification NO
--TIN Number
--ST.Reg Number
--CST. Reg Number
--Credit Limit
--Security Deposit
--GSTIN No
--PAN No
--Type of Services
--FSSAI Number
--Distributor Tax Type
--No of Sales Man
--Drug License no  20 B
--Drug License no  21 B
--CIN Number
--Drug License 20 B Expiry
--Drug License 21 B Expiry
--Supply Chain
--Geography
--Default Depot
--Customer Group
--CD Class
--CD Line
--CD Type
--Distributor Type
--Distributor Margin
--CD Branch
--Proprietor Name
--Latitude
--Longitude
--User Name
--Last Name
--Password
--Confirm Password
--Status
+- Distributor Code
+- Distributor Name
+- Street
+- City
+- District
+- State
+- Region
+- Country
+- Contact Person
+- Email
+- Phone
+- Pincode
+- Forum Code
+- Active
+- Date Format
+- Reports to
+- Alternate mobile
+- Customer Code Prefix
+- Disclaimer Acceptance
+- MOQ UOM
+- Overall MOQ Quantity
+- Bill Print Format
+- iStore
+- ECO Green
+- TCS Collectable
+- Aadhar No
+- TCS Percentage
+- Nil Tax Certification NO
+- TIN Number
+- ST.Reg Number
+- CST. Reg Number
+- Credit Limit
+- Security Deposit
+- GSTIN No
+- PAN No
+- Type of Services
+- FSSAI Number
+- Distributor Tax Type
+- No of Sales Man
+- Drug License no  20 B
+- Drug License no  21 B
+- CIN Number
+- Drug License 20 B Expiry
+- Drug License 21 B Expiry
+- Supply Chain
+- Geography
+- Default Depot
+- Customer Group
+- CD Class
+- CD Line
+- CD Type
+- Distributor Type
+- Distributor Margin
+- CD Branch
+- Proprietor Name
+- Latitude
+- Longitude
+- User Name
+- Last Name
+- Password
+- Confirm Password
+- Status
 
 ## 3. Select a Payment Mode appropriately
    - Need to have provision to select the Paymode Mode as Cash or  Credit 

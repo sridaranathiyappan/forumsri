@@ -44,11 +44,8 @@ If Distributor  has to be blocked for sales or Deactivation from the system , th
 There should be an provison to upload the master data through Excel upload and there should be validation check point on excel upload process to manage the data points for the mandate fields
 Also there should be an user roles & rights permisison access in order to authorise the specific user to manage the Distributor related approvals 
 
-### App Usage process 
-
-
 ## Events at Front End
-- User chooses the Distributor Addition menu item to create an New Distributor 
+- User chooses the Distributor Addition menu item to create a New Distributor 
 - User enters the Distributor name,ID,Address,Phonenumber,Email,Shipping Address and TIN number
 - User selects the supply chain from the drop down list
 - User selects the Customer Group  from the drop down list
@@ -56,20 +53,30 @@ Also there should be an user roles & rights permisison access in order to author
 - User clicks on 'Save' option and the customer details will get added to the customer master
 
 ## Events at Business logic layer (overview)
-- Providing the front end access control based on user profile to create an Distributor 
+- Providing the front end access control based on user profile to create a Distributor 
 - Generate record reference number for record creation Internal reference. Every request should have this reference to process, manipulate or produce data. 
 
 - Validate the data submitted from front end - Datatype & security related. 
 - Validate the data submitted from front end - Business related 
 
 ## Flow of Related Events 
-- Creation of Distributor
-- Creation of User
-- Distributor User Mapping 
-- Distributor and Sub Distributor Mapping
-- Creation and mapping of Vendor
-- CP user and Distributor Mapping 
-- CD Key for Integration
+- Creation of Distributor User
+- Distributor and Distributor User has to get Mapped to login into Distributor portal to manage the operations 
+- Distributor and Sub Distributor Mapping to be done
+- Creation of Vendor and mapping the Vendor with the distributor
+- CP user and Distributor has to get mapped 
+- CD Key mapping with Distributor to manage the data integration 
+
+## Flow of related Events Chart
+graph TB
+  subgraph "Report Update Process"
+  NodeReport[Update Report Data]
+  end
+
+  subgraph "Mail Process"
+  NodeMail[Sent Mail to Customer]
+  end
+
 
 # Precondition for Creating a Distributor   
 

@@ -391,24 +391,54 @@ Sales invoice field wise description
 - Validate the data submitted from front end - Datatype & security related. 
 - Validate the data submitted from front end - Business related. 
 
+**Business Flow Validations**
+
+  - User chooses the 'Sales Invoice Entry' menu item. 
+  - System should pick the Default Distributor details 
+  - User selects the Beat name or code
+  - User selects the customers which should get load based on the previous event of selected beat 
+  - System should pick the Billing Address and shipping address of the selected customer 
+  - System should check the Customer-salesman-product-pricing group and retrieve these items as qualified items for creating an invoice
+  - System should also check the list of schemes available for the qualified items and  apply it while creating an Invoice 
+  - System should check for configuration to apply or not to apply scheme on the invoice 
+  - User enters the product id/product name and desired quantity in respective fields.
+  - User clicks on [Add item] button to add the next item.
+  - System adds the desired product in draft mode 
+  - User applies the Promotion/Coupon code if available.
+  - Being continued,user clicks on 'Save' Invoice link.
+  - User adds/updates shipping information.
+  - User selects the shipping method for the Invoice.
+  - User can enters Credit term type description.
+  - System will create Sales Invoice and update the total amount as Due for collection
+  - User can select the payment methods as Cash or Cheque and do the required collection
+  - User clicks on 'Sales Invoice' link and Sales Invoice will be created in 'Created/Publish' status.
+  - User can select the 'Sales invoice' and print the 'Tax Invoice'
+
+
 - Apply pricing 
   - Price for specific customer channel & product are to be arrived and applied. 
+
+- Apply Tax 
+  - Apply Tax as per the tax definition applicable for the distributor, customer, product criteria, tax identification availability.  
 
 - Apply scheme 
   - Apply scheme as per the scheme definition for the customer criteria, applicable distributor and product. 
   - Apply Offtake scheme benefit as applicable for the customer. 
 
-- Apply Tax 
-  - Apply Tax as per the tax definition applicable for the distributor, customer, product criteria, tax identification availability.  
-
 - Apply stock impact related validation 
   - Check validation criteria on availability of stock  
+
+- Apply Transaction series
+   - Pick the Auto incremental sequencing codification and Apply for the Transaction series 
+
+- Ap ply Transaction series with Order Reference
+   - Pick the Sales Order reference and Apply the same against the respective Sales Invoice 
 
 - Apply implicit collection and adjustment related validation.
   - Check all validations & precondition as per [Collection](Collection Creation)
 
 - Apply business workflow logic.
-  - As per configuration, apply business logic based workflow for the respective module.
+  - As per configuration, apply business logic based workflow for the respective modules.
  
 - Apply Log 
   - Generate access log for application. 

@@ -101,6 +101,20 @@ This page list all direct configuration applicable for Sales Invoice & related o
 |Allow only Cash Payment mode for counter sales||If enabled, only cash payment mode will be applicable on counter sales|
 |Disable Adjustment in Counter Sales||If enabled, current balance and adjust amount field will be displayed to proceed, amount adjustment on counter sales screen|
 
+### SI Amendment Configuration
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Schemes has to consider for ||config enable based on invoice date,  sales invoice date will be considered for scheme applicable,config enable based on amend date,sales invoice amend date will be considered for scheme applicable|
+|Tax has to consider for||config enable based on invoice date,  sales invoice date will be considered for Tax applicable,config enable based on amend date,sales invoice amend date will be considered for Tax applicable|
+|Pricing has to consider for||config enable based on invoice date,  sales invoice date will be considered for Pricing applicable,config enable based on amend date,sales invoice amend date will be considered for Pricing applicable|
+|Max no of times can amend||Set limit count for amending sales invoice, not to exceed count on amending sales invoice,If not sales invoice is not able to amendable|
+|Within how many days invoice can be amendable||Set limit days for amending sales invoice on creation date,If not sales invoice is not able to amendable|
+|Reason Mandatory for Amendment||Provide reason for amending sales invoice if enabledoptional if not enabled|
+|Reason Mandatory for Cancellation||Provide reason for cancel sales invoice if enabled,optional if not enabled|
+|Allow invoice amend based on||Sales invoice date creation with (first or last)|
+	
+	
+
 # See also .. 
   - [Sales Invoice](Sales Invoice) 
   - [Sales Invoice Creation](Sales Invoice Creation) 

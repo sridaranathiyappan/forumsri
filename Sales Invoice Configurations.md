@@ -113,7 +113,76 @@ This page list all direct configuration applicable for Sales Invoice & related o
 |Reason Mandatory for Cancellation||Provide reason for cancel sales invoice if enabled,optional if not enabled|
 |Allow invoice amend based on||Sales invoice date creation with (first or last)|
 	
-	
+### Masters Configuration 
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Alert the user upon clicking on Cancel Button |  | This will alert user with additional popup for cancelling invoices | [FD-Conf-MAS-SI-0001](Sales Invoice Creation#FD-Conf-MAS-SI-0001) |
+|Hide the following UOM in transactions |  | This will restrict the UOM's listing on transactions | [FD-Conf-MAS-SI-0002](Sales Invoice Creation#FD-Conf-MAS-SI-0002) |
+|Restrict multiple beat mapping for Customer |  | This will restrict to map multiple beat to the customer | [FD-Conf-MAS-SI-0003](Sales Invoice Creation#FD-Conf-MAS-SI-0003) |
+|Restrict multiple Salesman mapping for Beat |  | This will restrict to map multiple salesman  to the beat | [FD-Conf-MAS-SI-0004](Sales Invoice Creation#FD-Conf-MAS-SI-0004) |
+|Do not allow cross classification Beat Mapping in Salesman & Retailer |  | This will override the Salesman profile selection | [FD-Conf-MAS-SI-0005](Sales Invoice Creation#FD-Conf-MAS-SI-0005) |
+|Product with drug flag true are to be listed only for retailer with DL number in customer master |  | Already explained in Sales invoice Product selection | [FD-Conf-MAS-SI-0006](Sales Invoice Creation#FD-Conf-MAS-SI-0006) |
+|Allow Send SMS To Customer |  | This will allow to send SMS to customers. | [FD-Conf-MAS-SI-0007](Sales Invoice Creation#FD-Conf-MAS-SI-0007) |
+|Validate value level threshold |  | This will allow to validate value level threshold limit to the customer to make further invoices | [FD-Conf-MAS-SI-0008](Sales Invoice Creation#FD-Conf-MAS-SI-0008) |
+|Password to allow retailer threshold limit |  | User can set the password to override the threshold validation. | [FD-Conf-MAS-SI-0009](Sales Invoice Creation#FD-Conf-MAS-SI-0009) |
+|Action to be taken when "Validate value/volume level threshold" is enabled |  | This will allow for further action if customer reached configured threshold limit.  | [FD-Conf-MAS-SI-0010](Sales Invoice Creation#FD-Conf-MAS-SI-0010) |
+|Validate volume level threshold |  | This will allow to validate volume  level threshold limit to the customer to make further invoices | [FD-Conf-MAS-SI-0011](Sales Invoice Creation#FD-Conf-MAS-SI-0011) |
+
+
+
+### Customer Master
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Display customer in Transaction with status of  |  | This configuration will allow customers list in sales invoice based on status. | [FD-Conf-RET-0001](Sales Invoice Creation#FD-Conf-RET-0001) |
+|Allow unapproved customer in all transactions. |  | This configuration will allow unapproved customers to create sales invoice with limited number of invoices. | [FD-Conf-RET-0002](Sales Invoice Creation#FD-Conf-RET-0002) |
+
+
+
+### Salesman Master 
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Salesman classification and Salesman Profile mapping / approval |  | DSR, USR, RSR, VRSR, MER, RSP, -> Based on profile selection mobile integration module will enable and Beat mapping will allow to the users. | [FD-Conf-Salesperson-0009](Sales Invoice Creation#FD-Conf-Salesperson-0009) |
+
+
+
+### Configuration by Distributor 
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Allow Invoice if Salesman level credit norm settings are violated |  | When this setting is ON then system allows to continue the sales invoice even if salesman exceeds the credit limit  like credit amount , days, no. of bills | [FD-Conf-SI-DP-0001](Sales Invoice Creation#FD-Conf-SI-DP-0001) |
+|Option 1 - Seek password for billing for salesman level Credit Norm Violation | Allow Invoice if Salesman level credit norm settings are violated | Set password to seek while validation is violated. Password can be provided to authenticate the transaction post credit limit exceed.  | [FD-Conf-SI-DP-0002](Sales Invoice Creation#FD-Conf-SI-DP-0002) |
+|Option 2 -Disable ALERT for billing for Salesman level Credit Norm Violation | Allow Invoice if Salesman level credit norm settings are violated | Disable pop-up for credit limit exceed validation.  | [FD-Conf-SI-DP-0003](Sales Invoice Creation#FD-Conf-SI-DP-0003) |
+|Allow Invoice if Customer level credit norm settings are violated |  | When this setting is ON then system allows to continue the sales invoice even if customer exceeds the credit limit  like credit amount , days, no. of bills | [FD-Conf-SI-DP-0004](Sales Invoice Creation#FD-Conf-SI-DP-0004) |
+|Option1 -Seek password for billing for customer level credit norm violation | Allow billing if customer level credit norm settings are violated | Set password to seek while validation is violated. Password can be provided to authenticate the transaction post credit limit exceed | [FD-Conf-SI-DP-0005](Sales Invoice Creation#FD-Conf-SI-DP-0005) |
+|Option 2 -Disable ALERT for billing for Customer level Credit Norm Violation | Allow billing if customer level credit norm settings are violated | Disable pop-up for customer credit limit exceed | [FD-Conf-SI-DP-0006](Sales Invoice Creation#FD-Conf-SI-DP-0006) |
+|Seek password for Sales Invoice Amendment configuration |  | Password can be set for invoice amendment save | [FD-Conf-SI-DP-0007](Sales Invoice Creation#FD-Conf-SI-DP-0007) |
+|Seek password for Sales Invoice cancellation configuration |  | Password can be set for invoice cancellation save | [FD-Conf-SI-DP-0008](Sales Invoice Creation#FD-Conf-SI-DP-0008) |
+|Ask for password to authenticate the approver |  | Seek password during any approval of Sales Invoice transaction | [FD-Conf-SI-DP-0009](Sales Invoice Creation#FD-Conf-SI-DP-0009) |
+
+
+
+### Round- off Configuration
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Quantity: Align to decimals  |  | Apply the decimal rule in all quantity field of application | [FD-Conf-Decimal-DP-0001](Sales Invoice Creation#FD-Conf-Decimal-DP-0001) |
+|Amount: Align to decimals  |  | Apply the decimal rule in all value/amount field of application | [FD-Conf-Decimal-DP-0002](Sales Invoice Creation#FD-Conf-Decimal-DP-0002) |
+|Print Quantity: Align to decimals  |  | Apply the decimal rule in all quantity field of application print | [FD-Conf-Decimal-DP-0003](Sales Invoice Creation#FD-Conf-Decimal-DP-0003) |
+|Print Amount: Align to decimals  |  | Apply the decimal rule in all value/amount field of application print | [FD-Conf-Decimal-DP-0004](Sales Invoice Creation#FD-Conf-Decimal-DP-0004) |
+|Allow Decimal Quantity Transaction for SO and SI (Base UOM)  |  | Apply the decimal rule in base UOM quantity field of SI & SO (Base UOM) | [FD-Conf-Decimal-DP-0005](Sales Invoice Creation#FD-Conf-Decimal-DP-0005) |
+|Allow Decimal Quantity Transaction for SO, SI and SR (All UOM)  |  | Apply the decimal rule in quantity field of SI, SR & SO (All UOM) | [FD-Conf-Decimal-DP-0006](Sales Invoice Creation#FD-Conf-Decimal-DP-0006) |
+
+
+
+### Round- off Configuration by Distributor
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Quantity: Align to decimals  |  | Apply the decimal rule in all quantity field of application | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+|Amount: Align to decimals  |  | Apply the decimal rule in all value/amount field of application | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+|Print Quantity: Align to decimals  |  | Apply the decimal rule in all quantity field of application print | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+|Print Amount: Align to decimals  |  | Apply the decimal rule in all value/amount field of application print | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+|Allow Decimal Quantity Transaction for SO and SI (Base UOM)  |  | Apply the decimal rule in base UOM quantity field of SI & SO (Base UOM) | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+|Allow Decimal Quantity Transaction for SO, SI and SR (All UOM)  |  | Apply the decimal rule in quantity field of SI, SR & SO (All UOM) | [FD-Conf-Decimal-0001](Sales Invoice Creation#FD-Conf-Decimal-0001) |
+
+
 
 # See also .. 
   - [Sales Invoice](Sales Invoice) 

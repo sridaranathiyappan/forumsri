@@ -3,26 +3,26 @@ Content
 [[_TOC_]]
 
 `Available for review`
-# Creation of Sales Collection  
-The Sales Collection will be done based on multiple Mode of Collection . Sales Collection can be created Against Sales Invoice or Without any reference to Sales Invoice (I.e On account Collection).There should be an provision to handle collection through Distributor Portal and Mobile application
+# Creation of Collection  
+The Collection will be done based on multiple Mode of Collection . Collection can be created Against Sales Invoice or Without any reference to Sales Invoice (I.e On account Collection).There should be an provision to handle collection through Distributor Portal and Mobile application
 
-## Precondition for creating Sales Collection
-Before creating a sales Collection, you need to 
+## Precondition for creating Collection
+Before creating a Collection, you need to 
 * Create [Customer](Customer)
 * Create [Beat](Beat) & [Salesman](Salesman)
 * Create [Sales Invoice](Sales Invoice)
 * Create [Bank](Bank)
 * Create [Payment Mode](Payment Mode)
 
-Creation of Sales Collection vary based on type of creation. 
+Creation of Collection vary based on type of creation. 
 
-## To create Sales Collection Against Pending Invoice  via Collection Module in Distributor Portal 
+## To create Collection Against Pending Invoice  via Collection Module in Distributor Portal 
 
 1. **Collection Date** is often set to default current date
    - There are options to allow backdated Collection but date after present date are restricted. 
 
 2. **In the Customer field**, enter the name of an existing customer. 
-   - Sales Collection are created to document the collection amount against the sale of goods to customer. 
+   - Collection are created to document the collection amount against the sale of goods to customer. 
    - After Customer selection, Customer related information are pre-populated as below,  
      - default [Beat](Beat), 
      - default [Salesman](Salesman), 
@@ -38,7 +38,7 @@ Creation of Sales Collection vary based on type of creation.
     - Multiple Salesman are listed based on the Customer associated with multiple Beat. 
 
 5. **[Transaction Series](Transaction Series)**
-    - default Sales Collection Transaction Series are loaded, User can change these details as necessary. 
+    - default Collection Transaction Series are loaded, User can change these details as necessary. 
 
 6. **Select a Payment Mode** appropriately
 7. **Select a Credit Term** if Payment Mode is credit.  
@@ -46,86 +46,103 @@ Creation of Sales Collection vary based on type of creation.
 8. **Customer Billing address** 
     - default Billing address loaded as per sales Invoice , User can change these details as necessary. 
 
-9. Fill in or Modify the remaining fields on the Sales Collection page as necessary.
+9. Fill in or Modify the remaining fields on the Collection page as necessary.
     - Bank Details
    - Cheque Date
    - Cheque Number
    - Additional Information 
 
-> _These are the header details requires for creation of any Sales Collection._
+> _These are the header details requires for creation of any Collection._
 
-## To create Sales Collection with Auto adjustment via Collection Module in Distributor Portal 
+## To create Collection with Auto adjustment via Collection Module in Distributor Portal 
 
 10. **Adjustment** 
     - User can Manual adjust or Auto adjust the available open [Credit Note document](Credit Note) of the selected customer. 
     - These Adjustments are posted as implicit [Collection](Collection), these adjustment amount will not reduce the Collection net amount, it has impact in Collection outstanding amount. 
 
-11. **Save Sales Collection** 
-On Saving of the Sales Collection document, 
-    - Document of sales is recorded with generation of unique Sales Collection Transaction number for a Distributor. 
+11. **Save Collection** 
+On Saving of the Collection document, 
+    - Document of sales is recorded with generation of unique Collection Transaction number for a Distributor. 
     - Line Item & quantity of details provided are reduced from the [current stock](Stock & Inventory) of the selected stock location. 
-    - (Adjustment & Outstanding)(Sales Collection Adjustment Logic) details are posted as implicit [Collection](Collection) to the selected customer. Credit note documents are adjusted as require. 
+    - (Adjustment & Outstanding)(Collection Adjustment Logic) details are posted as implicit [Collection](Collection) to the selected customer. Credit note documents are adjusted as require. 
     - reference transactions are updated like Sales order status update based on fulfillment. Customer outstanding modified. Customer Master update for address change. These are part of workflow as per configuration.  
     - Off take scheme benefit applied are accounted and updated. 
     - Report data consolidation initiated for relevant data points. 
-    - Sales Collection is ready to [Print](Sales Collection Print)
+    - Collection is ready to [Print](Collection Print)
     - Collection delivery process to be initiated for the prepared Collection. 
 
-## Cancellation of Sales Collection
-Cancellation of Sales Collection are action performed on un-deliverable sales Collection after preparation of Sales Collection. The reason may vary like "Wrongly created Collection", "Delivery failure", "Not accepted during delivery" ..etc. Cancelled Collection are not referred in any further transaction like adjustment or collections. Cancelled Collection are considered as valid document and used in all report.  
+## Cancellation of Collection
+Cancellation of Collection are action performed on un-deliverable Collection after preparation of Collection. The reason may vary like "Wrongly created Collection", "Delivery failure", "Not accepted during delivery" ..etc. Cancelled Collection are not referred in any further transaction like adjustment or collections. Cancelled Collection are considered as valid document and used in all report.  
 
-Cancellation of Sales Collection are restricted based on configuration & workflow, few points as below. 
+Cancellation of Collection are restricted based on configuration & workflow, few points as below. 
 
   - Business level restriction may vary based on configuration.  
-    - Delivered Sales Collection are not allowed to cancel, instead sales return to be performed to maintain the logical accounting transactions. 
+    - Delivered Collection are not allowed to cancel, instead sales return to be performed to maintain the logical accounting transactions. 
 
   - Data integrity related restrictions
     - Validation fails if the customer outstanding update creates negative value scenario. 
     - Validation fails if the implicitly created collection and related adjustment creates negative value scenario.
     - Deactivated master reference like customer, product, distributor, beat, salesman ..etc. will not have any impact to fail the cancellations. 
 
-On Cancel of Sales Collection document, 
+On Cancel of Collection document, 
   - Document marked for status change to indicate cancellation. 
   - Customer outstanding reversed by reducing the cancelled Collection value.  
   - Cancellation action on implicitly created collection is performed and Adjusted documents are reversed to current state to reflect current pending of the respective document.  
   - Cancelled Collection are considered as valid document and used in all tax report.
-  - Report related Sales collection in Ledger will get recomputed. 
+  - Report related Collection in Ledger will get recomputed. 
 
-## Amendment on Sales Collection
-Amendment to Sales Collection are corrections to the prepared sales Collection. 
+## Amendment on Collection
+Amendment to Collection are corrections to the prepared Collection. 
 Amendment is not editing in record, the amended document is referred as valid document with status amended. 
 
 Amendment performs validation and two primary actions as below, 
-  - Cancel the old document of sales Collection by executing all cancellation action as mentioned in [Sales Collection cancellation section](#cancellation) 
+  - Cancel the old document of Collection by executing all cancellation action as mentioned in [Collection cancellation section](#cancellation) 
 
-  - Amendment of sales Collection are restricted to Business level restriction & Data integrity related restriction as mentioned in [cancellation](#cancellation) section. 
+  - Amendment of Collection are restricted to Business level restriction & Data integrity related restriction as mentioned in [cancellation](#cancellation) section. 
 
   - Further, Modification of key parameters are not allowed like Customer, Salesman, Beat.  
 
-  - A new Sales Collection created with Sales Collection transaction number of old document. all action performed during sales Collection save are applicable for the newly created sales Collection document. 
+  - A new Collection created with Collection transaction number of old document. all action performed during Collection save are applicable for the newly created Collection document. 
 
 
-# Types of Sales Collection
+# Types of Collection
 
-## Create Sales Collection Against Sales Invoice  
-Sales Invoice are recorded by Salesman during market visit  or Distributor operator to record the demand and sales of the products. 
-A [Sales Invoice](Sales Invoice) records the customer's intent to buy the listed products at the stated price. 
-1.User will allowed  the payment collection from the customer through multiple mode of payment (Cash , Cheque,NEFT,GPAY)
-2.Based on customer type (Cash or credit) , salesman will be allowed to collect the payment as Partial or full payment against the sales invoice from the customer 
-3.User allowed to collect the payment for multiple pending invoices of the customer at a time 
+## Create Collection Against Sales Invoice  
+ Sales Invoice are recorded by Salesman during market visit  or Distributor operator to record the demand and sales of the products. 
+ A [Sales Invoice](Sales Invoice) records the customer's intent to buy the listed products at the stated price. 
 
-## Create Sales Collection with Adjustable return (Credit Note)
-           [[ To be Added]]
+  - User will be allowed  to do the payment collection from the customer through multiple mode of payment (Cash , Cheque,NEFT,RTGS)
 
-[Customer](Customer), [Salesman](Salesman), [Beat](Beat) ,Pending Invoice,Credit Note information are pre-loaded (pre-fetched from Sales Invoice and Sale return) to create the Collection during conversion using Option 1 & 2.
+  - Based on customer type (Cash or credit) , salesman will be allowed to collect the payment as Partial or full payment against the sales invoice from the customer 
 
-## Create Sales collection with Auto adjust mode
-       [[ To be Added]]
+  - User allowed to collect the payment for multiple pending invoices of the customer at a time 
+
+## Create Collection with Adjustable return (Credit Note)
+ Sales return are recorded by Salesman during market visit  or Distributor operator to record the market returns on previous sales of the products. 
+  A[Sales Return](Sales Return) records the customer's intent to return the products that are bought either from the Distributor or Sub distributor. 
+ 
+  - User allowed to do the amount adjustment for multiple returns  at a time 
+    [Customer](Customer), [Salesman](Salesman), [Beat](Beat) ,Pending Invoice,Credit Note information are pre-loaded (pre-fetched from Sales Invoice and Sale return) to create the Collection during conversion using Option 1 & 2.
+
+## Create Collection with Auto adjust mode
+
+ [[ To be Added]]
+
+## Salesmanwise Collection
+## Create Collection Salesmanwise
+ Sales Invoice are recorded by Salesman during the market visit or Distributor operator to record the sales of the products. 
+
+  - User will be allowed  to do the payment collection from all pending Invoices associated with the selected salesman 
+
+  - Provision should be given to pick the required pending invoices based on Salesman/Date/Beat/Customer and do the required collection through multiple mode of payment (Cash ,Cheque,NEFT,RTGS)
+
+  - System should allow to do collection full or partial amount against invoices 
+
 
 # List of Collection Configurations
 
 ## Collection Configuration 
-This page list all direct configuration applicable for Sales Collection & related other module configuration which impacts Collections. 
+This page list all direct configuration applicable for Collection & related other module configuration which impacts Collections. 
 
 > Other common configuration such as User profile based configuration, Field level configurations, Menu configurations are assumed to be as applicable similar to other modules in application. Refer [Common Application Configurations](Common Application Configurations) 
  
@@ -154,36 +171,29 @@ This page list all direct configuration applicable for Sales Collection & relate
 |ALLOW AUTO ADJUST (Collection configuration)| |If enabled display Auto Adjust icon on collection screen.,If not, do not display Auto Adjust icon on collection screen|[FD-Conf-MAS-Collection-0009](Collection Creation#FD-Conf-MAS-Collection-0009)|
 |Auto Adjust Amount Getting from| | Amount Received == Calculate adjustment on amount received column field value on collection screen,Adjustable Return == Calculate adjustment on outstanding column field value on collection screen|[FD-Conf-MAS-Collection-0010](Collection Creation#FD-Conf-MAS-Collection-0010)|
 	
-	
-# See also .. 
-  - [Collection](Collection) 
-  - [Collection Creation](Collection Creation) 
-  - [Domain Object Collection](Domain Object Collection)
-  - [Home](Home)
-
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 -->
 
 # Business Rule & Impact 
 
-> Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Collection are clear. Refer [Sales Collection](Sales Collection), [Sales Collection Creation](#creation-of-sales-Collection)   
+> Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Collection are clear. Refer [Collection](Collection), [Collection Creation](#creation-of-sales-Collection)   
 
 1. [FD-BR-0001] - User access 
 
 >  [FD-BR-Collection-0001](#FD-BR-Collection-0001)-Collection Module
     1. Login user should has association with a Distributor. 
-    1. In case of user associated with multiple user, then distributor selection is require before creating sales Collection transaction 
-    1. User with profile access configurations are to be applied while Listing Sales Collection, Create, Modify, View Sales Collection
+    2. In case of user associated with multiple user, then distributor selection is require before creating Collection transaction 
+    3. User with profile access configurations are to be applied while Listing Collection, Create, Modify, View Collection
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-1. [FD-BR-Collection-0002](#FD-BR-Collection-0002) - List view of Sales Collection
-    1. Listing page is default landing page, where newly created Sales Collection are listed with selected information.
-    1. All listing page related features are to be available for Sales Collection listing Page. 
-    1. Retrieve recently created top `20` Sales Collection document with selected field where it belongs to a Distributor and sort with Collection date. Default filter for Sales Collection applicable for all users. 
-    1. Custom filter to be available for all modules
-    1. Default list view fields for distributor users  
+1. [FD-BR-Collection-0002](#FD-BR-Collection-0002) - List view of Collection
+    1. Listing page is default landing page, where newly created Collection are listed with selected information.
+    2. All listing page related features are to be available for Collection listing Page. 
+    3. Retrieve recently created top `20` Collection document with selected field where it belongs to a Distributor and sort with Collection date. Default filter for Collection applicable for all users. 
+    4. Custom filter to be available for all modules
+    5. Default list view fields for distributor users  
         - "salesmanName"    
         - "customername"    
         - "beatname" 
@@ -209,11 +219,11 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
     1. Detail view of Collection record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     2. From the Collections list view, select the desired record. Details view of Collection record should follow the Field access rule for the login user related profile. 
 
-4.[FD-BR-Collection-0004](#FD-BR-Collection-0004) - Create Sales Collection
-    1. Allow creation of Sales Collection based on Profile access configuration. 
+4.[FD-BR-Collection-0004](#FD-BR-Collection-0004) - Create Collection
+    1. Allow creation of Collection based on Profile access configuration. 
     2. User Distributor association is mandatory for creating transaction. 
     3. Corporate User are indirect users create transaction related to specific associated distributor. 
-    4. Creation of Sales Collection should be restricted to user without distributor association. 
+    4. Creation of Collection should be restricted to user without distributor association. 
 
 5.[FD-BR-Collection-0005](#FD-BR-Collection-0005) -  Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
@@ -227,10 +237,82 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 3. In all the above scenarios Customer, Beat and Salesman mapping is must. 
 
 
+# Event Flows
+
+## Events at Front End (Create)
+  - Collection list view page 
+     - Listing Collection
+   - While Creating Collection
+    - Render page based on user profile (To be explained in separate page) 
+    - Listing Salesman
+    - On Selection of Salesman, Retrieve Salesman Category info, Filter related Beat, Filter related customer.
+    - Listing Beat 
+    - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
+    - Listing Customer
+    - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
+    - Listing Transaction Series for Collection
+    - Listing Collection Mode
+    - Listing Pending Invoices
+    - On Selection of populate bills retrieve all invoices with outstanding amount details 
+    - Listing Adjustable return 
+    - List relevant Adjustment info 
+ 
+
+## Events at Business logic layer (overview)
+- Apply Dynamic front end access control based on user profile. 
+- Generate record reference number for transaction internal reference. Every request should have this reference to process, manipulate or produce data. 
+
+- Validate the data submitted from front end - Datatype & security related. 
+- Validate the data submitted from front end - Business flow related. 
+
+**Business flow validations**
+
+  - User chooses the 'Collection Entry' menu item. 
+  - System should pick the Default Distributor details 
+  - User selects the Salesman associated with that distributor
+  - User selects the Beat name or code
+  - System should list out the customer from the selected beat 
+  - User should select the customer from the selected beat 
+  - System should pick the customer
+  - System should check and  retrieve all pending invoices / returns associated with that customer 
+ - User should select the Collection mode as (Cash/Cheque/NEFT/RTGS) . In case of cheque payment additional details to be added as required 
+  - User enters the collection amount and adjustment amount against outstanding amount 
+  - User enters the adjustment amount against returns in respective fields.
+  - System will create Collection and update the total amount as Due for collection against the customer
+  - User clicks on 'Collection' link and Collection will be created in 'Created/Publish' status.
+  - User can select the 'Collection and print the 'Collection Receipt'
+
+**Events based on Collection Against Sales Invoice**
+
+- Apply Collection
+  - Collected Amount will get reduced against the selected invoice for specific customer and also against the Customer Balance 
+  - Any Exceptions related to collection computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+- Apply Amendment
+  - User can amend (Edit) the collectionTransactions , changes will get updated against the same transaction of specific customer and also against the Customer Balance 
+  - Any Exceptions related to collection computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+- Apply Cancel
+  - User can Cancel the collection Transactions , changes will get updated against the same transaction of specific customer and also against the Customer Balance and status of the collection will get modified as 'Cancel'
+  - Any Exceptions related to collection computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+**Events based on Collection Against Adjustment Return**
+
+- Apply Collection
+  - Adjustment Amount in Adjustable return will get reduced against the Customer Balance  of the selected specific customer
+  - Any Exceptions related to Adjustable amount computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+**Events based on Salesmanwise Collection**
+
+- Apply Collection
+  - User will be given provision to capture collection for all pending invoices associated with the selected customer based on  Salesman/Date/Beat/Customer and do the required collection through multiple mode of payment (Cash ,Cheque,NEFT,RTGS)
+  - Any Exceptions related to Adjustable amount computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+
 # See also .. 
-  - [Sales Collection](Sales Collection)
-  - [Sales Collection Configurations](Sales Collection Configurations)
-  - [Domain Object Sales Collection](Domain Object Sales Collection)
+  - [Collection](Collection)
+  - [Collection Configurations](Collection Configurations)
+  - [Domain Object Collection](Domain Object Collection)
   - [Home](Home)
 
 <!--stackedit_data:

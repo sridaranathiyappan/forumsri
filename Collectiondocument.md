@@ -194,18 +194,18 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 1. [FD-BR-0001] - User access 
 
 >  [FD-BR-Collection-0001](#FD-BR-Collection-0001)-Collection Module
-    1. Login user should has association with a Distributor. 
-    2. In case of user associated with multiple user, then distributor selection is require before creating Collection transaction 
-    3. User with profile access configurations are to be applied while Listing Collection, Create, Modify, View Collection
+    - Login user should has association with a Distributor. 
+    -  In case of user associated with multiple user, then distributor selection is require before creating Collection transaction 
+    - User with profile access configurations are to be applied while Listing Collection, Create, Modify, View Collection
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
 1. [FD-BR-Collection-0002](#FD-BR-Collection-0002) - List view of Collection
-    1. Listing page is default landing page, where newly created Collection are listed with selected information.
-    2. All listing page related features are to be available for Collection listing Page. 
-    3. Retrieve recently created top `20` Collection document with selected field where it belongs to a Distributor and sort with Collection date. Default filter for Collection applicable for all users. 
-    4. Custom filter to be available for all modules
-    5. Default list view fields for distributor users  
+    - Listing page is default landing page, where newly created Collection are listed with selected information.
+    -  All listing page related features are to be available for Collection listing Page. 
+    -  Retrieve recently created top `20` Collection document with selected field where it belongs to a Distributor and sort with Collection date. Default filter for Collection applicable for all users. 
+    - Custom filter to be available for all modules
+    - Default list view fields for distributor users  
         - "salesmanName"    
         - "customername"    
         - "beatname" 
@@ -228,46 +228,48 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 3. [FD-BR-Collection-0003](#FD-BR-Collection-0003) - Detail view actions
-    1. Detail view of Collection record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
-    2. From the Collections list view, select the desired record. Details view of Collection record should follow the Field access rule for the login user related profile. 
 
-4.[FD-BR-Collection-0004](#FD-BR-Collection-0004) - Create Collection
-    1. Allow creation of Collection based on Profile access configuration. 
-    2. User Distributor association is mandatory for creating transaction. 
-    3. Corporate User are indirect users create transaction related to specific associated distributor. 
-    4. Creation of Collection should be restricted to user without distributor association. 
+    - Detail view of Collection record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
+    -  From the Collections list view, select the desired record. Details view of Collection record should follow the Field access rule for the login user related profile. 
 
-5.[FD-BR-Collection-0005](#FD-BR-Collection-0005) -  Customer Selection 
-    1. Listing of Customer for **Selection list** in transaction, criteria to be   
+4. [FD-BR-Collection-0004](#FD-BR-Collection-0004) - Create Collection
+
+    - Allow creation of Collection based on Profile access configuration
+    - User Distributor association is mandatory for creating transaction
+    - Corporate User are indirect users create transaction related to specific associated distributor
+    - Creation of Collection should be restricted to user without distributor association
+
+5. [FD-BR-Collection-0005](#FD-BR-Collection-0005) - Customer Selection 
+
+    - Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
         
-    2. Customer can be selected in any one of the following ways
+    - Customer can be selected in any one of the following ways
       - Direct customer selection
       - Customer selection post Salesman selection
       - Customer selection post Salesman and Beat selection
-    
-3. In all the above scenarios Customer, Beat and Salesman mapping is must. 
-
+      
+     -  In all the above scenarios Customer, Beat and Salesman mapping is must. 
 
 # Event Flows
 
 ## Events at Front End (Create)
   - Collection list view page 
      - Listing Collection
-   - While Creating Collection
-    - Render page based on user profile (To be explained in separate page) 
-    - Listing Salesman
-    - On Selection of Salesman, Retrieve Salesman Category info, Filter related Beat, Filter related customer.
-    - Listing Beat 
-    - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
-    - Listing Customer
-    - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
-    - Listing Transaction Series for Collection
-    - Listing Collection Mode
-    - Listing Pending Invoices
-    - On Selection of populate bills retrieve all invoices with outstanding amount details 
-    - Listing Adjustable return 
-    - List relevant Adjustment info 
+    - While Creating Collection
+     - Render page based on user profile (To be explained in separate page) 
+     - Listing Salesman
+     - On Selection of Salesman, Retrieve Salesman Category info, Filter related Beat, Filter related customer.
+     - Listing Beat 
+     - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
+     - Listing Customer
+     - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
+     - Listing Transaction Series for Collection
+     - Listing Collection Mode
+     - Listing Pending Invoices
+     - On Selection of populate bills retrieve all invoices with outstanding amount details 
+     - Listing Adjustable return 
+     - List relevant Adjustment info 
  
 
 ## Events at Business logic layer (overview)

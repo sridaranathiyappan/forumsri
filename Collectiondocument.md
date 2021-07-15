@@ -3,8 +3,24 @@ Content
 [[_TOC_]]
 
 `Available for review`
+
+## What is Collection 
+
+Collection is used to collect the amount for the invoice made against the particular customer. Any balance/pending amount against the Customer should be collected through this transaction. Collection is accounting transaction. 
+
+## Types of Collection 
+
+1. Collection by adjusting pending open documents. 
+2. Advance Collection 
+
+## Who creates Collection? 
+
+1. `Collection` are created by `Distributor` & Distributor `Salesperson`. 
+2. In general, `Company Salesperson`  don't make collection for the goods supplied by Distributor. 
+> Note: `Company Salesperson` collecting on oepn document from distributor is covered as `payment` from distributor. 
+
 # Creation of Collection  
-The Collection will be done based on multiple Mode of Payment. Collection can be created against Sales Invoice or Without any reference of Sales Invoice (I.e On account Collection).There should be an provision to handle the collection through Distributor Portal and Mobile application
+  Collection will be done against the pending sales invoice through multiple Mode of Payment. Collection can be created against Sales Invoice or Without any reference of Sales Invoice (I.e Advance Collection).There should be an provision to handle the collection through Distributor Portal and Mobile application
 
 ## Precondition for creating Collection
 Before creating a Collection, you need to 
@@ -54,7 +70,7 @@ Creation of Collection vary based on type of creation.
 
 > _These are the header details requires for creation of any Collection._
 
-## To create Collection with Auto adjustment via Collection Module in Distributor Portal 
+## To Create Collection with Auto adjustment via Collection Module in Distributor Portal 
 
 10. **Adjustment** 
     - User can Manual adjust or Auto adjust the available open [Credit Note document](Credit Note) of the selected customer. 

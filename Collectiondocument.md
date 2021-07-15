@@ -4,7 +4,7 @@ Content
 
 `Available for review`
 # Creation of Collection  
-The Collection will be done based on multiple Mode of Collection . Collection can be created Against Sales Invoice or Without any reference to Sales Invoice (I.e On account Collection).There should be an provision to handle collection through Distributor Portal and Mobile application
+The Collection will be done based on multiple Mode of Payment. Collection can be created against Sales Invoice or Without any reference of Sales Invoice (I.e On account Collection).There should be an provision to handle the collection through Distributor Portal and Mobile application
 
 ## Precondition for creating Collection
 Before creating a Collection, you need to 
@@ -16,7 +16,7 @@ Before creating a Collection, you need to
 
 Creation of Collection vary based on type of creation. 
 
-## To create Collection Against Pending Invoice  via Collection Module in Distributor Portal 
+## To Create Collection Against Pending Invoice  via Collection Module in Distributor Portal 
 
 1. **Collection Date** is often set to default current date
    - There are options to allow backdated Collection but date after present date are restricted. 
@@ -123,10 +123,6 @@ Amendment performs validation and two primary actions as below,
  
   - User allowed to do the amount adjustment for multiple returns  at a time 
     [Customer](Customer), [Salesman](Salesman), [Beat](Beat) ,Pending Invoice,Credit Note information are pre-loaded (pre-fetched from Sales Invoice and Sale return) to create the Collection during conversion using Option 1 & 2.
-
-## Create Collection with Auto adjust mode
-
- [[ To be Added]]
 
 ## Salesmanwise Collection
 ## Create Collection Salesmanwise

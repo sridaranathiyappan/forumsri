@@ -402,6 +402,125 @@ This page list all direct configuration applicable for Sales Order & related oth
   - Accurate calculation of tax amount is main criteria of Sales Order document.
 
 
+# Event Flows 
+## Events at Front End (Create)
+  - Sales Order list view page 
+    - Listing Sales  Order
+  - While Creating Sales  Order
+    - Render page based on user profile (To be explained in separate page) 
+    - Listing Salesman
+    - On Selection of Salesman, Retrieve Salesman Category info, Filter related Beat, Filter related customer.
+    - Listing Beat 
+    - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
+    - Listing Customer
+    - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
+    - Listing Transaction Series for Sales Invoice
+    - Listing Godown of Distributor 
+    - Listing Product
+    - On Selection of Product, retrieve relate product info, Batch details, Tax info, Scheme info, current stock position.
+    - List Batch info of the product
+    - List relevant Adjustment info 
+ 
+ <!-- blank line -->
+## Events at Business logic layer (overview)
+- Apply Dynamic front end access control based on user profile. 
+- Generate record reference number for transaction internal reference. Every request should have this reference to process, manipulate or produce data. 
+
+- Validate the data submitted from front end - Datatype & security related. 
+- Validate the data submitted from front end - Business flow related. 
+
+**Business flow validations**
+
+  - User chooses the 'Sales Order Entry' menu item. 
+  - System should pick the Default Distributor details 
+  - User selects the Salesman associated with that distributor
+  - User selects the Beat name or code
+  - System should list out the customer from the selected beat 
+  - User should select the customer from the selected beat 
+  - System should pick the Billing Address and shipping address of the selected customer 
+  - System should check the Customer-salesman-product-pricing group and retrieve these items as qualified items for creating an invoice
+  - System should also check the list of schemes available for the qualified items and  apply it while creating an Invoice 
+  - System should check for configuration to apply or not to apply scheme on the invoice 
+  - User enters the product id/product name and desired quantity in respective fields.
+  - User clicks on [Add item] button to add the next item.
+  - System adds the desired product in draft mode 
+  - User applies the Promotion/Coupon code if available.
+  - Being continued,user clicks on 'Save' Invoice link.
+  - User can enters Credit term type description.
+  - System will create Sales Order and update the total amount as Order Amount
+  - User clicks on 'Save' link and Sales Order will be created in 'Created/Publish' status.
+  - User can select the 'Sales Order' and print the 'Sales Order' if required 
+
+**Events based on Mobile Based Order**
+
+- Apply pricing 
+  - Price for specific customer channel & product are to be arrived and same will get recomputed , price will not get Reapply
+  - Any Exceptions related to pricing computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+
+- Apply Tax 
+  - Recompute Tax as per the tax definition applicable for the distributor, customer, product criteria, tax identification availability.  
+  - Any Exceptions related to Tax computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+
+- Apply scheme 
+  - As per the scheme definition for the customer criteria, applicable distributor and product,Scheme will get reapplied
+  - Apply Offtake scheme benefit as applicable for the customer. 
+  - Any Exceptions related to scheme computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+
+- Apply Transaction series
+   - Pick the Auto incremental sequencing codification and Apply for the Transaction series 
+
+
+- Apply business workflow logic.
+  - As per configuration, apply business logic based workflow for the respective modules.
+
+
+- Apply Log 
+  - Generate access log for application. 
+
+**Events based on Direct Order**
+
+- Apply pricing 
+  - Price for specific customer channel & product are to be arrived and same will get applied
+  - Any Exceptions related to pricing computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+- Apply Tax 
+  - Apply Tax as per the tax definition applicable for the distributor, customer, product criteria, tax identification availability.  
+  - Any Exceptions related to Tax computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+
+- Apply scheme 
+  - As per the scheme definition for the customer criteria, aplicable distributor and product,Scheme has to be applied
+  - Apply Offtake scheme benefit as applicable for the customer. 
+  - Any Exceptions related to scheme computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
+
+- Apply Transaction series
+   - Pick the Auto incremental sequencing codification and Apply for the Transaction series 
+
+- Apply business workflow logic.
+  - As per configuration, apply business logic based workflow for the respective modules.
+ 
+- Apply Log 
+  - Generate access log for application. 
+
+ <!-- blank line -->
+## Events at Unified Log
+### Flow of related Events  (Save)
+
+- Sales Order Service scope limited to Sales invoice creation/amendment/cancel/delete. 
+- Sales Order Service to trigger the related sub services which are internal and separate service. 
+
+ <!-- blank line -->
+- Customer Open orders  to get updated in Distributor sales order screen 
+- Sales Order status to get updated depending on the number of orders get fulfilled 
+
+ <!-- blank line -->
+- Mail triggers to Customer on order confirmation status
+- SMS triggers to Customer on order confirmation status
+- Report related Sales order data to be updated through services. 
+
 # See also .. 
   - [Sales Order ](Sales Order )
   - [Sales Order Configurations](Sales Order Configurations)

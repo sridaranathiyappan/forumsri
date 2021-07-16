@@ -42,20 +42,16 @@ Creation of Sales Order vary based on type of creation.
 5. **Select a Payment Mode** appropriately
 6. **Select a Credit Term** if Payment Mode is credit.  
 
-7. Stock **Location**
-    - default distributor Godown to be mapped 
-    - user can select appropriately, if there are multiple values in list.     
-
-8. **[Transaction Series](Transaction Series)**
+7. **[Transaction Series](Transaction Series)**
     - default Sales Order Transaction Series are loaded, User can change these details as necessary. 
 
-9. **Customer Shipping address** 
+8. **Customer Shipping address** 
     - default Shipping address loaded, User can change these details as necessary. 
 
-10. **Customer Billing address** 
+9. **Customer Billing address** 
     - default Billing address loaded, User can change these details as necessary. 
 
-11. Fill in or Modify the remaining fields on the Sales Order page as necessary.
+10. Fill in or Modify the remaining fields on the Sales Order page as necessary.
     - Reference number Manual
     - Reference number Additional
     - Secondary Transaction series 
@@ -73,7 +69,7 @@ Creation of Sales Order vary based on type of creation.
 > _You are now ready to fill in the Sales Order lines for products that you are selling to the Customer._
 
 ## Addition of line level details
-12. **Select a [Product](Product)** from list of eligible product for sales. 
+11. **Select a [Product](Product)** from list of eligible product for sales. 
     - After selection of line level [Product](Product), related information are pre-populated  
       - Batch details from current stock of [Distributor](Distributor)
       - Price to customer [PTR](#rate-calculation)
@@ -81,37 +77,37 @@ Creation of Sales Order vary based on type of creation.
       - Sales [UOM](Unit of Measurement) 
       - [Applicable Tax](#rate-calculation) 
 
-13. **Provide the sales order quantity**
+12. **Provide the sales order quantity**
     - After providing the sales order quantity, 
       - The value in the Line Amount field is calculated as Unit Price x Quantity. 
       - [Applies Tax](#tax) based on predefined [Tax Master](Tax Master) settings
       - Line level [Net Amount](Sales Order Calculation) is calculated. 
 
-14. Fill in the **Discount** as necessary, to re-compute Tax amount & Net amount.
+13. Fill in the **Discount** as necessary, to re-compute Tax amount & Net amount.
     - Amount Discount 
     - Percentage Discount 
     - Discount Per UOM
     - Manual Free Item  
 
-15. **[Scheme defined](Scheme Master)** for item are applied as per configuration. 
+14. **[Scheme defined](Scheme Master)** for item are applied as per configuration. 
     - any Scheme discount applied will re-compute the Tax amount & Net amount. 
     - Scheme product free are loaded based as per scheme.   
     - [Scheme applied](#scheme) at line level and overall document level. 
 
-16. **Net amount** is computed after discount, Scheme discount & Tax related impact. 
+15. **Net amount** is computed after discount, Scheme discount & Tax related impact. 
     - _refer [Sales Order calculation logic](#rate-calculation)_
 
-17. _Repeat **Addition of line level details** Step for adding more lines of item._ 
+16. _Repeat **Addition of line level details** Step for adding more lines of item._ 
 
 ## Order Discount & Adjustments 
 
-18. **Order level discount** can be provided to re-compute final [Order Amount](#rate-calculation)
+17. **Order level discount** can be provided to re-compute final [Order Amount](#rate-calculation)
     - Amount Discount 
     - Percentage Discount 
     - Discount Per UOM
     - Order Level Scheme Discount
 
-19. **Save Sales Order ** 
+18. **Save Sales Order ** 
 On Saving of the Sales Order document, 
     - Document of sales Order is recorded with generation of unique Sales Order Transaction number for a Distributor. 
     - Line Item & quantity of details provided are added as part of sales order document as Open order
@@ -173,10 +169,11 @@ This page list all direct configuration applicable for Sales Order & related oth
 |Tax Option Enable| |If enabled, select option with tax mode (individual/group) will be displayed, based on selection tax calculation are done.|
 |Currency Option Enable||If enabled, select option with currency will be displayed, default indian rupee.|
 |Shipping Tax Enable||If enabled, Taxes For Shipping and Handling field will be available on sales order screen. for tax calculation.|
-|Allow selection of Buyer from Buyer Master||If enabled, user will be selecting the buyer on salesorder screen.|If not, default buyer will be loaded initial, user can change the buyer if needed.|
+|Allow selection of Buyer from Buyer Master||If enabled, user will be selecting the buyer on salesorder screen.If not, default buyer will be loaded initial, user can change the buyer if needed.|
 |Forbid Generation of Default transaction Series||If enabled, user to select the transaction series on salesorder screen.,If not, default transaction series will be loaded salesorder screen.|
-|Allow Loading product out of stock||If enabled, allow product out of stock to display.,If not, allow only stock available product.|Show Current stock for selected item|If enabled, display current stock in salesorder screen.|
-*||Allow adding new item to detail||If enabled, display Add product icon in salesorder screen.|
+|Allow Loading product out of stock||If enabled, allow product out of stock to display.,If not, allow only stock available product.
+|Show Current stock for selected item||If enabled, display current stock in salesorder screen.|
+|Allow adding new item to detail||If enabled, display Add product icon in salesorder screen.|
 |Throw error when stock position goes negative||If enabled, display alert if stock is on negative values.|
 |Allow Adhoc discount for each item||If enabled, display Cash/AddDiscount option on each line item on salesorder screen.|
 | Allow Adhoc discount for transaction||If enabled, display Cash/AddDiscount option for transaction on salesorder screen.|
@@ -201,14 +198,14 @@ This page list all direct configuration applicable for Sales Order & related oth
 |Allow SO from unapproved customers in the status of||Set config status of unapprover customer to allow SO. |
 |How many SO are allowed for unapproved customers||Set limit for SO from unapproved customers|
 |Apply SO Covertions With Completion Percentage||If enabled, pending order conversion is handled with percentage configuration.If not, Order Conversion Invoice Level/Sales Order Conversion Line Level will not be processed.|
-|Sales Order Conversion Line Level Completion Percentage|If enabled, set line level value to be perfoemed for conversion|
+|Sales Order Conversion Line Level Completion Percentage||If enabled, set line level value to be performed for conversion|
 |Sales Order Conversion Invoice Level Completion Percentage||If enabled, set Order Conversion Invoice Level value to be perfoemed for conversion|
 |Allow Single SO to Mutiple SI||If enabled, allow single So to conversion to multiple SI.|
 |Restrict selling of drug SKU to Non Drug customers for Sales Order / Sales Invoice Y/N||If enabled, allow drug product selling for non drug customer,If not, restrict selling drug product to non drug customer.|
 |Apply manual discounts on the Original Amount (Quantity X Rate)|| If enabled the manual discount to be considerd on amount of quantity,If not, scheme discount is not be considered.|
 |Set the maximum discount % as while performing billing at MRP||To be enabled and Set percentage of maximum discount to be applied on billing mrp transaction|
 | Selection of Delivery Date Days||To be enabled and Set no of days to configured for the delivery date of salesorder transaction.|
-|Auto Close Sales Order Configuration|Close Sales order based on (Default / Order type) config values||If Default, Automatically close the sales order after Days,Set days value to auto close sales order.|
+|Auto Close Sales Order Configuration Close Sales order based on (Default / Order type) config values||If Default, Automatically close the sales order after Days,Set days value to auto close sales order.|
 |Sales Order Type Configuration ||Set Order Types and days for the sales order close.,(Ex : mobile order, direct order) to set no of days to close sales order.|
 |Auto Closure of Sales Order CRON Configurtion based on Retailer Channel||If enabled, allow user to configure retailer channel and days to close sales order based on retailer channel type,(Ex : Bakery, Bunk, chemist) to set no of days to close sales order.|
 
@@ -226,7 +223,7 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-1. [FD-BR-SI-0002](#FD-BR-SI-0002) - List view of Sales Order 
+2. [FD-BR-SI-0002](#FD-BR-SI-0002) - List view of Sales Order 
     1. Listing page is default landing page, where newly created Sales Order are listed with selected information.
     1. All listing page related features are to be available for Sales Order listing Page. 
     1. Retrieve recently created top `20` Sales Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Sales Order applicable for all users. 
@@ -253,17 +250,17 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-1. [FD-BR-SI-0003](FD-BR-SI-0003) - Detail view actions
+3. [FD-BR-SI-0003](FD-BR-SI-0003) - Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
-1. [FD-BR-SI-0004](FD-BR-SI-0004) - Create Sales Order 
+4. [FD-BR-SI-0004](FD-BR-SI-0004) - Create Sales Order 
     1. Allow creation of Sales Order based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Sales Order should be restricted to user without distributor association. 
 
-1. [FD-BR-SI-0005] -  Customer Selection 
+5. [FD-BR-SI-0005] -  Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
        - Apply configuration impact [FD-Conf-SI-0007](#FD-Conf-SI-0007)
@@ -353,14 +350,17 @@ This page list all direct configuration applicable for Sales Order & related oth
 | Atta 2 KG | 2        | KG  | 44.41 | 88.82  | 5               | 2        | 4.091 | 42.9555  | 85.911     |
 
     - UOM1 - without discount
+
 | Product   | Quantity | UOM | Rate   | Amount | Scheme Discount | Discount | Tax    | Net Rate | Net Amount |
 |-----------|----------|-----|--------|--------|-----------------|----------|--------|----------|------------|
 | Atta 2 KG | 2        | CFC | 1332.3 | 2664.6 | 0               | 0        | 133.23 | 1398.915 | 2797.83    |
 
     - UOM 1- with Scheme and Other discount
+
 | Product   | Quantity | UOM | Rate   | Amount | Scheme Discount | Discount | Tax    | Net Rate | Net Amount |
 |-----------|----------|-----|--------|--------|-----------------|----------|--------|----------|------------|
 | Atta 2 KG | 2        | CFC | 1332.3 | 2664.6 | 5               | 2        | 132.88 | 1395.24  | 2790.48    |
+
     - When Net Rate is changed (Base UOM - without discount)
 | Product   | Quantity | UOM | Rate  | Amount | Scheme Discount | Discount | Tax  | Net Rate | Net Amount |
 |-----------|----------|-----|-------|--------|-----------------|----------|------|----------|------------|
@@ -414,8 +414,7 @@ This page list all direct configuration applicable for Sales Order & related oth
     - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
     - Listing Customer
     - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
-    - Listing Transaction Series for Sales Invoice
-    - Listing Godown of Distributor 
+    - Listing Transaction Series for Sales Order
     - Listing Product
     - On Selection of Product, retrieve relate product info, Batch details, Tax info, Scheme info, current stock position.
     - List Batch info of the product

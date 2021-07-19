@@ -213,9 +213,9 @@ This page list all direct configuration applicable for Sales Order & related oth
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Order are clear. Refer [Sales Order ](Sales Order ), [Sales Order Creation](#creation-of-sales-Order )   
 
-1. [FD-BR-SI-0001] - User access 
+1. [FD-BR-SO-0001] - User access 
 
->  FD-BR-SI-0001
+>  FD-BR-SO-0001
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating sales Order transaction 
@@ -223,7 +223,7 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SI-0002](#FD-BR-SI-0002) - List view of Sales Order 
+2. [FD-BR-SO-0002](#FD-BR-SO-0002) - List view of Sales Order 
     1. Listing page is default landing page, where newly created Sales Order are listed with selected information.
     1. All listing page related features are to be available for Sales Order listing Page. 
     1. Retrieve recently created top `20` Sales Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Sales Order applicable for all users. 
@@ -250,20 +250,20 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SI-0003](FD-BR-SI-0003) - Detail view actions
+3. [FD-BR-SO-0003](FD-BR-SO-0003) - Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SI-0004](FD-BR-SI-0004) - Create Sales Order 
+4. [FD-BR-SO-0004](FD-BR-SO-0004) - Create Sales Order 
     1. Allow creation of Sales Order based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Sales Order should be restricted to user without distributor association. 
 
-5. [FD-BR-SI-0005] -  Customer Selection 
+5. [FD-BR-SO-0005] -  Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
-       - Apply configuration impact [FD-Conf-SI-0007](#FD-Conf-SI-0007)
+       - Apply configuration impact [FD-Conf-SI-0007](#FD-Conf-SO-0007)
         
     1. Customer can be selected in any one of the following ways
       - Direct customer selection

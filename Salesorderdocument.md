@@ -162,7 +162,7 @@ This page list all direct configuration applicable for Sales Order & related oth
  
 ## Application level Configuration  
 
-### Collection Module Configuration
+### Sales Order Module Configuration
 | Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
 |------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
 | Display the stock in qty Godown only | | If enabled, display godown stock also in salesorder screen for quantity|[ FD-Conf-MAS-SO-0001](Sales Invoice Creation#FD-Conf-MAS-SO-0001)|
@@ -207,6 +207,23 @@ This page list all direct configuration applicable for Sales Order & related oth
 |Auto Close Sales Order Configuration| | Close Sales order based on (Default / Order type) config values|If Default, Automatically close the sales order after Days,Set days value to auto close sales order.|[ FD-Conf-MAS-SO-0040](Sales Invoice Creation#FD-Conf-MAS-SO-0040)|
 |Sales Order Type Configuration | | Set Order Types and days for the sales order close.,(Ex : mobile order, direct order) to set no of days to close sales order.|[ FD-Conf-MAS-SO-0041](Sales Invoice Creation#FD-Conf-MAS-SO-0041)|
 |Auto Closure of Sales Order CRON Configurtion based on Retailer Channel| | If enabled, allow user to configure retailer channel and days to close sales order based on retailer channel type,(Ex : Bakery, Bunk, chemist) to set no of days to close sales order.|[ FD-Conf-MAS-SO-0042](Sales Invoice Creation#FD-Conf-MAS-SO-0042)|
+
+# Bulk Order Conversion Configuration:
+
+### Bulk Order Coversion Module Configuration
+| Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
+|------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
+|Create Bill with available Stock for orders with partial stock availability||If enabled, allow conversion orders with partial stock quantity to invoice| [FD-Conf-MAS-BulkSO-0001](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0001)|
+|Product category to Product conversion to be applied||If enabled, product conversion is applied based on the product category|[FD-Conf-MAS-BulkSO-0002](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0002)|
+|SOH Lowest to Highest||If enabled, the product list is ordered from lowest to highest by quantity| [FD-Conf-MAS-BulkSO-0003](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0003)|
+|MRP Lowest to Highest||If enabled, the product list is ordered from lowest to highest by mrp|[FD-Conf-MAS-BulkSO-0004](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0004)|
+|SOH Lowest to Highest / SOH Lowest to Highest  ||If both enabled,  the product list is ordered from lowest to highest by quantity and mrp|[FD-Conf-MAS-BulkSO-0005](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0005)|
+|Settings for one click conversion|Customer credit norm violation treatment|Ignore customer credit norm violations while converting orders to invoices,If enabled, allow order conversion customer credit norms to invoices|[FD-Conf-MAS-BulkSO-0006](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0006)|
+|Do not convert the orders if the customer credit norm is violated||If enabled, do not allow order conversion customer credit norms to invoices|[FD-Conf-MAS-BulkSO-0006](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0006)|
+|Salesman credit norm violation treatment||Ignore salesman credit norm violations while converting orders to invoices,If enabled, allow order conversion salesman credit norms to invoices|[FD-Conf-MAS-BulkSO-0007](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0007)|
+|Do not convert the orders if the salesman credit norm is violated||If enabled, do not allow order conversion salesman credit norms to invoices|[FD-Conf-MAS-BulkSO-0008](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0008)|
+|Conversion rule setting in case of insufficient stock|Create bills with available stock for orders with partial stock availability,If enabled, allow conversion orders with partial stock quantity to invoice.|[FD-Conf-MAS-BulkSO-0009](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0009)|
+|Do not convert the orders to invoice in case of insufficient stock availability||If enabled, do not allow conversion orders with partial stock quantity to invoice|[FD-Conf-MAS-BulkSO-0010](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0010)|
 
 # Business Rule & Impact 
 

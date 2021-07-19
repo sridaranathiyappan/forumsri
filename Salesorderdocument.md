@@ -263,7 +263,7 @@ This page list all direct configuration applicable for Sales Order & related oth
 5. [FD-BR-SO-0005] -  Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
-       - Apply configuration impact [FD-Conf-SI-0007](#FD-Conf-SO-0007)
+       - Apply configuration impact [FD-Conf-SO-0007](#FD-Conf-SO-0007)
         
     1. Customer can be selected in any one of the following ways
       - Direct customer selection

@@ -155,6 +155,10 @@ User can have mulitple choices to convert the open sales orders into Sales Invoi
 [Customer](Customer), [Salesman](Salesman), [Beat](Beat) and Item information are pre-loaded (pre-fetched from Sales Order) to create the Invoice during conversion using Option 1 & 2.
 Option 3, is auto processed to create Sales Order . 
 
+## Bulk Order Processing
+Bulk Order Processing refers to processing the mutiple sales open orders at the same time.
+During the time of Bulk Order Processing , system will auto validate the configurations related to stock check based order conversion / Partial or full order conversion / credit limit norm checks
+
 # Sales Order Configuration 
 This page list all direct configuration applicable for Sales Order & related other module configuration which impacts Collections. 
 

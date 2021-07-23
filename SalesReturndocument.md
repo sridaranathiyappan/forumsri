@@ -8,7 +8,7 @@ A Sales Return  is a market return that get generated from the customer based on
 
 ## Precondition for creating Sales Return  
 Before creating a direct sales Return  , you need to 
-* Create[Customer](Customer) details 
+* Create [Customer](Customer) details 
 * Create [Beat](Beat) & [Salesman](Salesman) details 
 * Create [Item](Product) details 
 * Create [Pricing](Pricing) details 

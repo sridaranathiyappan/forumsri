@@ -22,7 +22,7 @@ Creation of Sales Return  vary based on type of creation.
    - There are options to allow backdated Return  but date after present date are restricted. 
 
 2. **In the Customer field**, enter the name of an existing customer. 
-   - Sales Return  are created to document the sale of goods to customer. 
+   - Purchase Order are created to document the sale of goods to customer. 
    - After Customer selection, Customer related information are pre-populated as below,  
      - default [Beat](Beat), 
      - default [Salesman](Salesman), 
@@ -38,76 +38,80 @@ Creation of Sales Return  vary based on type of creation.
 4. **Select a [Salesman](Salesman)** related to the selected Customer 
     - Multiple Salesman are listed based on the Customer associated with multiple Beat. 
 
-5. **Select a Payment Mode** appropriately
-6. **Select a Credit Term** if Payment Mode is credit.  
+5. **[Transaction Series](Transaction Series)**
+    - default Purchase Order Transaction Series are loaded, User can change these details as necessary. 
 
-7. **[Transaction Series](Transaction Series)**
-    - default Sales Return  Transaction Series are loaded, User can change these details as necessary. 
-
-8. **Customer Shipping address** 
+6. **Customer Shipping address pick** 
     - default Shipping address loaded, User can change these details as necessary. 
 
-9. **Customer Billing address** 
-    - default Billing address loaded, User can change these details as necessary. 
+7. **Sales Return Type** 
+    - With Ref ir Withot Ref details , User can change these details as necessary. 
 
-10. Fill in or Modify the remaining fields on the Sales Return  page as necessary.
-    - Reference number Manual
-    - Reference number Additional
-    - Secondary Transaction series 
-    - Remark 
-    - Reason  
-    - Description
-    - Terms and Conditions
-    - Referred by
-    - Salesman Category Group 
-    - Product Category Group (based on Salesman Category Group)
-    - Delivery date
-    - Tax Form 
+8. **Remarks**
+     - Additional info can be provided 
 
-> _These are the header details requires for creation of any Sales Return  ._
-> _You are now ready to fill in the Sales Return  lines for products that you are selling to the Customer._
+9. Fill in or Modify the remaining fields on the Sales Return page as necessary.
+    - Product
+    - Batch
+    - Sales Invoice
+    - UOM
+    - Saleable Return quantity
+    - Non-Saleable Return quantity
+
+> _These are the header details requires for creation of any Sales Return._
+> _You are now ready to fill in the Purchase Order lines for products that you are selling to the Customer._
 
 ## Addition of line level details
-11. **Select a [Product](Product)** from list of eligible product for sales. 
+10. **Select a [Product](Product)** from list of eligible product for sales. 
     - After selection of line level [Product](Product), related information are pre-populated  
       - Batch details from current stock of [Distributor](Distributor)
       - Price to customer [PTR](#rate-calculation)
       - [Available Stock Quantity](Stock & Inventory) 
-      - Sales [UOM](Unit of Measurement) 
+      - Purchase [UOM](Unit of Measurement) 
       - [Applicable Tax](#rate-calculation) 
 
-12. **Provide the sales Return  quantity**
-    - After providing the sales Return  quantity, 
+11. **Provide the Sales Return  quantity**
+    - After providing the Sales Return  quantity, 
       - The value in the Line Amount field is calculated as Unit Price x Quantity. 
       - [Applies Tax](#tax) based on predefined [Tax Master](Tax Master) settings
-      - Line level [Net Amount](Sales Return  Calculation) is calculated. 
+      - Line level [Net Amount](Purchase Order Calculation) is calculated. 
 
-13. Fill in the **Discount** as necessary, to re-compute Tax amount & Net amount.
+12. **Select the Sales Invoice**
+    - After providing the Sales Invoice reference  
+      - The value in the Sales Invoice  calculated as Unit Price x Return Quantity. 
+      - [Applies Tax](#tax) based on predefined [Tax Master](Tax Master) settings
+      - Line level [Net Amount](Purchase Order Calculation) is calculated. 
+    - _refer [Purchase Order calculation logic](#rate-calculation)_
+
+## Invoice Discount & Adjustments against Sales Return
+
+13. **[Scheme defined](Scheme Master)** for item are applied as per configuration. 
+    - any Scheme discount applied will re-compute the Tax amount & Net amount. 
+    - Scheme product free are loaded based as per scheme.   
+    - [Scheme applied](#scheme) at line level and overall document level. 
+
+14. **Invoice  level discount** can be provided to re-compute final [Return Amount](#rate-calculation)
     - Amount Discount 
     - Percentage Discount 
     - Discount Per UOM
-    - Manual Free Item  
+    - Invoice Level Scheme Discount
 
-14. **Net amount** is computed after discount, Scheme discount & Tax related impact. 
-    - _refer [Sales Return  calculation logic](#rate-calculation)_
-
-15. _Repeat **Addition of line level details** Step for adding more lines of item.
+15. _Repeat **Addition of line level details** Step for adding more lines of item._ 
 
 16. **Save Sales Return  ** 
-On Saving of the Sales Return  document, 
-    - Document of sales Return  is recorded with generation of unique Sales Return  Transaction number for a Distributor. 
-    - Line Item & quantity of details provided are added as part of sales Return  document as Open Return 
-    - Off take scheme benefit applied are accounted and updated. 
+On Saving of the Sales Return document, 
+    - Document of Sales Return  is recorded with generation of unique Sales Return  Transaction number for a Customer
+    - Line Item & quantity of details provided are added as part of Sales Return document 
     - Report data consolidation initiated for relevant data points. 
-    - Sales Return  is ready to [Print](Sales Return  Print)
+    - Sales Return is ready to [Print](Sales Return Print)
 
 ## Cancellation 
-Cancellation of Sales Return  are action performed on Non-Invoiced sales Return  after preparation of Sales Return  . The reason may vary like "Wrongly created Return  ". Cancelled Return  are considered as valid document and used in all reports
+Cancellation of Sales Return are action performed against Delivered items (Sales Invoice or Without Sales Invoice ref) after preparation of Sales Return  . The reason may vary like "Wrongly created Return  ". Cancelled Return  are considered as valid document and used in all reports
 
 Cancellation of Sales Return  are restricted based on configuration & workflow, few points as below. 
 
   - Business level restriction may vary based on configuration.  
-    - Invoiced Sales Return  are not allowed to cancel, instead before the delivery , sales invoice cancellation to be performed to maintain the logical accounting transactions. 
+    - Approved Sales Return  are not allowed to cancel, instead before the approval , sales return cancellation to be performed to maintain the logical accounting transactions. 
 
   - Data integrity related restrictions
     - Validation fails if the customer Return  amount update creates zero value scenario due to Zero price exist in the system against any line item. 
@@ -133,17 +137,8 @@ Amendment performs validation and two primary actions as below,
 - Market Sales Return  
   - A [Sales Return ](Sales Return ) records the customer's intent to return the damaged / Expired products at the stated price during the market visit by the salesperson
 
-User can have mulitple choices to convert the open sales Return into Debit Note Invoice as mentioned below.  
-   1. Single Return  conversion to [Debit Note](Debit Note)
-   2. Bulk Return  Processing with user input to confirm each[Debit Note](Debit Note)
-   3. Bulk Return  Processing to auto create [Debit Note](Debit Note)
-
 [Customer](Customer), [Salesman](Salesman), [Beat](Beat) and Item information are pre-loaded (pre-fetched from Sales Return ) to create the Invoice during conversion using Option 1 & 2.
 Option 3, is auto processed to create Sales Return  . 
-
-## Bulk Return  Processing
-Bulk Return  Processing refers to processing the mutiple sales Return s at the same time.
-During the time of Bulk Return  Processing , system will auto validate the configurations related to stock check based Return  conversion / Partial or full Return  conversion / credit limit norm checks
 
 # Sales Return  Configuration 
 This page list all direct configuration applicable for Sales Return  & related other module configuration which impacts Collections. 
@@ -257,9 +252,8 @@ This page list all direct configuration applicable for Sales Return  & related o
 
 ## Rate calculation 
 1. **Sale Return  Price** is shown in any of the following ways.
-    - PTR value stored in Batch
-    - Special price defined for the customer channel and GST registration status. 
-    - When Bill at latest price is enabled for the item in the item master then latest Base Price is always considered until Special price is  defined for the item. 
+    - Return Price value stored in Batch
+    - When Bill at Return price is enabled for the item in the item master then latest return Price is always considered until return price is  defined for the item. 
     - User can override the rate based on settings
 
 2. **UOM** can be selected as **Base UOM**, **UOM 1**, **UOM 2** ...,**UOM 7**
@@ -267,7 +261,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 
     - **Sample Product UOM conversion & Rate** _Product Atta 2 KG_
  
-| UOM Type | UOM | Conversion Factor | Batch Rate | Special Price | Base Price |
+| UOM Type | UOM | Conversion Factor | Batch Rate | Return Price | Base Price |
 | ------ | ------ | ------ | ------ | ------ | ------ | 
 | Base UOM | KG | 1 | 44.41 | 40 | 44.60 |
 | UOM 1 | CFC | 30 | 1332.30 | 1200 | 1338 |
@@ -288,7 +282,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 | Item Name                            | User can select the product by Item Code or Name                                                            |
 | Batch                                | By default first batch is selected. Batch is listed on FIFO logic                                           |
 | UOM                                  | Default Sales UOM is selected initially. User can change if required by shortcut also or manually change it |
-| Sale Return  Price                           | PTR of the item is shown. PTR is considered based on the Margin or Channel Wise Margin or Quotation         |
+| Sale Return Price                           | PTR of the item is shown. PTR is considered based on the Margin or Channel Wise Margin or Quotation         |
 | Net Rate                             | Sale Price of item + Tax Amount is calculated for 1 quantity and shown.                                     |
 | Quantity                             | User can enter quantity. Quantity entered is considered as per UOM selected                                 |
 | Amount                               | Quantity * Sale Price is calculated and shown                                                               |
@@ -355,22 +349,6 @@ This page list all direct configuration applicable for Sales Return  & related o
 |-----------|----------|-----|-------|--------|-----------------|----------|------|----------|------------|
 | Atta 2 KG | 2        | KG  | 98.74 | 197.48 | 5               | 2        | 9.52 | 100      | 200        |
 
-
-## Scheme 
-  - Sales Return  are applied with respective scheme as defined or applicable. 
-  - Applicable scheme are based on various criteria's like Product, Product category, Customer, Customer Type, Channel Type, Distributor, Distributor Cluster, Geo hierarchy, Mode of payment, ..etc. Refer [Scheme master](Scheme) for types of scheme. 
-  - Different types of Scheme applies, some of the most used Scheme Type as below, 
-    - Item by Quantity
-    - Item by Value
-    - Item By Qty - Lines cut 
-    - `SMJ Pending - Add Return  level scheme types`
-  - Gross Amount : (Quantity * Sale Price)
-  - Gross Amount with tax : (Quantity * Rate + Tax)
-  - After Manual Discount : ((Quantity * Rate - line level Addl. Discount)
-  - After Manual Discount with tax : ((Quantity * Rate - line level Addl. Discount+ Tax)
-  - **On-Take Scheme** are applied while preparing the Sales Return  . 
-  - **Off-Take Scheme** benefits are applied as per the pending benefit list as applicable for the selected customer. 
-  - Sales Return  scheme benefits are [computed](Scheme engine) and applied.  
   
 ## Tax 
   - Tax Components can be
@@ -400,6 +378,7 @@ This page list all direct configuration applicable for Sales Return  & related o
     - Listing Transaction Series for Sales Return 
     - Listing Product
     - On Selection of Product, retrieve relate product info, Batch details, Tax info, Scheme info, current stock position.
+    - Listing Sales Invoice
     - List Batch info of the product
     - List relevant Adjustment info 
  
@@ -419,16 +398,13 @@ This page list all direct configuration applicable for Sales Return  & related o
   - User selects the Beat name or code
   - System should list out the customer from the selected beat 
   - User should select the customer from the selected beat 
-  - System should pick the Billing Address and shipping address of the selected customer 
+  - System should pick the shipping address Pick of the selected customer 
   - System should check the Customer-salesman-product-pricing group and retrieve these items as qualified items for creating an invoice
-  - System should also check the list of schemes available for the qualified items and  apply it while creating an Invoice 
-  - System should check for configuration to apply or not to apply scheme on the invoice 
+  - System should also check the invoice reference 
   - User enters the product id/product name and desired quantity in respective fields.
   - User clicks on [Add item] button to add the next item.
   - System adds the desired product in draft mode 
-  - User applies the Promotion/Coupon code if available.
-  - Being continued,user clicks on 'Save' Invoice link.
-  - User can enters Credit term type description.
+  - Being continued,user clicks on 'Save' Return' link.
   - System will create Sales Return  and update the total amount as Return  Amount
   - User clicks on 'Save' link and Sales Return  will be created in 'Created/Publish' status.
   - User can select the 'Sales Return ' and print the 'Sales Return ' if required 
@@ -445,12 +421,6 @@ This page list all direct configuration applicable for Sales Return  & related o
   - Any Exceptions related to Tax computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
 
 
-- Apply scheme 
-  - As per the scheme definition for the customer criteria, applicable distributor and product,Scheme will get reapplied
-  - Apply Offtake scheme benefit as applicable for the customer. 
-  - Any Exceptions related to scheme computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
-
-
 - Apply Transaction series
    - Pick the Auto incremental sequencing codification and Apply for the Transaction series 
 
@@ -462,7 +432,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 - Apply Log 
   - Generate access log for application. 
 
-**Events based on Direct Return **
+**Events based on Direct Sales Return in Distributor Portal **
 
 - Apply pricing 
   - Price for specific customer channel & product are to be arrived and same will get applied
@@ -471,12 +441,6 @@ This page list all direct configuration applicable for Sales Return  & related o
 - Apply Tax 
   - Apply Tax as per the tax definition applicable for the distributor, customer, product criteria, tax identification availability.  
   - Any Exceptions related to Tax computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
-
-
-- Apply scheme 
-  - As per the scheme definition for the customer criteria, aplicable distributor and product,Scheme has to be applied
-  - Apply Offtake scheme benefit as applicable for the customer. 
-  - Any Exceptions related to scheme computation to be captured and prompted in front end as 'toasted message' and same should get added to application logs
 
 - Apply Transaction series
    - Pick the Auto incremental sequencing codification and Apply for the Transaction series 

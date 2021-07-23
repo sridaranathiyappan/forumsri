@@ -8,7 +8,7 @@ A Sales Order is a market demand that get generated from the customer , It will 
 
 ## Precondition for creating Sales Order 
 Before creating a direct sales Order , you need to 
-* Create[Customer](Customer) details 
+* Create [Customer](Customer) details 
 * Create [Beat](Beat) & [Salesman](Salesman) details 
 * Create [Item](Product) details 
 * Create [Pricing](Pricing) details 

@@ -150,7 +150,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 ### Sales Return  Module Configuration
 | Configuration                                                                | Related Configuration | Details                                                                         | Ref #                                                     |
 |------------------------------------------------------------------------------|-----------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------|
-|Allow Back Dated Transaction|If enabled, allow back dated configuration|[ FD-Conf-MAS-SR-0001](Sales Order Creation#FD-Conf-MAS-SR-0001)|
+|Allow Back Dated Transaction||If enabled, allow back dated configuration|[ FD-Conf-MAS-SR-0001](Sales Order Creation#FD-Conf-MAS-SR-0001)|
 |Display Transferd Customer||If enabled, display transfer customer on sales return screen|[ FD-Conf-MAS-SR-0002](Sales Order Creation#FD-Conf-MAS-SR-0002)|
 |Allow Auto Batch Selection||If enabled, latest bctch will be auto loaded, on conversion from Rsr to SR transactions.If not, user has to select manual batch for line items|[ FD-Conf-MAS-SR-0003](Sales Order Creation#FD-Conf-MAS-SR-0003)|
 |Compute tax even if the retailer not having GSTIN No||If enabled, allow to compute tax if retailer has no GSTIN|[ FD-Conf-MAS-SR-0004](Sales Order Creation#FD-Conf-MAS-SR-0004)|
@@ -409,7 +409,7 @@ This page list all direct configuration applicable for Sales Return  & related o
   - User clicks on 'Save' link and Sales Return  will be created in 'Created/Publish' status.
   - User can select the 'Sales Return ' and print the 'Sales Return ' if required 
 
-**Events based on Mobile Based Return **
+**Events based on Mobile Based Return**
 
 - Apply pricing 
   - Price for specific customer channel & product are to be arrived and same will get recomputed , price will not get Reapply
@@ -432,7 +432,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 - Apply Log 
   - Generate access log for application. 
 
-**Events based on Direct Sales Return in Distributor Portal **
+**Events based on Direct Sales Return in Distributor Portal**
 
 - Apply pricing 
   - Price for specific customer channel & product are to be arrived and same will get applied

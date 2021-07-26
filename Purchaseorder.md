@@ -229,7 +229,7 @@ This page list all direct configuration applicable for Purchase Order & related 
 | Item Name                            | User can select the product by Item Code or Name                                                            |
 | Batch                                | By default first batch is selected. Batch is listed on FIFO logic                                           |
 | UOM                                  | Default Purchase UOM is selected initially. User can change if required by shortcut also or manually change it |
-| Purchase Order Price          | PTR of the item is shown. PTR is considered based on the Margin or Channel Wise Margin or Quotation         |
+| Purchase Order Price          | DLP of the item is shown. DLP is considered based on the Margin or Channel Wise Margin or Quotation         |
 | Net Rate                             | Sale Price of item + Tax Amount is calculated for 1 quantity and shown.                                     |
 | Quantity                             | User can enter quantity. Quantity entered is considered as per UOM selected                                 |
 | Amount                               | Quantity * Sale Price is calculated and shown                                                               |
@@ -332,10 +332,8 @@ This page list all direct configuration applicable for Purchase Order & related 
     - Render page based on user profile (To be explained in separate page) 
     - Listing Salesman
     - On Selection of Salesman, Retrieve Salesman Category info, Filter related Beat, Filter related customer.
-    - Listing Beat 
-    - On Selection of Beat, Retrieve relevant Customer, Salesman if not selected.  
     - Listing Customer
-    - On Selection of Customer, retrieve relevant Beat, Salesman, Customer outstanding, Customer Info, Customer address
+    - On Selection of Customer, retrieveCustomer Info, Customer address
     - Listing Transaction Series for Purchase Order
     - Listing Product
     - On Selection of Product, retrieve relate product info, Batch details, Tax info, Scheme info, current stock position.

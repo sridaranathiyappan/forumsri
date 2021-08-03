@@ -8,7 +8,7 @@ A Sales Order is a market demand that get generated from the customer , It will 
 
 ## Precondition for creating Sales Order 
 Before creating a direct sales Order , you need to 
-* Create [Customer](Customer) details 
+* Create[Customer](Customer) details 
 * Create [Beat](Beat) & [Salesman](Salesman) details 
 * Create [Item](Product) details 
 * Create [Pricing](Pricing) details 
@@ -233,22 +233,20 @@ This page list all direct configuration applicable for Sales Order & related oth
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Order are clear. Refer [Sales Order ](Sales Order ), [Sales Order Creation](#creation-of-sales-Order )   
 
-1. [FD-BR-SO-0001] - User access 
-
->  FD-BR-SO-0001
+1.[FD-BR-SO-0001](FD-BR-SO-0001)- User access 
 
     1. Login user should has association with a Distributor. 
-    1. In case of user associated with multiple user, then distributor selection is require before creating sales Order transaction 
-    1. User with profile access configurations are to be applied while Listing Sales Order , Create, Modify, View Sales Order 
+    2. In case of user associated with multiple user, then distributor selection is require before creating sales Order transaction 
+    3. User with profile access configurations are to be applied while Listing Sales Order , Create, Modify, View Sales Order 
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SO-0002](#FD-BR-SO-0002) - List view of Sales Order 
+2. [FD-BR-SO-0002](FD-BR-SO-0002) - List view of Sales Order 
     1. Listing page is default landing page, where newly created Sales Order are listed with selected information.
-    1. All listing page related features are to be available for Sales Order listing Page. 
-    1. Retrieve recently created top `20` Sales Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Sales Order applicable for all users. 
-    1. Custom filter to be available for all modules
-    1. Default list view fields for distributor users  
+    2. All listing page related features are to be available for Sales Order listing Page. 
+    3. Retrieve recently created top `20` Sales Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Sales Order applicable for all users. 
+    4. Custom filter to be available for all modules
+    5. Default list view fields for distributor users  
         - "transactionNumber" 
         - "Order Date" 
         - "reference1Manual" 
@@ -272,25 +270,67 @@ This page list all direct configuration applicable for Sales Order & related oth
 
 3. [FD-BR-SO-0003](FD-BR-SO-0003) - Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
-    1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
+    2. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
 4. [FD-BR-SO-0004](FD-BR-SO-0004) - Create Sales Order 
     1. Allow creation of Sales Order based on Profile access configuration. 
-    1. User Distributor association is mandatory for creating transaction. 
-    1. Corporate User are indirect users create transaction related to specific associated distributor. 
-    1. Creation of Sales Order should be restricted to user without distributor association. 
+    2. User Distributor association is mandatory for creating transaction. 
+    3. Corporate User are indirect users create transaction related to specific associated distributor. 
+    4. Creation of Sales Order should be restricted to user without distributor association. 
 
-5. [FD-BR-SO-0005] -  Customer Selection 
+5. [FD-BR-SO-0005](FD-BR-SO-0005) -  Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
        - Apply configuration impact [FD-Conf-SO-0007](#FD-Conf-SO-0007)
         
-    1. Customer can be selected in any one of the following ways
+    2. Customer can be selected in any one of the following ways
       - Direct customer selection
       - Customer selection post Salesman selection
       - Customer selection post Salesman and Beat selection
-    1. In all the above scenarios Customer, Beat and Salesman mapping is must. 
-   
+    3. In all the above scenarios Customer, Beat and Salesman mapping is must. 
+ 
+6. [FD-BR-SO-0006](FD-BR-SO-0006) -  Godown stock availability
+    1.Order screen should have provision to display the Godown current stock 
+
+7. [FD-BR-SO-0007](FD-BR-SO-0007) -  selection of Buyer from Buyer Master
+    1.System should be allowed to either pick default buyer or user allowed to select buyer from buyer master  
+
+8. [FD-BR-SO-0008](FD-BR-SO-0008) -  Generation of Default transaction Series
+    1. Generation of Default transaction series or user allowed to set transaction series to generate running sequence for an order number
+
+9. [FD-BR-SO-0009](FD-BR-SO-0009) - Display out of stock
+    1.System should show the out of stock items based on configuration of out of stock show/not show 
+
+10. [FD-BR-SO-0010](FD-BR-SO-0010) - Alert to show negative stock
+   1. There should be an alert msg to show the list of items which has the negative stock 
+
+11. [FD-BR-SO-0011](FD-BR-SO-0011) - Price Edit
+   1. There should be an provision to enable / disable the price edit in the order screen
+
+12. [FD-BR-SO-0012](FD-BR-SO-0012) -  SO allowed for unapproved customers
+   1. There should be limit to allow the user to create the orders for Unapproved customers in the system 
+
+
+13. [FD-BR-SO-0013](FD-BR-SO-0013) -  Single SO to Mutiple SI
+   1.Enabling the option to either create Single SO to Single SI or Mulitple SI 
+
+
+14. [FD-BR-SO-0014](FD-BR-SO-0014) - Selection of Delivery Date Days
+   1.No of days to be configurable for the delivery date of each salesorder transaction.
+
+### Bulk Order Conversion Configuration:
+
+15. [FD-BR-SO-0015](FD-BR-SO-0015) - Invoice creation with available Stock for orders with partial stock availability
+   1.Allow conversion of orders with partial stock quantity to invoice
+
+
+16. [FD-BR-SO-0016](FD-BR-SO-0016) - Settings for one click conversion of Order
+   1.Provision to Ignore / Allow customer credit norm violations while converting orders to invoices
+
+
+17. [FD-BR-SO-0017](FD-BR-SO-0017) - Conversion rule setting in case of insufficient stock
+   1.Create Invoice based on stock availability, To allow conversion of orders to invoice based on partial / full stock quantity 
+
 
 ## Rate calculation 
 1. **Sale Order Price** is shown in any of the following ways.

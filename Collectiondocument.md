@@ -244,7 +244,7 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
     - Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
         
-    - Customer can be selected in any one of the following ways
+      - Customer can be selected in any one of the following ways
       - Direct customer selection
       - Customer selection post Salesman selection
       - Customer selection post Salesman and Beat selection
@@ -253,11 +253,11 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 
 6. [FD-BR-Collection-0006](#FD-BR-Collection-0006) - Allow Back dated Transaction
 
-       - Allow the user to capture sales collection for Back date based on configuration settings
+      - Allow the user to capture sales collection for Back date based on configuration settings
 
 7. [FD-BR-Collection-0007](#FD-BR-Collection-0007) - Allow collection recompute and adjustment 
 
-       - Allow the user to recompute the collection and do required adjustment based on configuration settings 
+      - Allow the user to recompute the collection and do required adjustment based on configuration settings 
  
 
 # Event Flows

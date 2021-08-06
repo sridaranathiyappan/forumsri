@@ -200,7 +200,7 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-1. [FD-BR-Collection-0002](#FD-BR-Collection-0002) - List view of Collection
+2. [FD-BR-Collection-0002](#FD-BR-Collection-0002) - List view of Collection
     - Listing page is default landing page, where newly created Collection are listed with selected information.
     -  All listing page related features are to be available for Collection listing Page. 
     -  Retrieve recently created top `20` Collection document with selected field where it belongs to a Distributor and sort with Collection date. Default filter for Collection applicable for all users. 
@@ -250,6 +250,15 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
       - Customer selection post Salesman and Beat selection
       
      -  In all the above scenarios Customer, Beat and Salesman mapping is must. 
+
+6. [FD-BR-Collection-0006](#FD-BR-Collection-0006) - Allow Back dated Transaction
+
+       - Allow the user to capture sales collection for Back date based on configuration settings
+
+7. [FD-BR-Collection-0007](#FD-BR-Collection-0007) - Allow collection recompute and adjustment 
+
+       - Allow the user to recompute the collection and do required adjustment based on configuration settings 
+ 
 
 # Event Flows
 

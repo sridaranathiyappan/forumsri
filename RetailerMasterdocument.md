@@ -190,6 +190,63 @@ Before creating a Customer, you need to
 |Enable Channel Classification Configuration|Channel Config||User channel classification== set user channel classification types|[FD-Conf-MAS-RET-0060](Retailer Creation#FD-Conf-MAS-RET-0060)|
 |Enable Channel Classification Configuration|Channel Config||User channel classification nextstage == set nextstage status value config respective mapped towards User channel classification|[FD-Conf-MAS-RET-0061](Retailer Creation#FD-Conf-MAS-RET-0061)|
 
+# Business Rule & Impact 
+
+> Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Person are clear. Refer [Retailer](Retailer), [RetailerCreation](#creation-of-Retailer)   
+
+1. [FD-BR-RET-0001] - User access 
+
+>  FD-BR-RET-0001
+
+    1. Login user should has association with a Distributor. 
+    1. In case of user associated with multiple user, then distributor selection is require before creating Salesperson for any transactions 
+    1. User with profile access configurations are to be applied while Listing Sales Person, Create, Modify, View Sales Person
+
+    > Refer User profile, Distributor User, Corporate User Distributor mapping 
+
+2. [FD-BR-RET-0002](FD-BR-RET-0002) - List view of Salesperson
+    1. Listing page is default landing page, where newly created Salesperson are listed with selected information.
+    1. All listing page related features are to be available for Sales Person listing Page. 
+    1. Retrieve recently created top `20` Salesperson document with selected field where it belongs to a Distributor and sort with creation date. Default filter for Salesperson applicable for all users. 
+    1. Custom filter to be available for all modules
+    1. Default list view fields for distributor users  
+        -"Unique Salesman Code"
+        -"Salesman "
+        -"Salesman Code"
+        -"Mobile No"
+        -"Email"
+        -"Password"
+        -"Salesman Category Group"
+        -"Product Category Group"
+        -"Salesman Classification"
+        -"Reports to Oraganization Hierarchy"
+        -"Credit Days"
+        -"Reports to CP User"
+
+    > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
+
+3. [FD-BR-RET-0003](FD-BR-RET-0003) - Detail view actions
+    1. Detail view of salesperson record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
+    1. From the salesperson list view, select the desired record. Details view of salesperson record should follow the Field access rule for the login user related profile. 
+
+4. [FD-BR-RET-0004](FD-BR-RET-0004) - Create Salesperson
+    1. Allow creation of Salesperson based on Profile access configuration. 
+    1. User Distributor association is mandatory for creating any new salesperson record
+    1. Corporate User are indirect users to create salesperson related to specific associated distributor. 
+    1. Creation of Salesperson should be restricted to user without distributor association. 
+
+5. [FD-BR-RET-0005](FD-BR-RET-0005) - Set value for 'Status' column while creating an salesman
+    1.Value to be set for 'Status' Column to make an salesman active/Inactive 
+
+6. [FD-BR-RET-0006](FD-BR-RET-0006) - Set value for 'Next stage name while creating an salesman
+    1. Value to be set as Created/Publish to proceed with Next stage of salesman creation process
+
+7. [FD-BR-RET-0007](FD-BR-RET-0007) - Salesman Classification value set 
+    1. Required values need to be setup for Salesman classification field to map the salesman with proper classification of salesman 
+
+8. [FD-BR-RET-0008](FD-BR-RET-0008) - Salesman Channel value set 
+    1. Required values need to be setup for Salesman Channel field to map the salesman with proper channel
+
 ### [Domain Object Customer](Domain-Object-Customer)
 
 ## See also 

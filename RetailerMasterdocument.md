@@ -13,10 +13,10 @@ A customer is a person who purchases goods. Secondary customer master are also r
   - Customers are more classified using different Channels. 
 
 ## Who creates Customer? 
-Customers are created by Distributor, [Salesperson](Salesperson) & [Company Salesperson](Company Salesperson). 
+Customers are created by Distributor, [Retailer](Retailer) & [Company Retailer](Company Retailer). 
   1. Distributor can create customer using create option or import 
-  1. Salesperson can create a new customer while visiting market. 
-  1. Company Salesperson can create customer using import option. 
+  1. Retailer can create a new customer while visiting market. 
+  1. Company Retailer can create customer using import option. 
 
   
 ## Use Story 
@@ -50,6 +50,7 @@ Before creating a Customer, you need to
 * Create [Channel Hierarchy](Channel)
 * Create [Supply chain Hierarchy](Supply chain Hierarchy)
 * Create [Geo Hierarchy](Geo Hierarchy) 
+* Create [Distributor](Distributor)
 * Create [State](State)
 * Create [Credit term](Credit-term)
 * Create [Payment mode](Payment-mode)
@@ -83,7 +84,7 @@ Before creating a Customer, you need to
     - Customer record created with generation of unique code & internal reference unique document ID 
     - Universal customer record to be created for each customer created in the application 
     - Newly created universal record ID referent to be associated to customer record by updating. 
-    - Report data to be updated for new customer info. Count of customer will get increased for distributor & related company Salesperson. 
+    - Report data to be updated for new customer info. Count of customer will get increased for distributor & related company Retailer. 
     - Customer record set with appropriate status based on workflow configuration. 
 
 1. After Customer creation, 
@@ -118,7 +119,7 @@ Before creating a Customer, you need to
 1. Customers are created using create customer page by distributor user 
 1. Customer are created using universal master by converting selecting available universal master and convert it to Customer. 
 1. Using Importing option by distributor or company users. 
-1. Customers created by Salesperson from field using mobile device. These informations are recevied and converted to customer. 
+1. Customers created by Retailer from field using mobile device. These informations are recevied and converted to customer. 
 1. During Sub distributor and Distributor associations, Customers are created implicitly
 1. During Retailer re-alignment, Customers are created implicitly.
 
@@ -192,48 +193,64 @@ Before creating a Customer, you need to
 
 # Business Rule & Impact 
 
-> Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Person are clear. Refer [Retailer](Retailer), [RetailerCreation](#creation-of-Retailer)   
+> Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Retailer Master are clear. Refer [Retailer](Retailer), [RetailerCreation](#creation-of-Retailer)   
 
 1. [FD-BR-RET-0001] - User access 
 
 >  FD-BR-RET-0001
 
     1. Login user should has association with a Distributor. 
-    1. In case of user associated with multiple user, then distributor selection is require before creating Salesperson for any transactions 
-    1. User with profile access configurations are to be applied while Listing Sales Person, Create, Modify, View Sales Person
+    1. In case of user associated with multiple user, then distributor selection is require before creating Retailer for any transactions 
+    1. User with profile access configurations are to be applied while Listing Retailer, Create, Modify, View Retailer
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-RET-0002](FD-BR-RET-0002) - List view of Salesperson
-    1. Listing page is default landing page, where newly created Salesperson are listed with selected information.
-    1. All listing page related features are to be available for Sales Person listing Page. 
-    1. Retrieve recently created top `20` Salesperson document with selected field where it belongs to a Distributor and sort with creation date. Default filter for Salesperson applicable for all users. 
+2. [FD-BR-RET-0002](FD-BR-RET-0002) - List view of Retailer
+    1. Listing page is default landing page, where newly created Retailer are listed with selected information.
+    1. All listing page related features are to be available for Retailer listing Page. 
+    1. Retrieve recently created top `20` Retailer document with selected field where it belongs to a Distributor and sort with creation date. Default filter for Retailer applicable for all users. 
     1. Custom filter to be available for all modules
     1. Default list view fields for distributor users  
-        -"Unique Salesman Code"
-        -"Salesman "
-        -"Salesman Code"
-        -"Mobile No"
-        -"Email"
-        -"Password"
-        -"Salesman Category Group"
-        -"Product Category Group"
-        -"Salesman Classification"
-        -"Reports to Oraganization Hierarchy"
-        -"Credit Days"
-        -"Reports to CP User"
+      -"Customercode"
+      -"Customername"
+      -"Address"
+      -"Contact person"
+      -"Email"
+      -"Phone"
+      -"State"
+      -"City"
+      -"Pincode"
+      -"TypeShop"
+      -"Countersale Customer"
+      -"Active"
+      -"Village Type"
+      -"TDS Applicable"
+      -"TCS Applicable"
+      -"TIN Number"
+      -"GSTIN Number"
+      -"PAN Number"
+      -"Customer Category"
+      -"Customer Channel"
+      -"Supply Chain Hierarchy"
+      -"Supply Chain Distributor code"
+      -"Geography"
+      -"Name of the Bank"
+      -"Bank Account Number"
+      -"IFSC Code"
+      -"Name of the Bank Branch"
+
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 3. [FD-BR-RET-0003](FD-BR-RET-0003) - Detail view actions
-    1. Detail view of salesperson record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
-    1. From the salesperson list view, select the desired record. Details view of salesperson record should follow the Field access rule for the login user related profile. 
+    1. Detail view of Retailer record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
+    1. From the Retailer list view, select the desired record. Details view of Retailer record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-RET-0004](FD-BR-RET-0004) - Create Salesperson
-    1. Allow creation of Salesperson based on Profile access configuration. 
-    1. User Distributor association is mandatory for creating any new salesperson record
-    1. Corporate User are indirect users to create salesperson related to specific associated distributor. 
-    1. Creation of Salesperson should be restricted to user without distributor association. 
+4. [FD-BR-RET-0004](FD-BR-RET-0004) - Create Retailer
+    1. Allow creation of Retailer based on Profile access configuration. 
+    1. User Distributor association is mandatory for creating any new Retailer record
+    1. Corporate User are indirect users to create Retailer related to specific associated distributor. 
+    1. Creation of Retailer should be restricted to user without distributor association. 
 
 5. [FD-BR-RET-0005](FD-BR-RET-0005) - Set value for 'Status' column while creating an salesman
     1.Value to be set for 'Status' Column to make an salesman active/Inactive 
@@ -241,16 +258,39 @@ Before creating a Customer, you need to
 6. [FD-BR-RET-0006](FD-BR-RET-0006) - Set value for 'Next stage name while creating an salesman
     1. Value to be set as Created/Publish to proceed with Next stage of salesman creation process
 
-7. [FD-BR-RET-0007](FD-BR-RET-0007) - Salesman Classification value set 
-    1. Required values need to be setup for Salesman classification field to map the salesman with proper classification of salesman 
+7. [FD-BR-RET-0007](FD-BR-RET-0007) - Customer Category value set 
+    1. Required values need to be setup for Customer Category field to map the salesman with proper classification of salesman 
 
-8. [FD-BR-RET-0008](FD-BR-RET-0008) - Salesman Channel value set 
-    1. Required values need to be setup for Salesman Channel field to map the salesman with proper channel
+8. [FD-BR-RET-0008](FD-BR-RET-0008) - Customer Channel value set 
+    1. Required values need to be setup for Customer Channel field to map the salesman with proper channel
+
+9. [FD-BR-RET-0009](FD-BR-RET-0009) - Set the default business channel type, while creating customers
+  1.To set the default Business channel while creating a customer , Provision given to change the Business channel as required 
+
+10. [FD-BR-RET-0010](FD-BR-RET-0010) - Alert if the mobile number do not start with any of the following numbers
+  1. Required data validation to check whether mobile number is inline with proper numbering format like 10 digits
+
+11. [FD-BR-RET-0011](FD-BR-RET-0011) - Load Supply Chain Hierarchy Based On Channel Hierarchy
+   1. Need to load the supply chain hierarchy based on the selection of Channel Hierarchy
+
+12. [FD-BR-RET-0012](FD-BR-RET-0012) - Alert if the GST number is duplicated
+   1. There should be an validation to check GST number duplication and revert with Alert Message to the user
+
+13. [FD-BR-RET-0013](FD-BR-RET-0013) - Prefix When Creating customer through Universal master approval
+   1.Required Prefix for customer code should get populated based on the prefix codification
+
+14. [FD-BR-RET-0014](FD-BR-RET-0014) - Customer Category to be filtered based on parent selection
+   1. Requried to set customer category based on the parent category selection 
+
+15. [FD-BR-RET-0015](FD-BR-RET-0015) - Customer Approval Process
+  1.On approval of New customer , New customer code need to get generated based on the prefix codification
+
 
 ### [Domain Object Customer](Domain-Object-Customer)
 
 ## See also 
-  - [Sales Invoice](Sales Invoice) 
-  - [Sales](Sales)
   - [Home](Home)
   - [Distributor](Distributor)
+  - [Sales](Sales)
+  - [Sales Order](Sales Order) 
+  - [Sales Invoice](Sales Invoice) 

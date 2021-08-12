@@ -407,9 +407,7 @@ This page list all direct configuration applicable for Sales Invoice & related o
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales invoice are clear. Refer [Sales Invoice](Sales Invoice), [Sales Invoice Creation](#creation-of-sales-invoice)   
 
-1. [FD-BR-SI-0001] - User access 
-
->  FD-BR-SI-0001
+a) User access 
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating sales invoice transaction 
@@ -417,7 +415,8 @@ This page list all direct configuration applicable for Sales Invoice & related o
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SI-0002](FD-BR-SI-0002) - List view of Sales Invoice
+b) List view of Sales Invoice
+
     1. Listing page is default landing page, where newly created Sales invoice are listed with selected information.
     1. All listing page related features are to be available for Sales Invoice listing Page. 
     1. Retrieve recently created top `20` Sales invoice document with selected field where it belongs to a Distributor and sort with invoice date. Default filter for Sales invoice applicable for all users. 
@@ -444,22 +443,22 @@ This page list all direct configuration applicable for Sales Invoice & related o
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SI-0003](FD-BR-SI-0003) - Detail view actions
+c). Detail view actions
     1. Detail view of Invoice record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Invoices list view, select the desired record. Details view of invoice record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SI-0004](FD-BR-SI-0004) - Create Sales Invoice
+d). Create Sales Invoice
     1. Allow creation of Sales invoice based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Sales Invoice should be restricted to user without distributor association. 
 
-5. [FD-BR-SI-0005](FD-BR-SI-0005) -Selection of Beat
+e). Selection of Beat
     1. Listing of Beat for **Selection list** in transaction, criteria to be   
        - Distributor related Beat with status as per configuration 
        - Apply configuration impact [FD-Conf-MAS-SI-0002](Sales Invoice Creation#FD-Conf-MAS-SI-0002)
 
-6. [FD-BR-SI-0006](FD-BR-SI-0006) -Customer Selection 
+f). Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
        - Apply the credit norm of the selected customer [FD-Conf-MAS-SI-0005](Sales Invoice Creation#FD-Conf-MAS-SI-0005)
@@ -475,46 +474,312 @@ This page list all direct configuration applicable for Sales Invoice & related o
       - Customer selection post Salesman and Beat selection
      In all the above scenarios Customer, Beat and Salesman mapping is must.  
 
-7. [FD-BR-SI-0007](FD-BR-SI-0007) -GSTIN Thershold validation
-     - Setting up validation on thershold for GSTIN code setup 
-     - Apply configuration impact [FD-Conf-MAS-SI-0003](Sales Invoice Creation#FD-Conf-MAS-SI-0003)
+1. [FD-BR-SI-0001](FD-BR-SI-0001)-Add new item detail Converting SO to SI 
+If enabled, new line item is allowed on so to si,If not, allow only line item from so to si
+Apply configuration impact [FD-Conf-MAS-SI-0001](Sales Invoice Creation#FD-Conf-MAS-SI-0001)
 
-8. [FD-BR-SI-0008](FD-BR-SI-0008) -Invoice cancellation Time period
-    - Setup limit days on invoice to be cancelled [FD-Conf-MAS-SI-0009](Sales Invoice Creation#FD-Conf-MAS-SI-0009)
-    
-9. [FD-BR-SI-0009](FD-BR-SI-0009) -Scheme View Hide 
-      -Viewing of Scheme will be enabled / disabled based on configuration impact [FD-Conf-MAS-SI-0012](Sales Invoice Creation#FD-Conf-MAS-SI-0012)
+2. [FD-BR-SI-0002](FD-BR-SI-0002)-Disable Beat refresh post selecting customer in SO and SI Screen
+If enabled beat will not be re-loaded after customer selection,If not, beat will be re-loaded even after customer selection 
+Apply configuration impact [FD-Conf-MAS-SI-0002](Sales Invoice Creation#FD-Conf-MAS-SI-0002)
 
-10. [FD-BR-SI-0010](FD-BR-SI-0010)-Net PTR capping 
-      -Enable provision to edit Net PTR price before completing the Invoice 
+3. [FD-BR-SI-0003](FD-BR-SI-0003)-Allow GSTIN Threshold Limit Validation 
+If enabled, threshold limit is validation If not, is not be considered for validation 
+Apply configuration impact [FD-Conf-MAS-SI-0003](Sales Invoice Creation#FD-Conf-MAS-SI-0003)
 
-11. [FD-BR-SI-0011](FD-BR-SI-0011)-Scheme product Deletion
-      -Apply the configuration to allow/delete the scheme product [FD-Conf-MAS-SI-0030](Sales Invoice Creation#FD-Conf-MAS-SI-0030)
-  
-12. [FD-BR-SI-0012](FD-BR-SI-0012)-Restrict viewing of Shipping & Handling charges 
-        -Apply the configuration to allow/hide the shipping & handling charges[FD-Conf-MAS-SI-0033](Sales Invoice Creation#FD-Conf-MAS-SI-0033)
+4. [FD-BR-SI-0004](FD-BR-SI-0004)-How many invoices are allowed for unapproved customers
+Set limit count to allow invoice for unapproved customer,If not, invoice not allowed
+Apply configuration impact [FD-Conf-MAS-SI-0004](Sales Invoice Creation#FD-Conf-MAS-SI-0004)
 
-13. [FD-BR-SI-0013](FD-BR-SI-0013]-Setup Salesman Credit Limit 
-      -Apply the configuration to allow/restrict the salesman credit limit [FD-Conf-MAS-SI-0044](Sales Invoice Creation#FD-Conf-MAS-SI-0044)
+5. [FD-BR-SI-0005](FD-BR-SI-0005)-Allow receive sales invoice is made against credit norms
+If enabled, days exceed againt credit norm invoice will be received,If not, days exceed againt credit norm invoice will not be received
+Apply configuration impact [FD-Conf-MAS-SI-0005](Sales Invoice Creation#FD-Conf-MAS-SI-0005)
 
-14. [FD-BR-SI-0014](FD-BR-SI-0014)-Transaction Series Yearly Reset Date
-       -Apply the configuration to allow/restrict the Invoice transaction series based on MTD [FD-Conf-MAS-SI-0057](Sales Invoice Creation#FD-Conf-MAS-SI-0057)
-   
-15. [FD-BR-SI-0015](FD-BR-SI-0015)-Apply Scheme Same as SO
-       -Apply the configuration to allow/restrict the SO scheme to get applied on SI [FD-Conf-MAS-SI-0060](Sales Invoice Creation#FD-Conf-MAS-SI-0060)
+6. [FD-BR-SI-0006](FD-BR-SI-0006)-Allow selection of Referral details if the sales invoice is made against end consumer
+If enabled, if the ref type is end consumer, will be allowed to select ref details., If not, field will be disabled
+Apply configuration impact [FD-Conf-MAS-SI-0006](Sales Invoice Creation#FD-Conf-MAS-SI-0006)
 
-16. [FD-BR-SI-0016](FD-BR-SI-0016)-Disable direct sales invoice creation
-       -Apply the configuration to allow/Disable direct sales invoice creation in distributor portal [FD-Conf-MAS-SI-0063](Sales Invoice Creation#FD-Conf-MAS-SI-0063)
+7. [FD-BR-SI-0007](FD-BR-SI-0007)-Allow invoice from unapproved customers in the status of 
+Selected staus of invoice are allowed for the unapproved customer
+Apply configuration impact [FD-Conf-MAS-SI-0007](Sales Invoice Creation#FD-Conf-MAS-SI-0007)
+
+8. [FD-BR-SI-0008](FD-BR-SI-0008)-SO & SI Custome Max Limit Cash Discount
+If enabled the limit of max discount is validated,If not, is not considered on validation
+Apply configuration impact [FD-Conf-MAS-SI-0008](Sales Invoice Creation#FD-Conf-MAS-SI-0008)
+
+9. [FD-BR-SI-0009](FD-BR-SI-0009)-Within How Many Days Invoice Can Be Cancel
+Set limit days on invoice to be cancelled
+Apply configuration impact [FD-Conf-MAS-SI-0009](Sales Invoice Creation#FD-Conf-MAS-SI-0009)
+
+10. [FD-BR-SI-0010](FD-BR-SI-0010)-Delivery date based on SI date / LR date
+Si date configuration will be based on salesinvoice date
+Apply configuration impact [FD-Conf-MAS-SI-0010](Sales Invoice Creation#FD-Conf-MAS-SI-0010)
+
+11. [FD-BR-SI-0011](FD-BR-SI-0011)-Password for GSTIN Threshold Limit Violation
+Set password for violation on gstin threshold limit
+Apply configuration impact [FD-Conf-MAS-SI-0011](Sales Invoice Creation#FD-Conf-MAS-SI-0011)
+
+12. [FD-BR-SI-0012](FD-BR-SI-0012)-Hide Scheme View button
+If enabled, scheme view button is diaabled,If not, button enabled
+Apply configuration impact [FD-Conf-MAS-SI-0012](Sales Invoice Creation#FD-Conf-MAS-SI-0012)
+
+13. [FD-BR-SI-0013](FD-BR-SI-0013)-Suppress Apply Scheme Button in Sales Invoice
+If enabled, diaabled apply scheme button,If not, enabled button
+Apply configuration impact  [FD-Conf-MAS-SI-0013](Sales Invoice Creation#FD-Conf-MAS-SI-0013)
+
+14.[FD-BR-SI-00014](FD-BR-SI-0014)-Invoice Level discount on Per UOM
+If enabled discount is based on per uom to applicable.,If not, per uom is not applicable
+Apply configuration impact [FD-Conf-MAS-SI-0014](Sales Invoice Creation#FD-Conf-MAS-SI-0014)
+
+15.[FD-BR-SI-0015](FD-BR-SI-0015)-Invoice print tracking
+If enabled, the print invoices are tracked based on type and user
+Apply configuration impact  [FD-Conf-MAS-SI-0015](Sales Invoice Creation#FD-Conf-MAS-SI-0015)
+
+16.[FD-BR-SI-0016](FD-BR-SI-0016)-Enable NetPTR capping
+If enabled, allow to edit net ptr
+Apply configuration impact [FD-Conf-MAS-SI-0016](Sales Invoice Creation#FD-Conf-MAS-SI-0016)
+
+17.[FD-BR-SI-0017](FD-BR-SI-0017)-Enable PTR capping
+If enabled, allow to edit ptr
+Apply configuration impact [FD-Conf-MAS-SI-0017](Sales Invoice Creation#FD-Conf-MAS-SI-0017)
+
+18.[FD-BR-SI-0018](FD-BR-SI-0018)-Get Fixed NetRate from the Base price & Special price settings
+If enabled, display the fixed rate price setting for the line item
+Apply configuration impact [FD-Conf-MAS-SI-0018](Sales Invoice Creation#FD-Conf-MAS-SI-0018)
+
+19.[FD-BR-SI-0019](FD-BR-SI-0019)-Display out of stock SKUs in the sales invoice
+If enabled, out of stock sku are displayed,If not, sku is not displayed
+Apply configuration impact [FD-Conf-MAS-SI-0019](Sales Invoice Creation#FD-Conf-MAS-SI-0019)
+
+20.[FD-BR-SI-0020](FD-BR-SI-0020)-Show Net Rate in Sales Invoice View
+If enabled net rated to be displayed on invoice view,If not, not displayed
+Apply configuration impact  [FD-Conf-MAS-SI-0020](Sales Invoice Creation#FD-Conf-MAS-SI-0020)
+
+21.[FD-BR-SI-0021](FD-BR-SI-0021)-Enable Distwise Invoice Number
+If enabled the invoice number is updated based on datewise
+Apply configuration impact [FD-Conf-MAS-SI-0021](Sales Invoice Creation#FD-Conf-MAS-SI-0021)
+
+22.[FD-BR-SI-0022](FD-BR-SI-0022)-Secondary transaction number required
+If enabled, consider the secondary transaction number
+Apply configuration impact [FD-Conf-MAS-SI-0022](Sales Invoice Creation#FD-Conf-MAS-SI-0022)
+
+23.[FD-BR-SI-0023](FD-BR-SI-0023)-Select true for warning SI day close back dated configuration 
+If enabled, allow only create back dated transaction, display alert
+Apply configuration impact [FD-Conf-MAS-SI-0023](Sales Invoice Creation#FD-Conf-MAS-SI-0023)
+
+24.[FD-BR-SI-0024](FD-BR-SI-0024)-Line Item Level discount on Per UOM
+If enable, line item discont is considered on per UOM
+Apply configuration impact [FD-Conf-MAS-SI-0024](Sales Invoice Creation#FD-Conf-MAS-SI-0024)
+
+25.[FD-BR-SI-0025](FD-BR-SI-0025)-Net Amount Editable
+If enabled net amount field is editable
+Apply configuration impact  [FD-Conf-MAS-SI-0025](Sales Invoice Creation#FD-Conf-MAS-SI-0025)
+
+26.[FD-BR-SI-0026](FD-BR-SI-0026)-Net Rate Editable
+If enabled net rate field is editable
+Apply configuration impact [FD-Conf-MAS-SI-0026](Sales Invoice Creation#FD-Conf-MAS-SI-0026)
+
+27.[FD-BR-SI-0027](FD-BR-SI-0027)-Payment Date based on SI date / Delivery date
+Si / deliver date config is to be configured as payment date
+Apply configuration impact [FD-Conf-MAS-SI-0027](Sales Invoice Creation#FD-Conf-MAS-SI-0027)
+
+28.[FD-BR-SI-0028](FD-BR-SI-0028)-Apply manual discounts on the Original Amount(Quantity X Rate)
+If enabled the manual discount to be considerd on amount of quantity
+Apply configuration impact  [FD-Conf-MAS-SI-0028](Sales Invoice Creation#FD-Conf-MAS-SI-0028)
+
+29.[FD-BR-SI-0029](FD-BR-SI-0029)-Back dated limit
+Set limit to calcualte the back date from current date
+Apply configuration impact [FD-Conf-MAS-SI-0029](Sales Invoice Creation#FD-Conf-MAS-SI-0029)
+
+30.[FD-BR-SI-0030](FD-BR-SI-0030)-Delete scheme free product
+  If enabled the free product for the scheme are diabled
+Apply configuration impact  [FD-Conf-MAS-SI-0030](Sales Invoice Creation#FD-Conf-MAS-SI-0030)
+
+31.[FD-BR-SI-0031](FD-BR-SI-0031)-Enable option to issue free product manually
+If enabled the option to issue free product is available
+Apply configuration impact [FD-Conf-MAS-SI-0031](Sales Invoice Creation#FD-Conf-MAS-SI-0031)
+
+32.[FD-BR-SI-0032](FD-BR-SI-0032)-Hide 'No Schemes to Apply' Message - if no schemes are applicable
+If enabled the msg is displayed if no scheme to apply
+Apply configuration impact [FD-Conf-MAS-SI-0032](Sales Invoice Creation#FD-Conf-MAS-SI-0032)
+
+33.[FD-BR-SI-0033](FD-BR-SI-0033)-Hide Shipping & Handling Charges
+If enabled, field will not be shown on invoice screen
+Apply configuration impact [FD-Conf-MAS-SI-0033](Sales Invoice Creation#FD-Conf-MAS-SI-0033)
+
+34.[FD-BR-SI-0034](FD-BR-SI-0034)-Add new item detail
+If enabled, allow to add new item details on invoice screen
+Apply configuration impact  [FD-Conf-MAS-SI-0034](Sales Invoice Creation#FD-Conf-MAS-SI-0034)
+
+35.[FD-BR-SI-0035](FD-BR-SI-0035)-ADHOC Discount for each item
+If enabled, discount is applied for each item on invoice
+Apply configuration impact [FD-Conf-MAS-SI-0035](Sales Invoice Creation#FD-Conf-MAS-SI-0035)
+
+36.[FD-BR-SI-0036](FD-BR-SI-0036)-ADHOC Discount for transaction
+If enabled the discount is applicaable for transaction on final amount
+Apply configuration impact [FD-Conf-MAS-SI-0036](Sales Invoice Creation#FD-Conf-MAS-SI-0036)
+
+37.[FD-BR-SI-0037](FD-BR-SI-0037)-ADHOC Scheme for transaction
+If enabled discount is applicable for final scheme transation details
+Apply configuration impact [FD-Conf-MAS-SI-0037](Sales Invoice Creation#FD-Conf-MAS-SI-0037)
+
+38.[FD-BR-SI-0038](FD-BR-SI-0038)-Allow selection of vendor
+If enabled , vendor selection is allowed
+Apply configuration impact  [FD-Conf-MAS-SI-0038](Sales Invoice Creation#FD-Conf-MAS-SI-0038)
+
+39.[FD-BR-SI-0039](FD-BR-SI-0039)-Back dated transaction
+If enabled, allow the transaction back date as set Back dated limit
+Apply configuration impact [FD-Conf-MAS-SI-0039](Sales Invoice Creation#FD-Conf-MAS-SI-0039)
+
+40.[FD-BR-SI-0040](FD-BR-SI-0040)-Billing Address Editable
+If enabled, the field is editabled on screen
+Apply configuration impact [FD-Conf-MAS-SI-0040](Sales Invoice Creation#FD-Conf-MAS-SI-0040)
+
+41.[FD-BR-SI-0041](FD-BR-SI-0041)-Generate Product Category Group based credit norms violation alert in Sales Invoice
+If enabed, alert is displayed if the product category based on credit norms on invoice
+Apply configuration impact [FD-Conf-MAS-SI-0041](Sales Invoice Creation#FD-Conf-MAS-SI-0041)
+
+42.[FD-BR-SI-0042](FD-BR-SI-0042)-Treat the selection of product category group as mandatory in sales invoice screen
+  If enabled the filed is mandatoy on screen to be selected
+Apply configuration impact  [FD-Conf-MAS-SI-0042](Sales Invoice Creation#FD-Conf-MAS-SI-0042)
+
+43.[FD-BR-SI-0043](FD-BR-SI-0043)-Filter the Product based on Product Properties 1 & 2 
+If enabled, the Product Properties 1 & 2 fields are displayed to file=ter the products on invoice screen
+Apply configuration impact [FD-Conf-MAS-SI-0043](Sales Invoice Creation#FD-Conf-MAS-SI-0043)
+
+44.[FD-BR-SI-0044](FD-BR-SI-0044)-Allow Salesman credit Limit 
+ If enabled, allow the invoice based on salesman creditlimi on transaction
+Apply configuration impact  [FD-Conf-MAS-SI-0044](Sales Invoice Creation#FD-Conf-MAS-SI-0044)
+
+45.[FD-BR-SI-0045](FD-BR-SI-0045)-Allow selection of products based on category group attachment for Sales Invoice
+  If enabled, allow only only product on categiry group to invoice transaction  
+Apply configuration impact  [FD-Conf-MAS-SI-0045](Sales Invoice Creation#FD-Conf-MAS-SI-0045)  
+
+46.[FD-BR-SI-0046](FD-BR-SI-0046)-Shipping Address Editable 
+If enabled, allow the field as editable
+Apply configuration impact [FD-Conf-MAS-SI-0046](Sales Invoice Creation#FD-Conf-MAS-SI-0046)  
+
+47.[FD-BR-SI-0047](FD-BR-SI-0047)-Allow user to invoke customer creation screen from Sales Invoice Screen 
+ If enabled, allow user to create customer on invoice screen on transaction  
+Apply configuration impact  [FD-Conf-MAS-SI-0047](Sales Invoice Creation#FD-Conf-MAS-SI-0047)  
+
+48.[FD-BR-SI-0048](FD-BR-SI-0048)-Allow user to pop up Scrap Purchase Screen from Sales Invoice Screen 
+ If enabled, show the scrap purchase on invoice transaction screen  
+Apply configuration impact  [FD-Conf-MAS-SI-0048](Sales Invoice Creation#FD-Conf-MAS-SI-0048)  
+
+49.[FD-BR-SI-0049](FD-BR-SI-0049)-Show current stock for items  
+If enabled show the current stock for items on the invoice screen   
+Apply configuration impact [FD-Conf-MAS-SI-0049](Sales Invoice Creation#FD-Conf-MAS-SI-0049)  
+
+50.[FD-BR-SI-0050](FD-BR-SI-0050)-Back dated within the month 
+ If enabled, allow the transaction with in back dated duration of limit month  
+Apply configuration impact  [FD-Conf-MAS-SI-0050](Sales Invoice Creation#FD-Conf-MAS-SI-0050)  
+
+51.[FD-BR-SI-0051](FD-BR-SI-0051)-Sales Invoice Print Formats Display  
+Display the sales invocie print format to be displayed option on invoice print screen 
+Apply configuration impact  [FD-Conf-MAS-SI-0051](Sales Invoice Creation#FD-Conf-MAS-SI-0051)  
+
+52.[FD-BR-SI-0052](FD-BR-SI-0052)-Sales Invoice Default print version 
+ Set the deffault print version to be handled on invoice print   
+Apply configuration impact [FD-Conf-MAS-SI-0052](Sales Invoice Creation#FD-Conf-MAS-SI-0052)  
+
+53.[FD-BR-SI-0053](FD-BR-SI-0053)-Product Price Information Popup is Required
+  If enabled, display the product price details on screen  
+Apply configuration impact  [FD-Conf-MAS-SI-0053](Sales Invoice Creation#FD-Conf-MAS-SI-0053)  
+
+54.[FD-BR-SI-0054](FD-BR-SI-0054)-Enable Save & Continue Option
+  If enabled, display option to allow the user to save and continue transaction  
+Apply configuration impact  [FD-Conf-MAS-SI-0054](Sales Invoice Creation#FD-Conf-MAS-SI-0054)  
+
+55.[FD-BR-SI-0055](FD-BR-SI-0055)-Allow SO to SI editable price as list price
+  If enabled allow the user to edit the price on item price details  
+Apply configuration impact  [FD-Conf-MAS-SI-0055](Sales Invoice Creation#FD-Conf-MAS-SI-0055)  
+
+56.[FD-BR-SI-0056](FD-BR-SI-0056)-Transaction Series Yearly Reset Alert 
+ If enabled, display the alert is the transaction series is on yearly details alert  
+Apply configuration impact  [FD-Conf-MAS-SI-0056](Sales Invoice Creation#FD-Conf-MAS-SI-0056)  
+
+57.[FD-BR-SI-0057](FD-BR-SI-0057)-Transaction Series Yearly Reset Date 
+ Configure the month on yearl to reset the series of transaction 
+Apply configuration impact  [FD-Conf-MAS-SI-0057](Sales Invoice Creation#FD-Conf-MAS-SI-0057)  
+
+58.[FD-BR-SI-0058](FD-BR-SI-0058)-Enable vehicle number configuration
+  If enabled the vechicle number field will be displayed 
+Apply configuration impact   [FD-Conf-MAS-SI-0058](Sales Invoice Creation#FD-Conf-MAS-SI-0058)  
+
+59.[FD-BR-SI-0059](FD-BR-SI-0059)-In Sales Invoice/Van Sales Invoice/Counter Sales Invoice, 
+Hide Location Type  Location Type is to be displaye or hide on invoice screen  
+Apply configuration impact  [FD-Conf-MAS-SI-0059](Sales Invoice Creation#FD-Conf-MAS-SI-0059)  
+
+60.[FD-BR-SI-0060](FD-BR-SI-0060)-Apply Scheme Same as SO
+  If enabled the scheme applied on so to be applied on si as same 
+Apply configuration impact   [FD-Conf-MAS-SI-0060](Sales Invoice Creation#FD-Conf-MAS-SI-0060)  
+
+61.[FD-BR-SI-0061](FD-BR-SI-0061)-Validate Partial tax in Sales Invoice while saving
+  If enabled, validate the partial tax on invoince before save 
+Apply configuration impact   [FD-Conf-MAS-SI-0061](Sales Invoice Creation#FD-Conf-MAS-SI-0061)  
+
+62.[FD-BR-SI-0062](FD-BR-SI-0062)-Alert and stop the user if the edited list price is not between PTS and MRP 
+ If enabled the price is not between PTS and MRPas user entered will be stoped on transaction
+Apply configuration impact [FD-Conf-MAS-SI-0062](Sales Invoice Creation#FD-Conf-MAS-SI-0062)  
+
+63.[FD-BR-SI-0063](FD-BR-SI-0063)-Disable direct sales invoice creation 
+ If enabled direction creation of salesinvoice is restricted  
+Apply configuration impact  [FD-Conf-MAS-SI-0063](Sales Invoice Creation#FD-Conf-MAS-SI-0063)  
+
+64.[FD-BR-SI-0064](FD-BR-SI-0064)-Disable sales invoice draft creation 
+ If enabled sales invoice draft creation is restricted  
+Apply configuration impact  [FD-Conf-MAS-SI-0064](Sales Invoice Creation#FD-Conf-MAS-SI-0064)  
+
+65.[FD-BR-SI-0065](FD-BR-SI-0065)-Set the maximum discount % as while performing billing at MRP 
+ If enabled, Set percentage of discount on billing mrp invoice transaction  
+Apply configuration impact  [FD-Conf-MAS-SI-0065](Sales Invoice Creation#FD-Conf-MAS-SI-0065)  
+
+66.[FD-BR-SI-0066](FD-BR-SI-0066)-Additional Terms & Conditions 
+ If enabled display the addition info provide for terms and condition 
+Apply configuration impact   [FD-Conf-MAS-SI-0066](Sales Invoice Creation#FD-Conf-MAS-SI-0066)  
+
+67.[FD-BR-SI-0067](FD-BR-SI-0067)-Auto Adjust Credit Notes in Sales Invoice while saving
+  If enabled, auto adjust is handled based on the request type of invoice (Offtake CRSales Return CRLoyalty points CRManual CRwindow display scheme CR) 
+Apply configuration impact   [FD-Conf-MAS-SI-0067](Sales Invoice Creation#FD-Conf-MAS-SI-0067)  
+
+68.[FD-BR-SI-0068](FD-BR-SI-0068)-Allow create implicit collection for Cash Payment mode 
+ If enabled, payment is cash mode, collection is created implicity  
+Apply configuration impact  [FD-Conf-MAS-SI-0068](Sales Invoice Creation#FD-Conf-MAS-SI-0068)  
+
+69.[FD-BR-SI-0069](FD-BR-SI-0069)-Show UOM based stock and price in batch list 
+ If enabled the uom stock and price is listed on batch list on transaction 
+Apply configuration impact   [FD-Conf-MAS-SI-0069](Sales Invoice Creation#FD-Conf-MAS-SI-0069)  
+
+70.[FD-BR-SI-0070](FD-BR-SI-0070)-Show UOM based MRP in batch list 
+ If enabled uom mrp details will be displayed on battch list details 
+Apply configuration impact   [FD-Conf-MAS-SI-0070](Sales Invoice Creation#FD-Conf-MAS-SI-0070)  
+
+71.[FD-BR-SI-0071](FD-BR-SI-0071)-Show Display status  
+If enabled, the status of the invoice transaction is displayed on screen  
+Apply configuration impact  [FD-Conf-MAS-SI-0071](Sales Invoice Creation#FD-Conf-MAS-SI-0071)  
+
+72.[FD-BR-SI-0072](FD-BR-SI-0072)-Generate alert message – if no tax is configured for the product  
+Set alert type as Alert & Continue == will display alert and continue transaction 
+Alert & Stop == will display alert and stop transaction 
+Apply configuration impact [FD-Conf-MAS-SI-0072](Sales Invoice Creation#FD-Conf-MAS-SI-0072)  
+
+73.[FD-BR-SI-0073](FD-BR-SI-0073)-Special Price Setting Round Off Enable
+  If enabled, based on the round off range will be calculated SET Special Price Round Off Range 
+Apply configuration impact [FD-Conf-MAS-SI-0073](Sales Invoice Creation#FD-Conf-MAS-SI-0073)  
+
+74.[FD-BR-SI-0074](FD-BR-SI-0074)-Don't allow sales invoice
+  If enabled, based on the date provided the invoice transaction are restricted on the back dated date 
+Apply configuration impact   [FD-Conf-MAS-SI-0074](Sales Invoice Creation#FD-Conf-MAS-SI-0074)  
 
 ### Counter Sales related rule
 
-17. [FD-BR-SI-0017](FD-BR-SI-0017)-Option to issue free product manually
+75.[FD-BR-SI-0075](FD-BR-SI-0075)-Option to issue free product manually
        -Apply the configuration to allow/Disable Issuing of Free product during Counter sale creation in distributor portal) [FD-Conf-Countersale-SI-0006](Sales Invoice Creation#FD-Conf-Countersale-SI-0006)
 
-18. [FD-BR-SI-0018](FD-BR-SI-0018)-Customer TIN number Validation
+76. [FD-BR-SI-0076](FD-BR-SI-0076)-Customer TIN number Validation
        -Apply the configuration to Validate Walk-In customer TIN number against the existing customers TIN number in distributor portal and generate the Alert) [FD-Conf-Countersale-SI-0007](Sales Invoice Creation#FD-Conf-Countersale-SI-0007)
 
-19. [FD-BR-SI-0019](FD-BR-SI-0019)-Customer Mobile number Validation
+77. [FD-BR-SI-0077](FD-BR-SI-0077)-Customer Mobile number Validation
        -Apply the configuration to Validate Walk-In customer Mobile number against the existing customers Mobile number in distributor portal and generate the Alert) [FD-Conf-Countersale-SI-0008](Sales Invoice Creation#FD-Conf-Countersale-SI-0008)
 
 

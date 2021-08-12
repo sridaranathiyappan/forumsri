@@ -254,11 +254,25 @@ eyJoaXN0b3J5IjpbNTM1MjUzMDA3XX0=
 6. [FD-BR-Collection-0006](#FD-BR-Collection-0006) - Allow Back dated Transaction
 
       - Allow the user to capture sales collection for Back date based on configuration settings
+      - Apply configuration impact [FD-Conf-MAS-Collection-0001](Collection Creation#FD-Conf-MAS-Collection-0001)
 
-7. [FD-BR-Collection-0007](#FD-BR-Collection-0007) - Allow collection recompute and adjustment 
+7. [FD-BR-Collection-0007](#FD-BR-Collection-0007) - Allow the number of decimals 
+   
+    - Set range of amount to be displayed on decimal value on screen
+    - Apply configuration impact [FD-Conf-MAS-Collection-0007](Collection Creation#FD-Conf-MAS-Collection-0007)
+ 
+
+8. [FD-BR-Collection-0008](#FD-BR-Collection-0008) - Allow collection recompute and adjustment 
 
       - Allow the user to recompute the collection and do required adjustment based on configuration settings 
- 
+      - Apply configuration impact [FD-Conf-MAS-Collection-0008](Collection Creation#FD-Conf-MAS-Collection-0008)
+
+
+9. [FD-BR-Collection-0009](#FD-BR-Collection-0009) - Show Transferred custmer 
+
+      - Allow the user to view the Transferred customer and do the required collection  based on configuration settings 
+      - Apply configuration impact  [FD-Conf-MAS-Collection-0003](Collection Creation#FD-Conf-MAS-Collection-0003)
+
 
 # Event Flows
 

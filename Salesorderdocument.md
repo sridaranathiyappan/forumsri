@@ -233,7 +233,7 @@ This page list all direct configuration applicable for Sales Order & related oth
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Order are clear. Refer [Sales Order ](Sales Order ), [Sales Order Creation](#creation-of-sales-Order )   
 
-1.[FD-BR-SO-0001](FD-BR-SO-0001)- User access 
+a) User access 
 
     1. Login user should has association with a Distributor. 
     2. In case of user associated with multiple user, then distributor selection is require before creating sales Order transaction 
@@ -241,7 +241,7 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SO-0002](FD-BR-SO-0002) - List view of Sales Order 
+b) List view of Sales Order 
     1. Listing page is default landing page, where newly created Sales Order are listed with selected information.
     2. All listing page related features are to be available for Sales Order listing Page. 
     3. Retrieve recently created top `20` Sales Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Sales Order applicable for all users. 
@@ -268,17 +268,17 @@ This page list all direct configuration applicable for Sales Order & related oth
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SO-0003](FD-BR-SO-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     2. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SO-0004](FD-BR-SO-0004) - Create Sales Order 
+d) Create Sales Order 
     1. Allow creation of Sales Order based on Profile access configuration. 
     2. User Distributor association is mandatory for creating transaction. 
     3. Corporate User are indirect users create transaction related to specific associated distributor. 
     4. Creation of Sales Order should be restricted to user without distributor association. 
 
-5. [FD-BR-SO-0005](FD-BR-SO-0005) -  Customer Selection 
+e) Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
        - Apply configuration impact [FD-Conf-SO-0007](#FD-Conf-SO-0007)
@@ -289,48 +289,219 @@ This page list all direct configuration applicable for Sales Order & related oth
       - Customer selection post Salesman and Beat selection
     3. In all the above scenarios Customer, Beat and Salesman mapping is must. 
  
-6. [FD-BR-SO-0006](FD-BR-SO-0006) -  Godown stock availability
-    1.Order screen should have provision to display the Godown current stock 
+1.[FD-BR-SO-0001](FD-BR-SO-0001)-Display the stock in qty Godown only    
+  - If enabled, display godown stock also in salesorder screen for quantity 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0001](Sales Order Creation#FD-Conf-MAS-SO-0001) 
 
-7. [FD-BR-SO-0007](FD-BR-SO-0007) -  selection of Buyer from Buyer Master
-    1.System should be allowed to either pick default buyer or user allowed to select buyer from buyer master  
+2.[FD-BR-SO-0002](FD-BR-SO-0002)- Tax Option Enable  
+ - If enabled, select option with tax mode (individual/group) will be displayed, based on selection tax calculation are done. 
+ - Apply configuration impact [ FD-Conf-MAS-SO-0002](Sales Order Creation#FD-Conf-MAS-SO-0002) 
 
-8. [FD-BR-SO-0008](FD-BR-SO-0008) -  Generation of Default transaction Series
-    1. Generation of Default transaction series or user allowed to set transaction series to generate running sequence for an order number
+3.[FD-BR-SO-0003](FD-BR-SO-0003)- Currency Option Enable   
+ - If enabled, select option with currency will be displayed, default indian rupee. 
+ - Apply configuration impact [ FD-Conf-MAS-SO-0003](Sales Order Creation#FD-Conf-MAS-SO-0003) 
 
-9. [FD-BR-SO-0009](FD-BR-SO-0009) - Display out of stock
-    1.System should show the out of stock items based on configuration of out of stock show/not show 
+4.[FD-BR-SO-0004](FD-BR-SO-0004)- Shipping Tax Enable   
+ - If enabled, Taxes For Shipping and Handling field will be available on sales order screen. for tax calculation. 
+ - Apply configuration impact [ FD-Conf-MAS-SO-0004](Sales Order Creation#FD-Conf-MAS-SO-0004) 
 
-10. [FD-BR-SO-0010](FD-BR-SO-0010) - Alert to show negative stock
-   1. There should be an alert msg to show the list of items which has the negative stock 
+5.[FD-BR-SO-0005](FD-BR-SO-0005)- Allow selection of Buyer from Buyer Master  
+  - If enabled, user will be selecting the buyer on salesorder screen,If not, default buyer will be loaded initial, user can change the buyer if needed.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0005](Sales Order Creation#FD-Conf-MAS-SO-0005) 
 
-11. [FD-BR-SO-0011](FD-BR-SO-0011) - Price Edit
-   1. There should be an provision to enable / disable the price edit in the order screen
+ 6.[FD-BR-SO-0006](FD-BR-SO-0006)-Generation of Default transaction Series  
+  - If enabled, user to select the transaction series on salesorder screen.,If not, default transaction series will be loaded salesorder screen. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0006](Sales Order Creation#FD-Conf-MAS-SO-0006) 
 
-12. [FD-BR-SO-0012](FD-BR-SO-0012) -  SO allowed for unapproved customers
-   1. There should be limit to allow the user to create the orders for Unapproved customers in the system 
+7.[FD-BR-SO-0007](FD-BR-SO-0007)-Allow Loading product out of stock 
+  - If enabled, allow product out of stock to display.,If not, allow only stock available product. Show Current stock for selected item If enabled, display current stock in salesorder screen.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0007](Sales Order Creation#FD-Conf-MAS-SO-0007) 
 
+8.[FD-BR-SO-0008](FD-BR-SO-0008)- Allow adding new item to detail  
+  - If enabled, display Add product icon in salesorder screen.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0008](Sales Order Creation#FD-Conf-MAS-SO-0008) 
 
-13. [FD-BR-SO-0013](FD-BR-SO-0013) -  Single SO to Mutiple SI
-   1.Enabling the option to either create Single SO to Single SI or Mulitple SI 
+9.[FD-BR-SO-0009](FD-BR-SO-0009)- Throw error when stock position goes negative  
+  - If enabled, display alert if stock is on negative values.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0009](Sales Order Creation#FD-Conf-MAS-SO-0009) 
 
+10.[FD-BR-SO-0010](FD-BR-SO-0010)- Allow Adhoc discount for each item   
+  - If enabled, display Cash/AddDiscount option on each line item on salesorder screen.
+ -  Apply configuration impact  [ FD-Conf-MAS-SO-0010](Sales Order Creation#FD-Conf-MAS-SO-0010) 
 
-14. [FD-BR-SO-0014](FD-BR-SO-0014) - Selection of Delivery Date Days
-   1.No of days to be configurable for the delivery date of each salesorder transaction.
+ 11.[FD-BR-SO-0011](FD-BR-SO-0011)-Allow Adhoc discount for transaction  
+  - If enabled, display Cash/AddDiscount option for transaction on salesorder screen. 
+ -  Apply configuration impact [ FD-Conf-MAS-SO-0011](Sales Order Creation#FD-Conf-MAS-SO-0011) 
+
+12.[FD-BR-SO-0012](FD-BR-SO-0012)- Allow Applying Scheme for Transaction   
+ - If enabled, display schemeDiscount option on each line item on salesorder screen.
+ - Apply configuration impact  [ FD-Conf-MAS-SO-0012](Sales Order Creation#FD-Conf-MAS-SO-0012) 
+
+13.[FD-BR-SO-0013](FD-BR-SO-0013) -Warn The User With Current Stock Position  
+  - If enabled, warn the user if quantity entered exceed than quantity in stock on salesorder transaction.
+ -  Apply configuration impact  [ FD-Conf-MAS-SO-0013](Sales Order Creation#FD-Conf-MAS-SO-0013) 
+
+14.[FD-BR-SO-0014](FD-BR-SO-0014) - List Price Editable  
+  - If enabled, user is able to edit the price of product on salesorder screen.
+ -  Apply configuration impact  [ FD-Conf-MAS-SO-0014](Sales Order Creation#FD-Conf-MAS-SO-0014) 
+
+15.[FD-BR-SO-0015](FD-BR-SO-0015) - Salesman Exceeded Credit Limit Allow  
+  - If enabled, validate the salesman credit and restrict exceed limit on transaction.
+ -  Apply configuration impact  [ FD-Conf-MAS-SO-0015](Sales Order Creation#FD-Conf-MAS-SO-0015) 
+
+16.[FD-BR-SO-0016](FD-BR-SO-0016) -Allow selection of products based on category group attachment for the Sales Order   
+ - If enabled, display only product mapped on category group on salesorder screen. 
+ - Apply configuration impact [ FD-Conf-MAS-SO-0016](Sales Order Creation#FD-Conf-MAS-SO-0016) 
+
+17.[FD-BR-SO-0017](FD-BR-SO-0017)-Treat the selection of product category group as mandatory in sales order screen  
+  - If enabled, product category group field is mandatory to be selected. 
+ -  Apply configuration impact [ FD-Conf-MAS-SO-0017](Sales Order Creation#FD-Conf-MAS-SO-0017) 
+
+18.[FD-BR-SO-0018](FD-BR-SO-0018)-Generate Product Category Group based credit norms violation alert in Sales Order  
+  - If enabled, credit norm alert to be displayed based on product category group on salesorder. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0018](Sales Order Creation#FD-Conf-MAS-SO-0018) 
+
+19.[FD-BR-SO-0019](FD-BR-SO-0019)- Net Amount Editable 
+  - If enabled, allow the net amount column as editable. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0019](Sales Order Creation#FD-Conf-MAS-SO-0019) 
+
+20.[FD-BR-SO-0020](FD-BR-SO-0020)-Net Rate Editable   
+  - If enabled, allow the user to edit net rate column on salesorder screen. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0020](Sales Order Creation#FD-Conf-MAS-SO-0020) 
+
+21.[FD-BR-SO-0021](FD-BR-SO-0021)-Filter the Product based on Product Properties 1 & 2   
+  - If enabled, Product Properties 1 & 2 column will be available to filter the product on salesorder screen.
+ -  Apply configuration impact  [ FD-Conf-MAS-SO-0021](Sales Order Creation#FD-Conf-MAS-SO-0021) 
+
+22.[FD-BR-SO-0022](FD-BR-SO-0022)-Generate alert message – if no tax is configured for the product 
+   - If enabled, alert if no tax is configured for product. 
+   - Apply configuration impact [ FD-Conf-MAS-SO-0022](Sales Order Creation#FD-Conf-MAS-SO-0022) 
+
+23.[FD-BR-SO-0023](FD-BR-SO-0023)-Enable Save & Continue Option  
+  - If enabled, save & continue icon will be displayed on salesorder screen.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0023](Sales Order Creation#FD-Conf-MAS-SO-0023) 
+
+24.[FD-BR-SO-0024](FD-BR-SO-0024)-Hide 'No Schemes to Apply' Message - if no schemes are applicable 
+    - If enabled, 'No Schemes to Apply' Message - if no schemes are applicable for product not be displayed. 
+    - Apply configuration impact [ FD-Conf-MAS-SO-0024](Sales Order Creation#FD-Conf-MAS-SO-0024) 
+
+25.[FD-BR-SO-0025](FD-BR-SO-0025)-Enable Single Click Option in Bulk Order Conversion 
+   - If enabled, icon will be available to convert bulk order so to si option, on bulk order conversion screen. 
+   - Apply configuration impact [ FD-Conf-MAS-SO-0025](Sales Order Creation#FD-Conf-MAS-SO-0025) 
+
+26.[FD-BR-SO-0026](FD-BR-SO-0026)- Direct SO to capture Product category   
+    - If enabled, on direct so, capture the product category of the product availale on salesorder transaction.
+    - Apply configuration impact  [ FD-Conf-MAS-SO-0026](Sales Order Creation#FD-Conf-MAS-SO-0026) 
+
+27.[FD-BR-SO-0027](FD-BR-SO-0027)-Hide Apply Scheme    
+  - If enabled, hide apply scheme icon on salesorder screen. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0027](Sales Order Creation#FD-Conf-MAS-SO-0027) 
+
+28.[FD-BR-SO-0028](FD-BR-SO-0028)-Sales Order to get latest batch price implementation  
+   - If enabled, display the latest batch price details of product on transaction. 
+   - Apply configuration impact [ FD-Conf-MAS-SO-0028](Sales Order Creation#FD-Conf-MAS-SO-0028) 
+
+29.[FD-BR-SO-0029](FD-BR-SO-0029)-Allow SO from unapproved customers in the status of  
+   - Set config status of unapprover customer to allow SO. 
+   - Apply configuration impact  [ FD-Conf-MAS-SO-0029](Sales Order Creation#FD-Conf-MAS-SO-0029) 
+
+30.[FD-BR-SO-0030](FD-BR-SO-0030)-How many SO are allowed for unapproved customers   
+    - Set limit for SO from unapproved customers 
+    - Apply configuration impact [ FD-Conf-MAS-SO-0030](Sales Order Creation#FD-Conf-MAS-SO-0030) 
+
+31.[FD-BR-SO-0031](FD-BR-SO-0031)-Apply SO Covertions With Completion Percentage   
+   -  If enabled, pending order conversion is handled with percentage configuration.If not, Order Conversion Invoice Level/Sales Order Conversion Line Level will not be processed.
+    - Apply configuration impact  [ FD-Conf-MAS-SO-0031](Sales Order Creation#FD-Conf-MAS-SO-0031) 
+
+32.[FD-BR-SO-0032](FD-BR-SO-0032)-Sales Order Conversion Line Level Completion Percentage  
+   - If enabled, set line level value to be perfoemed for conversion
+   - Apply configuration impact  [ FD-Conf-MAS-SO-0032](Sales Order Creation#FD-Conf-MAS-SO-0032) 
+
+33.[FD-BR-SO-0033](FD-BR-SO-0033)-Sales Order Conversion Invoice Level Completion Percentage 
+  - If enabled, set Order Conversion Invoice Level value to be perfoemed for conversion
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0033](Sales Order Creation#FD-Conf-MAS-SO-0033) 
+
+34.[FD-BR-SO-0034](FD-BR-SO-0034)-Allow Single SO to Mutiple SI  
+  - If enabled, allow single So to conversion to multiple SI. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0034](Sales Order Creation#FD-Conf-MAS-SO-0034) 
+
+35.[FD-BR-SO-0035](FD-BR-SO-0035)-Restrict selling of drug SKU to Non Drug customers for Sales Order / Sales Invoice Y/N   
+ - If enabled, allow drug product selling for non drug customer,If not, restrict selling drug product to non drug customer. 
+ - Apply configuration impact [ FD-Conf-MAS-SO-0035](Sales Order Creation#FD-Conf-MAS-SO-0035) 
+
+36.[FD-BR-SO-0036](FD-BR-SO-0036)-Apply manual discounts on the Original Amount (Quantity X Rate)  
+  - If enabled the manual discount to be considerd on amount of quantity,If not, scheme discount is not be considered.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0036](Sales Order Creation#FD-Conf-MAS-SO-0036) 
+
+37.[FD-BR-SO-0037](FD-BR-SO-0037)-Set the maximum discount % as while performing billing at MRP  
+  - To be enabled and Set percentage of maximum discount to be applied on billing mrp transaction 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0037](Sales Order Creation#FD-Conf-MAS-SO-0037) 
+
+38.[FD-BR-SO-0038](FD-BR-SO-0038)-Selection of Delivery Date Days  
+  - To be enabled and Set no of days to configured for the delivery date of salesorder transaction. 
+  - Apply configuration impact [ FD-Conf-MAS-SO-0038](Sales Order Creation#FD-Conf-MAS-SO-0038) 
+
+39.[FD-BR-SO-0039](FD-BR-SO-0039)-Auto Close Sales Order Configuration Close Sales order based on (Default / Order type) config values 
+  - If Default, Automatically close the sales order after Days,Set days value to auto close sales order.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0039](Sales Order Creation#FD-Conf-MAS-SO-0039) 
+
+40.[FD-BR-SO-0040](FD-BR-SO-0040)-Sales Order Type Configuration     
+  - Set Order Types and days for the sales order close.,(Ex : mobile order, direct order) to set no of days to close sales order.
+  - Apply configuration impact  [ FD-Conf-MAS-SO-0040](Sales Order Creation#FD-Conf-MAS-SO-0040) 
+
+41.[FD-BR-SO-0041](FD-BR-SO-0041)-Auto Closure of Sales Order CRON Configurtion based on Retailer Channel  
+   - If enabled, allow user to configure retailer channel and days to close sales order based on retailer channel type,(Ex : Bakery, Bunk, chemist) to set no of days to close sales order. 
+   - Apply configuration impact [ FD-Conf-MAS-SO-0041](Sales Order Creation#FD-Conf-MAS-SO-0041) 
+
+42.[FD-BR-SO-0042](FD-BR-SO-0042)-Hide Shipping & Handling Charges  
+   - If enabled, donot display Hide Shipping & Handling Charges field on salesorder screen. 
+   - Apply configuration impact [ FD-Conf-MAS-SO-0042](Sales Order Creation#FD-Conf-MAS-SO-0042) 
 
 ### Bulk Order Conversion Configuration:
 
-15. [FD-BR-SO-0015](FD-BR-SO-0015) - Invoice creation with available Stock for orders with partial stock availability
-   1.Allow conversion of orders with partial stock quantity to invoice
+43.[FD-BR-SO-0043](FD-BR-SO-0043)-Create Bill with available Stock for orders with partial stock availability
+- If enabled, allow conversion orders with partial stock quantity to invoice
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0001](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0001)
 
+44.[FD-BR-SO-0044](FD-BR-SO-0044)-Product category to Product conversion to be applied
+- If enabled, product conversion is applied based on the product category
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0002](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0002)
 
-16. [FD-BR-SO-0016](FD-BR-SO-0016) - Settings for one click conversion of Order
-   1.Provision to Ignore / Allow customer credit norm violations while converting orders to invoices
+45.[FD-BR-SO-0045](FD-BR-SO-0045)-SOH Lowest to Highest
+- If enabled, the product list is ordered from lowest to highest by quantity
+- Apply configuration impact  [FD-Conf-MAS-BulkSO-0003](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0003)|
 
+46.[FD-BR-SO-0046](FD-BR-SO-0046)-MRP Lowest to Highest
+- If enabled, the product list is ordered from lowest to highest by mrp
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0004](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0004)
 
-17. [FD-BR-SO-0017](FD-BR-SO-0017) - Conversion rule setting in case of insufficient stock
-   1.Create Invoice based on stock availability, To allow conversion of orders to invoice based on partial / full stock quantity 
+47.[FD-BR-SO-0047](FD-BR-SO-0047)-SOH Lowest to Highest / SOH Lowest to Highest 
+- If both enabled,  the product list is ordered from lowest to highest by quantity and mrp
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0005](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0005)
 
+48.[FD-BR-SO-0048](FD-BR-SO-0048)-Settings for one click conversion
+- Customer credit norm violation treatment|Ignore customer credit norm violations while converting orders to invoices,If enabled, allow order conversion customer credit norms to invoices
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0006](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0006)
+
+49.[FD-BR-SO-0049](FD-BR-SO-0049)-Do not convert the orders if the customer credit norm is violated
+- If enabled, do not allow order conversion customer credit norms to invoices
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0006](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0006)
+
+50.[FD-BR-SO-0050](FD-BR-SO-0050)-Salesman credit norm violation treatment
+- Ignore salesman credit norm violations while converting orders to invoices,If enabled, allow order conversion salesman credit norms to invoices
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0007](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0007)
+
+51.[FD-BR-SO-0051](FD-BR-SO-0051)-Do not convert the orders if the salesman credit norm is violated
+- If enabled, do not allow order conversion salesman credit norms to invoices
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0008](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0008)
+
+52.[FD-BR-SO-0052](FD-BR-SO-0052)-Conversion rule setting in case of insufficient stock
+- Create bills with available stock for orders with partial stock availability,If enabled, allow conversion orders with partial stock quantity to invoice.
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0009](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0009)
+
+53.[FD-BR-SO-0053](FD-BR-SO-0053)-Do not convert the orders to invoice in case of insufficient stock availability
+- If enabled, do not allow conversion orders with partial stock quantity to invoice
+- Apply configuration impact [FD-Conf-MAS-BulkSO-0010](Bulk Sales Order Creation#FD-Conf-MAS-BulkSO-0010)
 
 ## Rate calculation 
 1. **Sale Order Price** is shown in any of the following ways.

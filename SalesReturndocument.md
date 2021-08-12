@@ -8,7 +8,7 @@ A Sales Return  is a market return that get generated from the customer based on
 
 ## Precondition for creating Sales Return  
 Before creating a direct sales Return  , you need to 
-* Create [Customer](Customer) details 
+* Create[Customer](Customer) details 
 * Create [Beat](Beat) & [Salesman](Salesman) details 
 * Create [Item](Product) details 
 * Create [Pricing](Pricing) details 
@@ -191,9 +191,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Return  are clear. Refer [Sales Return  ](Sales Return  ), [Sales Return  Creation](#creation-of-sales-Return  )   
 
-1. [FD-BR-SR-0001] - User access 
-
->  FD-BR-SR-0001
+a) User access 
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating sales Return  transaction 
@@ -201,7 +199,7 @@ This page list all direct configuration applicable for Sales Return  & related o
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SR-0002](#FD-BR-SR-0002) - List view of Sales Return  
+b)  List view of Sales Return  
     1. Listing page is default landing page, where newly created Sales Return  are listed with selected information.
     1. All listing page related features are to be available for Sales Return  listing Page. 
     1. Retrieve recently created top `20` Sales Return  document with selected field where it belongs to a Distributor and sort with Return  date. Default filter for Sales Return  applicable for all users. 
@@ -228,17 +226,17 @@ This page list all direct configuration applicable for Sales Return  & related o
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SR-0003](FD-BR-SR-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of Return  record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Return  s list view, select the desired record. Details view of Return  record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SR-0004](FD-BR-SR-0004) - Create Sales Return  
+d) Create Sales Return  
     1. Allow creation of Sales Return  based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Sales Return  should be restricted to user without distributor association. 
 
-5. [FD-BR-SR-0005] -  Customer Selection 
+e) Customer Selection 
     1. Listing of Customer for **Selection list** in transaction, criteria to be   
        - Distributor related customer, with status as per configuration 
        - Apply configuration impact [FD-Conf-SO-0007](#FD-Conf-SO-0007)
@@ -248,8 +246,148 @@ This page list all direct configuration applicable for Sales Return  & related o
       - Customer selection post Salesman selection
       - Customer selection post Salesman and Beat selection
     1. In all the above scenarios Customer, Beat and Salesman mapping is must. 
-   
 
+1.[FD-BR-SR-0001](FD-BR-SR-0001)- Allow Back Dated Transaction 
+- If enabled, allow back dated configuration 
+- Apply configuration impact [ FD-Conf-MAS-SR-0001](Sales Order Creation#FD-Conf-MAS-SR-0001) 
+
+2.[FD-BR-SR-0002](FD-BR-SR-0002)- Display Transferd Customer
+- If enabled, display transfer customer on sales return screen
+- Apply configuration impact  [ FD-Conf-MAS-SR-0002](Sales Order Creation#FD-Conf-MAS-SR-0002) 
+
+3. [FD-BR-SR-0003](FD-BR-SR-0003)- Allow Auto Batch Selection  
+- If enabled, latest bctch will be auto loaded, on conversion from Rsr to SR transactions.If not, user has to select manual batch for line items
+- Apply configuration impact [ FD-Conf-MAS-SR-0003](Sales Order Creation#FD-Conf-MAS-SR-0003) 
+
+4. [FD-BR-SR-0004](FD-BR-SR-0004)- Compute tax even if the retailer not having GSTIN No
+- If enabled, allow to compute tax if retailer has no GSTIN
+- Apply configuration impact [ FD-Conf-MAS-SR-0004](Sales Order Creation#FD-Conf-MAS-SR-0004) 
+
+5. [FD-BR-SR-0005](FD-BR-SR-0005)- Restrict Free Quantity on Sales Return  
+- If enabled, free quantity on sales return are restricted on transaction
+- Apply configuration impact [ FD-Conf-MAS-SR-0005](Sales Order Creation#FD-Conf-MAS-SR-0005) 
+
+6. [FD-BR-SR-0006](FD-BR-SR-0006)- Allow query search to take batch information from central repository 
+-  If enabled, batch populate list are displayed with batch information from central repository
+- Apply configuration impact [ FD-Conf-MAS-SR-0006](Sales Order Creation#FD-Conf-MAS-SR-0006) 
+
+7. [FD-BR-SR-0007](FD-BR-SR-0007)- Allow to select batch details before salesinvoice 
+-  If enabled, user can select batch details before selecting invoice details on sr SCREEN.If not, only after selecting salesinvoice no, batch details are allowed to select
+- Apply configuration impact [ FD-Conf-MAS-SR-0007](Sales Order Creation#FD-Conf-MAS-SR-0007) 
+
+8. [FD-BR-SR-0008](FD-BR-SR-0008)- Salesman and Beat are mandatory  
+- If enabled, salesman and beat column are mandatory selection on SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0008](Sales Order Creation#FD-Conf-MAS-SR-0008) 
+
+9. [FD-BR-SR-0009](FD-BR-SR-0009)- Disable new batch creation on without reference SR 
+-  If enabled, new batch icon will be enabled only if SR type is without reference SR
+- Apply configuration impact  [ FD-Conf-MAS-SR-0009](Sales Order Creation#FD-Conf-MAS-SR-0009) 
+
+10.[FD-BR-SR-0010](FD-BR-SR-0010)- Disable the tax on without reference sales returns 
+-  If enabled, sr type without reference sales returns transaction tax are disabled.If not, tax are calculated sr type without reference sales returns transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0010](Sales Order Creation#FD-Conf-MAS-SR-0010) 
+
+11.[FD-BR-SR-0011](FD-BR-SR-0011)- Sales Return to get special price for without reference 
+-  If enabled, allow transaction to get special price for line item on SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0011](Sales Order Creation#FD-Conf-MAS-SR-0011) 
+
+12.[FD-BR-SR-0012](FD-BR-SR-0012)- Back dated within the month 
+-  If enabled, allow only back dated for respective month
+- Apply configuration impact  [ FD-Conf-MAS-SR-0012](Sales Order Creation#FD-Conf-MAS-SR-0012) 
+
+13.[FD-BR-SR-0013](FD-BR-SR-0013)- Back dated limit  
+- Set limit, of no of days to back date list
+- Apply configuration impact  [ FD-Conf-MAS-SR-0013](Sales Order Creation#FD-Conf-MAS-SR-0013) 
+
+14. [FD-BR-SR-0014](FD-BR-SR-0014)- Allow discount field to be editable for without reference
+-   If enabled, discount filed is editable on SR screen 
+- Apply configuration impact [ FD-Conf-MAS-SR-0014](Sales Order Creation#FD-Conf-MAS-SR-0014) 
+
+15.[FD-BR-SR-0015](FD-BR-SR-0015)-  Within How Many Days SalesReturn Can Be Cancelled
+-   Set limit day config on sr for cancellation days 
+- Apply configuration impact [ FD-Conf-MAS-SR-0015](Sales Order Creation#FD-Conf-MAS-SR-0015) 
+
+16. [FD-BR-SR-0016](FD-BR-SR-0016)- Within How Many Days SalesReturn Can Be Amended 
+-  Set limit days, for SR amend transaction
+- Apply configuration impact  [ FD-Conf-MAS-SR-0016](Sales Order Creation#FD-Conf-MAS-SR-0016) 
+
+17.[FD-BR-SR-0017](FD-BR-SR-0017)- Show pop-up when invoice number is selected to populate the rest of the line items automatically 
+-  If enabled, pop up will be displayed on selecting invoice with listig product in invoice no applied
+- Apply configuration impact  [ FD-Conf-MAS-SR-0017](Sales Order Creation#FD-Conf-MAS-SR-0017) 
+
+18.[FD-BR-SR-0018](FD-BR-SR-0018)- TCS applicable for same month return only  
+- If enabled, TCS is applicable for the same month on return transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0018](Sales Order Creation#FD-Conf-MAS-SR-0018) 
+
+19.[FD-BR-SR-0019](FD-BR-SR-0019)- Sales return auto close/expired months  
+- Set limit duration to SR transaction to be closed/expire 
+- Apply configuration impact [ FD-Conf-MAS-SR-0019](Sales Order Creation#FD-Conf-MAS-SR-0019) 
+
+20. [FD-BR-SR-0020](FD-BR-SR-0020)- Sales Return Default print version  
+- Set default print version to print SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0020](Sales Order Creation#FD-Conf-MAS-SR-0020) 
+
+21.[FD-BR-SR-0021](FD-BR-SR-0021)- Disable Non salable quantity and Non Salable Stock  
+- If enabled, Non salable quantity and Non Salable Stock are not allowe in SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0021](Sales Order Creation#FD-Conf-MAS-SR-0021) 
+
+22.[FD-BR-SR-0022](FD-BR-SR-0022)- Disable Godown Filed In SR  
+- If enabled, gowdown filed will be disabled in SR screen
+- Apply configuration impact  [ FD-Conf-MAS-SR-0022](Sales Order Creation#FD-Conf-MAS-SR-0022) 
+
+23.[FD-BR-SR-0023](FD-BR-SR-0023)- Disable Without Referance Option In Sales return type  
+- If enabled, Without Referance Option will not be displayed on SR type option
+- Apply configuration impact [ FD-Conf-MAS-SR-0023](Sales Order Creation#FD-Conf-MAS-SR-0023) 
+
+24.[FD-BR-SR-0024](FD-BR-SR-0024)- Sales Invoice Selection Period in Months  
+- Set limit month duration to select sales invoice transaction on SR 
+- Apply configuration impact [ FD-Conf-MAS-SR-0024](Sales Order Creation#FD-Conf-MAS-SR-0024) 
+
+25.[FD-BR-SR-0025](FD-BR-SR-0025)- Enabling/Disabling SR Option 
+-  If enabled, + icon will be displayed on SR screen.If not, + icon will not be displayed
+- Apply configuration impact  [ FD-Conf-MAS-SR-0025](Sales Order Creation#FD-Conf-MAS-SR-0025) 
+
+26. [FD-BR-SR-0026](FD-BR-SR-0026)- Allow multiple SalesInvoices in single SalesReturn 
+-  If enabled, allow multiple invoice selection on SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0026](Sales Order Creation#FD-Conf-MAS-SR-0026) 
+
+27.[FD-BR-SR-0027](FD-BR-SR-0027)- List deactivated product in sales return (with or without reference)  
+- If enabled, allow inactive product in SR transaction.If not, allow only active products in SR transaction
+- Apply configuration impact  [ FD-Conf-MAS-SR-0027](Sales Order Creation#FD-Conf-MAS-SR-0027) 
+
+28.[FD-BR-SR-0028](FD-BR-SR-0028)- Tariff based tax calculation in Sales Return 
+-  If enabled, allow tariff based calculation on SR transaction 
+- Apply configuration impact [ FD-Conf-MAS-SR-0028](Sales Order Creation#FD-Conf-MAS-SR-0028) 
+
+29.[FD-BR-SR-0029](FD-BR-SR-0029)- Restrict users from returning invoices older then days,  
+- If enabled, set limit of days to restrict returning the invoice for SR 
+- Apply configuration impact [ FD-Conf-MAS-SR-0029](Sales Order Creation#FD-Conf-MAS-SR-0029) 
+
+30.[FD-BR-SR-0030](FD-BR-SR-0030)- Allow price recalculation in Central batch repository And formula is 
+-  If enabled, set formula for price recalculation in central batch 
+- Apply configuration impact [ FD-Conf-MAS-SR-0030](Sales Order Creation#FD-Conf-MAS-SR-0030) 
+
+31.[FD-BR-SR-0031](FD-BR-SR-0031)- Tax Do not compute the tax amount for Sales Return without reference  
+- If enabled, SR transaction tax will not be computated 
+- Apply configuration impact [ FD-Conf-MAS-SR-0031](Sales Order Creation#FD-Conf-MAS-SR-0031) 
+
+32.[FD-BR-SR-0032](FD-BR-SR-0032)- Do not compute the tax amount for sales returns with reference 
+- if the return is performed after months from invoice date 
+- If enabled, set limit duration of months, to restrict tax computation of sales invoice to SR 
+- Apply configuration impact [ FD-Conf-MAS-SR-0032](Sales Order Creation#FD-Conf-MAS-SR-0032) 
+
+33.[FD-BR-SR-0033](FD-BR-SR-0033)- Generate alert message – if no tax is configured for the product 
+- If enabled, alert will be notified if no tax mapped for product 
+- Apply configuration impact [ FD-Conf-MAS-SR-0033](Sales Order Creation#FD-Conf-MAS-SR-0033) 
+
+34.[FD-BR-SR-0034](FD-BR-SR-0034)- Allow manual entry / editing of price points during new batch creation 
+-  If enabled, allow user to edit price on batch creation diplay 
+- Apply configuration impact [ FD-Conf-MAS-SR-0034](Sales Order Creation#FD-Conf-MAS-SR-0034) 
+
+35.[FD-BR-SR-0035](FD-BR-SR-0035)- Re-compute the PTR based on formula – of formula is configured for PTR calculation 
+-  If enabled, based on formula configured, PTR will be re computed for SR transaction
+- Apply configuration impact  [ FD-Conf-MAS-SR-0035](Sales Order Creation#FD-Conf-MAS-SR-0035) 
+   
 ## Rate calculation 
 1. **Sale Return  Price** is shown in any of the following ways.
     - Return Price value stored in Batch

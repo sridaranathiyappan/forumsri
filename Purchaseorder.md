@@ -156,9 +156,7 @@ This page list all direct configuration applicable for Purchase Order & related 
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Purchase Order are clear. Refer [Purchase Order ](Purchase Order ), [Purchase Order Creation](#creation-of-sales-Order )   
 
-1. [FD-BR-SO-0001] - User access 
-
->  FD-BR-SO-0001
+a) User access 
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating Purchase Order transaction 
@@ -166,7 +164,7 @@ This page list all direct configuration applicable for Purchase Order & related 
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SO-0002](#FD-BR-SO-0002) - List view of Purchase Order 
+b)  List view of Purchase Order 
     1. Listing page is default landing page, where newly created Purchase Order are listed with selected information.
     1. All listing page related features are to be available for Purchase Order listing Page. 
     1. Retrieve recently created top `20` Purchase Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Purchase Order applicable for all users. 
@@ -185,16 +183,173 @@ This page list all direct configuration applicable for Purchase Order & related 
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SO-0003](FD-BR-SO-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SO-0004](FD-BR-SO-0004) - Create Purchase Order 
+d)  Create Purchase Order 
     1. Allow creation of Purchase Order based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Purchase Order should be restricted to user without distributor association. 
-   
+
+1.[FD-BR-PO-0001](FD-BR-PO-0001)-Populate suggested order quantity when selecting the products manually – for manual PO 
+ - If enabled, on PO line item suggest the product order with quantity on selection 
+ - Apply configuration impact[FD-Conf-MAS-PO-0001](Purchase Order Creation#FD-Conf-MAS-PO-0001) 
+
+2.[FD-BR-PO-0002](FD-BR-PO-0002)-Allow Selection of Vendor  If enabled, allow user to select vendor on PO.
+- If not, default vendor will be loaded and restrict selection 
+- Apply configuration impact [FD-Conf-MAS-PO-0002](Purchase Order Creation#FD-Conf-MAS-PO-0002) 
+
+3.[FD-BR-PO-0003](FD-BR-PO-0003)- is Back Dated Transaction allowed 
+- If enabled allow backdated for transaction 
+- Apply configuration impact [FD-Conf-MAS-PO-0003](Purchase Order Creation#FD-Conf-MAS-PO-0003) 
+
+4.[FD-BR-PO-0004](FD-BR-PO-0004)- Update Referece Number with Transaction Number  
+- If enabled, reference number is update with transaction number based on series selection on PO screen 
+- Apply configuration impact [FD-Conf-MAS-PO-0004](Purchase Order Creation#FD-Conf-MAS-PO-0004) 
+
+5.[FD-BR-PO-0005](FD-BR-PO-0005)- Currency Option Enable  
+- If enabled, Currency  column will be loaded on PO item screen 
+- Apply configuration impact [FD-Conf-MAS-PO-0005](Purchase Order Creation#FD-Conf-MAS-PO-0005) 
+
+6.[FD-BR-PO-0006](FD-BR-PO-0006)- Display Value related fields in the screen 
+- If enabled, display price details column in item details,If not, price details column will be disabled 
+- Apply configuration impact [FD-Conf-MAS-PO-0006](Purchase Order Creation#FD-Conf-MAS-PO-0006) 
+
+7.[FD-BR-PO-0007](FD-BR-PO-0007)- Alert the user on pending POs
+- if the order is pending for days  Set limit duration days to alert user for pending order
+- Apply configuration impact  [FD-Conf-MAS-PO-0007](Purchase Order Creation#FD-Conf-MAS-PO-0007) 
+
+8.[FD-BR-PO-0008](FD-BR-PO-0008)- Automatically approve the pending PO days  
+- Set limit days to approve the po as config with duration days
+- Apply configuration impact [FD-Conf-MAS-PO-0008](Purchase Order Creation#FD-Conf-MAS-PO-0008) 
+
+9.[FD-BR-PO-0009](FD-BR-PO-0009)- Enable credit limit alert in Purchase Order Screen 
+- If enabled, display alert based on credit limit on PO transaction 
+- Apply configuration impact [FD-Conf-MAS-PO-0009](Purchase Order Creation#FD-Conf-MAS-PO-0009) 
+
+10.[FD-BR-PO-0010](FD-BR-PO-0010)- Billing Address Editable 
+- If enabled, allow to edit billing address on PO 
+- Apply configuration impact [FD-Conf-MAS-PO-0010](Purchase Order Creation#FD-Conf-MAS-PO-0010) 
+
+11.[FD-BR-PO-0011](FD-BR-PO-0011)- Shipping Address Editable  
+- If enabled allow to edit shipping address on PO
+- Apply configuration impact [FD-Conf-MAS-PO-0011](Purchase Order Creation#FD-Conf-MAS-PO-0011) 
+
+12.[FD-BR-PO-0012](FD-BR-PO-0012)- Display Discount fields in the screen
+- If enabled, discount field will be available on PO screen 
+- Apply configuration impact [FD-Conf-MAS-PO-0012](Purchase Order Creation#FD-Conf-MAS-PO-0012) 
+
+13.[FD-BR-PO-0013](FD-BR-PO-0013)- Display Tax field in the screen  
+- If enabled tax column will be displayed on PO screen
+- Apply configuration impact  [FD-Conf-MAS-PO-0013](Purchase Order Creation#FD-Conf-MAS-PO-0013) 
+
+14.[FD-BR-PO-0014](FD-BR-PO-0014)- Allow Selection of Depot 
+- If enabled, depot is available for selection 
+- Apply configuration impact [FD-Conf-MAS-PO-0014](Purchase Order Creation#FD-Conf-MAS-PO-0014) 
+
+15.[FD-BR-PO-0015](FD-BR-PO-0015)- Enable Generate Suggested Order
+- If enabled, Generate Suggested Order icon will be displayed on PO screen 
+- Apply configuration impact [FD-Conf-MAS-PO-0015](Purchase Order Creation#FD-Conf-MAS-PO-0015) 
+
+16.[FD-BR-PO-0016](FD-BR-PO-0016)- UOM non editable  
+- If enabled, uom column will be non editable
+- Apply configuration impact  [FD-Conf-MAS-PO-0016](Purchase Order Creation#FD-Conf-MAS-PO-0016) 
+
+17.[FD-BR-PO-0017](FD-BR-PO-0017)- Achieve minimum stock capacity with addition of RO level and Lot size 
+- If enabled, user is not able change the quantity based on min and max to item 
+- Apply configuration impact [FD-Conf-MAS-PO-0017](Purchase Order Creation#FD-Conf-MAS-PO-0017) 
+
+18.[FD-BR-PO-0018](FD-BR-PO-0018)- Send Single Acknowledgement mail from multiple SO per one PO 
+- If enabled, send single mail acknowledge SO per PO 
+- Apply configuration impact [FD-Conf-MAS-PO-0018](Purchase Order Creation#FD-Conf-MAS-PO-0018) 
+
+19.[FD-BR-PO-0019](FD-BR-PO-0019)- Enable auto PO Hierarchy Mail 
+-  If enabled, Trigger auto mail for PO transaction on hierarchy mail 
+- Apply configuration impact [FD-Conf-MAS-PO-0019](Purchase Order Creation#FD-Conf-MAS-PO-0019) 
+
+20.[FD-BR-PO-0020](FD-BR-PO-0020)- Enable auto PO Depot Mail 
+-  If enabled, trigger auto mail on PO depot mail
+- Apply configuration impact  [FD-Conf-MAS-PO-0020](Purchase Order Creation#FD-Conf-MAS-PO-0020) 
+
+21.[FD-BR-PO-0021](FD-BR-PO-0021)- Enable option to view DP Purchase Order Dashboard 
+-  If enabled, DP dashboard PO will be visible
+- Apply configuration impact  [FD-Conf-MAS-PO-0021](Purchase Order Creation#FD-Conf-MAS-PO-0021) 
+
+22.[FD-BR-PO-0022](FD-BR-PO-0022)- Alert the user if total Order Quantity is less than MOQ - During PO Creation
+- If enabled, display alert . Alert & Continue == Display alert and continue process
+- Alert & Stop == Display alert and restrict continue process 
+- Apply configuration impact [FD-Conf-MAS-PO-0022](Purchase Order Creation#FD-Conf-MAS-PO-0022) 
+
+23.[FD-BR-PO-0023](FD-BR-PO-0023)- Rules for PO Editing in DP Allow editing of PO quantity when suggested order quantity is populated
+-  If enabled, allow po quantity editable based on listed config 
+- Apply configuration impact [FD-Conf-MAS-PO-0023](Purchase Order Creation#FD-Conf-MAS-PO-0023) 
+
+24.[FD-BR-PO-0024](FD-BR-PO-0024)- Rules for PO Editing in DP Allow editing of PO quantity only 
+- if products are linked to properties Set product property config for po product quantity editable 
+- Apply configuration impact [FD-Conf-MAS-PO-0024](Purchase Order Creation#FD-Conf-MAS-PO-0024) 
+
+25.[FD-BR-PO-0025](FD-BR-PO-0025)- Restrict reduction of purchase order quantity than suggested order quantity while editing 
+- If enabled, restrict reduction of po quantity than order quantity suggested 
+- Apply configuration impact [FD-Conf-MAS-PO-0025](Purchase Order Creation#FD-Conf-MAS-PO-0025) 
+
+26.[FD-BR-PO-0026](FD-BR-PO-0026)- Allow Addition of new products to suggested order 
+-  If enabled, allow to add new product on PO suggest order 
+- Apply configuration impact [FD-Conf-MAS-PO-0026](Purchase Order Creation#FD-Conf-MAS-PO-0026)
+ 
+27.[FD-BR-PO-0027](FD-BR-PO-0027)- Allow Removal of products from suggested order 
+ - If enabled allow removal product on suggest order 
+- Apply configuration impact [FD-Conf-MAS-PO-0027](Purchase Order Creation#FD-Conf-MAS-PO-0027) 
+
+28.[FD-BR-PO-0028](FD-BR-PO-0028)- Rules for Closing the PO Close the PO once a Purchase Invoice / GRN is raised against the order
+- If enabled, close PO once a Purchase Invoice / GRN is raised against 
+- Apply configuration impact [FD-Conf-MAS-PO-0028](Purchase Order Creation#FD-Conf-MAS-PO-0028) 
+
+29.[FD-BR-PO-0029](FD-BR-PO-0029)- Rules for Closing the PO Close the PO only when all the products are invoiced in partial
+-  If enabled, close the PO only when all the products are invoiced in partial 
+- Apply configuration impact [FD-Conf-MAS-PO-0029](Purchase Order Creation#FD-Conf-MAS-PO-0029) 
+
+30.[FD-BR-PO-0030](FD-BR-PO-0030)- Rules for Closing the PO Close the PO only when all the products are invoiced in full 
+- If enabled, close the PO only when all the products are invoiced in full 
+- Apply configuration impact [FD-Conf-MAS-PO-0030](Purchase Order Creation#FD-Conf-MAS-PO-0030) 
+
+31.[FD-BR-PO-0031](FD-BR-PO-0031)- Rules for Closing the PO Close the PO If not approved by same day midnight
+-  If enabled, close the PO If not approved by same day midnight
+- Apply configuration impact  [FD-Conf-MAS-PO-0031](Purchase Order Creation#FD-Conf-MAS-PO-0031) 
+
+32.[FD-BR-PO-0032](FD-BR-PO-0032)- Approval Rule Settings in CP Seek Approval for PO if the Ordered products are linked to properties
+- If enabled, set product property for PO approval 
+- Apply configuration impact [FD-Conf-MAS-PO-0032](Purchase Order Creation#FD-Conf-MAS-PO-0032) 
+
+33.[FD-BR-PO-0033](FD-BR-PO-0033)- Approval Rule Settings in CP Allow editing of PO quantity only if products are linked to properties
+-  If enabled, set product property for editing of PO quantity 
+- Apply configuration impact [FD-Conf-MAS-PO-0033](Purchase Order Creation#FD-Conf-MAS-PO-0033) 
+
+34.[FD-BR-PO-0034](FD-BR-PO-0034)- Approval Rule Settings in CP Allow Addition of new products to suggested order 
+- If enabled allow add new product on PO suggest order
+- Apply configuration impact [FD-Conf-MAS-PO-0034](Purchase Order Creation#FD-Conf-MAS-PO-0034) 
+
+35.[FD-BR-PO-0035](FD-BR-PO-0035)- Approval Rule Settings in CP Allow Removal of products from suggested order
+- If enabled allow remove product on PO suggest order 
+- Apply configuration impact [FD-Conf-MAS-PO-0035](Purchase Order Creation#FD-Conf-MAS-PO-0035) 
+
+36.[FD-BR-PO-0036](FD-BR-PO-0036)- Suggested Order Calculation Logic Populate Suggested order based on Total Salable Stock (Excluding Van Stock)
+-  If enabled, Populate Suggested order based on Total Salable Stock (Excluding Van Stock) 
+- Apply configuration impact [FD-Conf-MAS-PO-0036](Purchase Order Creation#FD-Conf-MAS-PO-0036) 
+
+37.[FD-BR-PO-0037](FD-BR-PO-0037)- Suggested Order Calculation Logic Populate Suggested order based on Total Salable Stock (Excluding Van Stock) - Stock In transit - Pending Order  
+- If enabled, Suggested order based on Total Salable Stock (Excluding Van Stock) - Stock In transit 
+- Apply configuration impact [FD-Conf-MAS-PO-0037](Purchase Order Creation#FD-Conf-MAS-PO-0037) 
+
+38.[FD-BR-PO-0038](FD-BR-PO-0038)- Suggested Order Calculation Logic Populate Suggested order based on Total Salable Stock (Excluding Van Stock) - Stock In transit
+-  If enabled, Suggested order based on Total Salable Stock (Excluding Van Stock) - Stock In transit 
+- Apply configuration impact [FD-Conf-MAS-PO-0038](Purchase Order Creation#FD-Conf-MAS-PO-0038) 
+
+39.[FD-BR-PO-0039](FD-BR-PO-0039)- Suggested Order Calculation Logic Populate Suggested order based on Total Salable Stock (Excluding Van Stock) - Pending Order
+-  If enabled, Suggested order based on Total Salable Stock (Excluding Van Stock) 
+- Apply configuration impact [FD-Conf-MAS-PO-0039](Purchase Order Creation#FD-Conf-MAS-PO-0039) 
+
 
 ## Rate calculation 
 1. **Purchase Order Price** is shown in any of the following ways.

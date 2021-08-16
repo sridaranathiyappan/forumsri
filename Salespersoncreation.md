@@ -111,10 +111,10 @@ Creation of Sales Person
     - Company Salesperson
 
 ## Distributor Salesperson
-"Salesperson" created at distributor location by the distributor operator. Any changes related to existing/new salesman modification will be controlled by the distributor 
+"Sales Person Direct" created at distributor location, without any reference to Sales order. The reference to the demand by customer are not recorded prior. 
 
 ## Company Salesperson
-"Company Salesperson" created in corporate portal through Corporate Portal users. Any changes related to existing/new company salesman modification will be controlled by the Corporate users in CP
+"Sales Person Direct" created at distributor location, without any reference to Sales order. The reference to the demand by customer are not recorded prior. 
  
 ## Application level Configuration  
 
@@ -137,7 +137,7 @@ Creation of Sales Person
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Sales Person are clear. Refer [Sales Person](Sales Person), [Sales Person Creation](#creation-of-sales-invoice)   
 
-1. [FD-BR-SM-0001] - User access 
+a) User access 
 
 >  FD-BR-SM-0001
 
@@ -147,7 +147,7 @@ Creation of Sales Person
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SM-0002](FD-BR-SM-0002) - List view of Salesperson
+b) List view of Salesperson
     1. Listing page is default landing page, where newly created Salesperson are listed with selected information.
     1. All listing page related features are to be available for Sales Person listing Page. 
     1. Retrieve recently created top `20` Salesperson document with selected field where it belongs to a Distributor and sort with creation date. Default filter for Salesperson applicable for all users. 
@@ -168,28 +168,59 @@ Creation of Sales Person
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SM-0003](FD-BR-SM-0003) - Detail view actions
+c)  Detail view actions
     1. Detail view of salesperson record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the salesperson list view, select the desired record. Details view of salesperson record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SM-0004](FD-BR-SM-0004) - Create Salesperson
+d)  Create Salesperson
     1. Allow creation of Salesperson based on Profile access configuration. 
     1. User Distributor association is mandatory for creating any new salesperson record
     1. Corporate User are indirect users to create salesperson related to specific associated distributor. 
     1. Creation of Salesperson should be restricted to user without distributor association. 
 
-5. [FD-BR-SM-0005](FD-BR-SM-0005) - Set value for 'Status' column while creating an salesman
-    1.Value to be set for 'Status' Column to make an salesman active/Inactive 
+1.[FD-BR-SM-0001](FD-BR-SM-0001)- Set value for 'Status' column while creating implicit salesman
+- Status config is created for implicit salesman status
+- Apply configuration impact [FD-Conf-MAS-SM-0001](Salesperson Creation#FD-Conf-MAS-SM-0001)
 
-6. [FD-BR-SM-0006](FD-BR-SM-0006) - Set value for 'Next stage name while creating an salesman
-    1. Value to be set as Created/Publish to proceed with Next stage of salesman creation process
+2[FD-BR-SM-0002](FD-BR-SM-0002)- .Set value for 'Next stage name' column while creating implicit salesman
+- Next stage name config is created for implicit salesman Next stage name
+- Apply configuration impact [FD-Conf-MAS-SM-0002](Salesperson Creation#FD-Conf-MAS-SM-0002)
 
-7. [FD-BR-SM-0007](FD-BR-SM-0007) - Salesman Classification value set 
-    1. Required values need to be setup for Salesman classification field to map the salesman with proper classification of salesman 
+3.[FD-BR-SM-0003](FD-BR-SM-0003)- Generate 'Unique Code' based on salesman classification
+- If enabled, unique code is generated ofr salesman on creation
+- Apply configuration impact [FD-Conf-MAS-SM-0003](Salesperson Creation#FD-Conf-MAS-SM-0003)
 
-8. [FD-BR-SM-0008](FD-BR-SM-0008) - Salesman Channel value set 
-    1. Required values need to be setup for Salesman Channel field to map the salesman with proper channel
+4.[FD-BR-SM-0004](FD-BR-SM-0004)- Enable Channel Classification Configuration for Salesman
+- If enabled, Channel classification is enabled ofr salesman on creation
+- Apply configuration impact [FD-Conf-MAS-SM-0004](Salesperson Creation#FD-Conf-MAS-SM-0004)
 
+5.[FD-BR-SM-0005](FD-BR-SM-0005)- Display salesman in Transaction with status of
+- Set staus for display salesman on transaction based on salesman status
+- Apply configuration impact [FD-Conf-MAS-SM-0005](Salesperson Creation#FD-Conf-MAS-SM-0005)
+
+6.[FD-BR-SM-0006](FD-BR-SM-0006)- Update Salesman Name From 'Salesman Unique Code'
+- If enabled, salesman name is updated as generated Salesman Unique Code
+- Apply configuration impact [FD-Conf-MAS-SM-0006](Salesperson Creation#FD-Conf-MAS-SM-0006)
+
+7.[FD-BR-SM-0007](FD-BR-SM-0007)- Inactive salesman without sales or sales return transactions for more than months
+- Set month duration limit to change active salesman to inactive salesman if no transaction with configured maonth range
+- Apply configuration impact [FD-Conf-MAS-SM-0007](Salesperson Creation#FD-Conf-MAS-SM-0007)
+
+8.[FD-BR-SM-0008](FD-BR-SM-0008)- Channel Config
+- User channel classification === set channel classification
+- Apply configuration impact [FD-Conf-MAS-SM-0008](Salesperson Creation#FD-Conf-MAS-SM-0008)
+
+9.[FD-BR-SM-0009](FD-BR-SM-0009)- Channel Config
+- User channel classification nextstage === set nextstage for the selected channel classification to be configured
+- Apply configuration impact [FD-Conf-MAS-SM-0009](Salesperson Creation#FD-Conf-MAS-SM-0009)
+
+10.[FD-BR-SM-0010](FD-BR-SM-0010)- Profile Config
+- Salesman classification === Set the salesman classification type
+- Apply configuration impact [FD-Conf-MAS-SM-0010](Salesperson Creation#FD-Conf-MAS-SM-0010)
+
+11.[FD-BR-SM-0011](FD-BR-SM-0011)- Profile Config
+- Salesman Profile === set profile towards the salesman classification tombe configured
+- Apply configuration impact [FD-Conf-MAS-SM-0011](Salesperson Creation#FD-Conf-MAS-SM-0011)
 
 # See also 
   - [Domain-Object-Salesperson](Domain-Object-Salesperson) 

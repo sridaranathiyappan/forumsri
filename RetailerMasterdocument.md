@@ -195,9 +195,7 @@ Before creating a Customer, you need to
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Retailer Master are clear. Refer [Retailer](Retailer), [RetailerCreation](#creation-of-Retailer)   
 
-1. [FD-BR-RET-0001] - User access 
-
->  FD-BR-RET-0001
+a) User access 
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating Retailer for any transactions 
@@ -205,7 +203,7 @@ Before creating a Customer, you need to
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-RET-0002](FD-BR-RET-0002) - List view of Retailer
+b) List view of Retailer
     1. Listing page is default landing page, where newly created Retailer are listed with selected information.
     1. All listing page related features are to be available for Retailer listing Page. 
     1. Retrieve recently created top `20` Retailer document with selected field where it belongs to a Distributor and sort with creation date. Default filter for Retailer applicable for all users. 
@@ -242,48 +240,245 @@ Before creating a Customer, you need to
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-RET-0003](FD-BR-RET-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of Retailer record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Retailer list view, select the desired record. Details view of Retailer record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-RET-0004](FD-BR-RET-0004) - Create Retailer
+d) Create Retailer
     1. Allow creation of Retailer based on Profile access configuration. 
     1. User Distributor association is mandatory for creating any new Retailer record
     1. Corporate User are indirect users to create Retailer related to specific associated distributor. 
     1. Creation of Retailer should be restricted to user without distributor association. 
 
-5. [FD-BR-RET-0005](FD-BR-RET-0005) - Set value for 'Status' column while creating an salesman
-    1.Value to be set for 'Status' Column to make an salesman active/Inactive 
+1.[FD-BR-RET-0001](FD-BR-RET-0001)- Enable credit norm mapping in customer creation 
+- If enabled, credit norm mapping in customer creation grid is available 
+- Apply configuration impact [FD-Conf-MAS-RET-0001](Retailer Creation#FD-Conf-MAS-RET-0001) 
 
-6. [FD-BR-RET-0006](FD-BR-RET-0006) - Set value for 'Next stage name while creating an salesman
-    1. Value to be set as Created/Publish to proceed with Next stage of salesman creation process
+2.[FD-BR-RET-0002](FD-BR-RET-0002)- Set the default business channel type, while creating customers through customer master   
+- Apply configuration impact [FD-Conf-MAS-RET-0002](Retailer Creation#FD-Conf-MAS-RET-0002) 
 
-7. [FD-BR-RET-0007](FD-BR-RET-0007) - Customer Category value set 
-    1. Required values need to be setup for Customer Category field to map the salesman with proper classification of salesman 
+3.[FD-BR-RET-0003](FD-BR-RET-0003)- Set the config for channel type to be displayed on creating customer 
+- Apply configuration impact [FD-Conf-MAS-RET-0003](Retailer Creation#FD-Conf-MAS-RET-0003) 
 
-8. [FD-BR-RET-0008](FD-BR-RET-0008) - Customer Channel value set 
-    1. Required values need to be setup for Customer Channel field to map the salesman with proper channel
+4.[FD-BR-RET-0004](FD-BR-RET-0004)- Set the maximum discount % as ‘’ ‘’ in the customer master   
+- Apply configuration impact [FD-Conf-MAS-RET-0004](Retailer Creation#FD-Conf-MAS-RET-0004) 
 
-9. [FD-BR-RET-0009](FD-BR-RET-0009) - Set the default business channel type, while creating customers
-  1.To set the default Business channel while creating a customer , Provision given to change the Business channel as required 
+5.[FD-BR-RET-0005](FD-BR-RET-0005)- Set max discount for customer to applicable on transaction 
+- Apply configuration impact  [FD-Conf-MAS-RET-0005](Retailer Creation#FD-Conf-MAS-RET-0005) 
 
-10. [FD-BR-RET-0010](FD-BR-RET-0010) - Alert if the mobile number do not start with any of the following numbers
-  1. Required data validation to check whether mobile number is inline with proper numbering format like 10 digits
+6.[FD-BR-RET-0006](FD-BR-RET-0006)- Allow Customer type related business channel type, while creating customers through customer master 
+-  Set config to display Customer type on customer creation, related to channel type
+- Apply configuration impact  [FD-Conf-MAS-RET-0006](Retailer Creation#FD-Conf-MAS-RET-0006) 
 
-11. [FD-BR-RET-0011](FD-BR-RET-0011) - Load Supply Chain Hierarchy Based On Channel Hierarchy
-   1. Need to load the supply chain hierarchy based on the selection of Channel Hierarchy
+7.[FD-BR-RET-0007](FD-BR-RET-0007)- Allow selection of Inactive Retailer in  Set config module to allow inactive retailer on transaction screen 
+- Apply configuration impact [FD-Conf-MAS-RET-0007](Retailer Creation#FD-Conf-MAS-RET-0007) 
 
-12. [FD-BR-RET-0012](FD-BR-RET-0012) - Alert if the GST number is duplicated
-   1. There should be an validation to check GST number duplication and revert with Alert Message to the user
+8.[FD-BR-RET-0008](FD-BR-RET-0008)- Alert if the mobile number do not start with any of the following numbers  
+- If enabled, restrict mobile number validation on customer creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0008](Retailer Creation#FD-Conf-MAS-RET-0008) 
 
-13. [FD-BR-RET-0013](FD-BR-RET-0013) - Prefix When Creating customer through Universal master approval
-   1.Required Prefix for customer code should get populated based on the prefix codification
+9.[FD-BR-RET-0009](FD-BR-RET-0009)- Mobile digits   Set mobile digit to be started
+- Apply configuration impact  [FD-Conf-MAS-RET-0009](Retailer Creation#FD-Conf-MAS-RET-0009) 
 
-14. [FD-BR-RET-0014](FD-BR-RET-0014) - Customer Category to be filtered based on parent selection
-   1. Requried to set customer category based on the parent category selection 
+10.[FD-BR-RET-0010](FD-BR-RET-0010)- Alert & Continue   
+- If enabled, alert if mobile digit not matched with configured digit to be started, and continue flow 
+- Apply configuration impact [FD-Conf-MAS-RET-0010](Retailer Creation#FD-Conf-MAS-RET-0010) 
 
-15. [FD-BR-RET-0015](FD-BR-RET-0015) - Customer Approval Process
-  1.On approval of New customer , New customer code need to get generated based on the prefix codification
+11.[FD-BR-RET-0011](FD-BR-RET-0011)- Alert & Stop   
+- If enabled, alert if mobile digit not matched with configured digit to be started, and restrict flow
+- Apply configuration impact  [FD-Conf-MAS-RET-0011](Retailer Creation#FD-Conf-MAS-RET-0011) 
+
+12.[FD-BR-RET-0012](FD-BR-RET-0012)- Alert if the mobile number is not equal to 10 digits  
+- If enabled, restriction based on config is validated 
+- Apply configuration impact [FD-Conf-MAS-RET-0012](Retailer Creation#FD-Conf-MAS-RET-0012) 
+
+13.[FD-BR-RET-0013](FD-BR-RET-0013)- Alert & Continue   
+- Alert if mobile no not equal to 10 digit and continue flow
+- Apply configuration impact  [FD-Conf-MAS-RET-0013](Retailer Creation#FD-Conf-MAS-RET-0013) 
+
+14.[FD-BR-RET-0014](FD-BR-RET-0014)- Alert & Stop  
+- Alert if mobile no not equal to 10 digit and restrict flow 
+- Apply configuration impact [FD-Conf-MAS-RET-0014](Retailer Creation#FD-Conf-MAS-RET-0014) 
+
+15.[FD-BR-RET-0015](FD-BR-RET-0015)- Alert if the mobile number is duplicated 
+-  If enabled, restriction based on config is validated 
+- Apply configuration impact [FD-Conf-MAS-RET-0015](Retailer Creation#FD-Conf-MAS-RET-0015) 
+
+16.[FD-BR-RET-0016](FD-BR-RET-0016)- Within the distributor data  Validate 
+- if mobile no is duplicate with respective distributor on customer creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0016](Retailer Creation#FD-Conf-MAS-RET-0016) 
+
+17.[FD-BR-RET-0017](FD-BR-RET-0017)- Within the company data  Validate 
+- if mobile no is duplicate with in customer on customer creation
+- Apply configuration impact  [FD-Conf-MAS-RET-0017](Retailer Creation#FD-Conf-MAS-RET-0017) 
+
+18.[FD-BR-RET-0018](FD-BR-RET-0018)- Alert & Continue  
+- Alert if mobile no duplicated and continue flow 
+- Apply configuration impact [FD-Conf-MAS-RET-0018](Retailer Creation#FD-Conf-MAS-RET-0018) 
+
+19.[FD-BR-RET-0019](FD-BR-RET-0019)- Alert & Stop  
+- Alert if mobile no duplicated and restrict flow 
+- Apply configuration impact [FD-Conf-MAS-RET-0019](Retailer Creation#FD-Conf-MAS-RET-0019) 
+
+20.[FD-BR-RET-0020](FD-BR-RET-0020)- Enable OTP Feature in retailer creation 
+-  If enabled, OTP column details are available on retailer creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0020](Retailer Creation#FD-Conf-MAS-RET-0020) 
+
+21.[FD-BR-RET-0021](FD-BR-RET-0021)- Maximum validity period for OTP (in Mins)  
+- Set config value for to maintain OTP validity period
+- Apply configuration impact  [FD-Conf-MAS-RET-0021](Retailer Creation#FD-Conf-MAS-RET-0021) 
+
+22.[FD-BR-RET-0022](FD-BR-RET-0022)- Display customer in Transaction with status of 
+-  Set status config to display customer on screen transaction 
+- Apply configuration impact [FD-Conf-MAS-RET-0022](Retailer Creation#FD-Conf-MAS-RET-0022) 
+
+23.[FD-BR-RET-0023](FD-BR-RET-0023)- Set value for 'Status' column while OTP is verified successfully   
+- Apply configuration impact [FD-Conf-MAS-RET-0023](Retailer Creation#FD-Conf-MAS-RET-0023) 
+
+24.[FD-BR-RET-0024](FD-BR-RET-0024)- Set config status value, of customer if OTP verification is successful   
+- Apply configuration impact [FD-Conf-MAS-RET-0024](Retailer Creation#FD-Conf-MAS-RET-0024) 
+
+25.[FD-BR-RET-0025](FD-BR-RET-0025)- Set value for 'Next stage name' column while OTP is verified successfully   
+- Apply configuration impact [FD-Conf-MAS-RET-0025](Retailer Creation#FD-Conf-MAS-RET-0025) 
+
+26.[FD-BR-RET-0026](FD-BR-RET-0026)- Set config Next stage name value, of customer if OTP verification is successful   
+- Apply configuration impact [FD-Conf-MAS-RET-0026](Retailer Creation#FD-Conf-MAS-RET-0026) 
+
+27.[FD-BR-RET-0027](FD-BR-RET-0027)- Set the maximum rows to fill while importing the customers   
+- Apply configuration impact [FD-Conf-MAS-RET-0027](Retailer Creation#FD-Conf-MAS-RET-0027) 
+
+28.[FD-BR-RET-0028](FD-BR-RET-0028)- Set config value to import and fill customer rows  
+- Apply configuration impact  [FD-Conf-MAS-RET-0028](Retailer Creation#FD-Conf-MAS-RET-0028) 
+
+29.[FD-BR-RET-0029](FD-BR-RET-0029)- Check customer code to be unique by distributor wise  
+- If enabled, customer code is unique based on distributor wise, to be validated 
+- Apply configuration impact [FD-Conf-MAS-RET-0029](Retailer Creation#FD-Conf-MAS-RET-0029) 
+
+30.[FD-BR-RET-0030](FD-BR-RET-0030)- Load Supply Chain Hierarchy Based On Channel Hierarchy 
+-  If enabled, on customer creation supply chain hierarchy is loaded based on channel hierarchy selected on respective column
+- Apply configuration impact [FD-Conf-MAS-RET-0030](Retailer Creation#FD-Conf-MAS-RET-0030) 
+
+31.[FD-BR-RET-0031](FD-BR-RET-0031)- Make the pincode dependent fields as readonly  
+- If enabled, pincode related fields like (District, city) are made as non editable on creation
+- Apply configuration impact [FD-Conf-MAS-RET-0031](Retailer Creation#FD-Conf-MAS-RET-0031) 
+
+32.[FD-BR-RET-0032](FD-BR-RET-0032)- Populate the cities list(census data) based on the City(If Check) 
+- If enabled, based on city list the census data are to be displayed on screen of customer creation
+- Apply configuration impact [FD-Conf-MAS-RET-0032](Retailer Creation#FD-Conf-MAS-RET-0032) 
+
+33.[FD-BR-RET-0033](FD-BR-RET-0033)- Retailer GPS Capture  
+- If enabled, Retailer GPS is enabled to capture and to be recorder in lat / long column
+- Apply configuration impact  [FD-Conf-MAS-RET-0033](Retailer Creation#FD-Conf-MAS-RET-0033) 
+
+34.[FD-BR-RET-0034](FD-BR-RET-0034)- Alert if the GST number is duplicated 
+-  If enabled, restriction based on config is validated 
+- Apply configuration impact [FD-Conf-MAS-RET-0034](Retailer Creation#FD-Conf-MAS-RET-0034) 
+
+35.[FD-BR-RET-0035](FD-BR-RET-0035)- Within the distributor data  Validate if GST number is duplicate with respective distributor on customer creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0035](Retailer Creation#FD-Conf-MAS-RET-0035) 
+
+36.[FD-BR-RET-0036](FD-BR-RET-0036)- Within the company data   Validate if GST number is duplicate with in customer on customer creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0036](Retailer Creation#FD-Conf-MAS-RET-0036) 
+
+37.[FD-BR-RET-0037](FD-BR-RET-0037)- Alert & Continue  
+- Alert if GST number duplicated and continue flow 
+- Apply configuration impact [FD-Conf-MAS-RET-0037](Retailer Creation#FD-Conf-MAS-RET-0037) 
+
+38.[FD-BR-RET-0038](FD-BR-RET-0038)- Alert & Stop  
+- Alert if GST number duplicated and restrict flow
+- Apply configuration impact [FD-Conf-MAS-RET-0038](Retailer Creation#FD-Conf-MAS-RET-0038) 
+
+39.[FD-BR-RET-0039](FD-BR-RET-0039)- Re-Align Sub-retailers also when moving Retailer  
+- If enabled, customer which are to be re-allign, includes sub-retailers also to be re-allign respectively 
+- Apply configuration impact [FD-Conf-MAS-RET-0039](Retailer Creation#FD-Conf-MAS-RET-0039) 
+
+40.[FD-BR-RET-0040](FD-BR-RET-0040)- Show Creation Button in Retailer List and Retailer Detail view 
+-  If enabled, + icon will be visble for create customer 
+- Apply configuration impact [FD-Conf-MAS-RET-0040](Retailer Creation#FD-Conf-MAS-RET-0040) 
+
+41.[FD-BR-RET-0041](FD-BR-RET-0041)- Active filed default active for the New Retailer creation
+-  If enabled, retailer is set to active staus on creation 
+- Apply configuration impact [FD-Conf-MAS-RET-0041](Retailer Creation#FD-Conf-MAS-RET-0041) 
+
+42.[FD-BR-RET-0042](FD-BR-RET-0042)- Allow default beat mapping for retailer in salesinvoice 
+- If enabled, on salesinvoice transaction beat mapping is loaded default towards customer
+- Apply configuration impact [FD-Conf-MAS-RET-0042](Retailer Creation#FD-Conf-MAS-RET-0042) 
+
+43.[FD-BR-RET-0043](FD-BR-RET-0043)- Populate new customer channel dropdown 
+- If enabed, retailer channel type column are listed with channel type details on fields 
+- Apply configuration impact [FD-Conf-MAS-RET-0043](Retailer Creation#FD-Conf-MAS-RET-0043) 
+
+44.[FD-BR-RET-0044](FD-BR-RET-0044)- Allow Customer Code Editable 
+-  If enabled, customer code is allowed to edit by user 
+- Apply configuration impact [FD-Conf-MAS-RET-0044](Retailer Creation#FD-Conf-MAS-RET-0044) 
+
+45.[FD-BR-RET-0045](FD-BR-RET-0045)- Customer realignment customers are new retailers 
+-  If enabled, re-allign customer are treated as new retailer 
+- Apply configuration impact [FD-Conf-MAS-RET-0045](Retailer Creation#FD-Conf-MAS-RET-0045) 
+
+46.[FD-BR-RET-0046](FD-BR-RET-0046)- Auto populate Distributor Code in the Customer Code Prefix field (In distribitor Master Screen)
+-  If enabled, Distributor code is populated based on customer prefix code 
+- Apply configuration impact [FD-Conf-MAS-RET-0046](Retailer Creation#FD-Conf-MAS-RET-0046) 
+
+47.[FD-BR-RET-0047](FD-BR-RET-0047)- Populate the Universal Master details based on the user and distributor mapping 
+-  If enabled, Universal Master details based on the user and distributor mapping are populated on Universal screen 
+- Apply configuration impact [FD-Conf-MAS-RET-0047](Retailer Creation#FD-Conf-MAS-RET-0047) 
+
+48.[FD-BR-RET-0048](FD-BR-RET-0048)- Set Prefix When Creating customer through Universal master approval 
+-  If enabled, set config prefix value on approval process on universal master creating customer 
+- Apply configuration impact [FD-Conf-MAS-RET-0048](Retailer Creation#FD-Conf-MAS-RET-0048) 
+
+49.[FD-BR-RET-0049](FD-BR-RET-0049)- Customer Category to be filtered based on parent selection 
+- If enabled, set value for filter category level 
+- Apply configuration impact [FD-Conf-MAS-RET-0049](Retailer Creation#FD-Conf-MAS-RET-0049) 
+
+50.[FD-BR-RET-0050](FD-BR-RET-0050)- Customer Category to be filtered based on parent selection  
+- Set value to filter Customer Category parent level 
+- Apply configuration impact [FD-Conf-MAS-RET-0050](Retailer Creation#FD-Conf-MAS-RET-0050) 
+
+51.[FD-BR-RET-0051](FD-BR-RET-0051)- Customer Category to be filtered based on parent selection 
+- Set value to filter Customer Category child level 
+- Apply configuration impact [FD-Conf-MAS-RET-0051](Retailer Creation#FD-Conf-MAS-RET-0051) 
+
+52.[FD-BR-RET-0052](FD-BR-RET-0052)- Inactive retailers without sales or sales return transactions for more than Months  
+- Set month config limit to inactivate customer without transaction 
+- Apply configuration impact [FD-Conf-MAS-RET-0052](Retailer Creation#FD-Conf-MAS-RET-0052) 
+
+53.[FD-BR-RET-0053](FD-BR-RET-0053)- Customer Approval Process  Enable Customer Approval Process
+- If enabled, set config for Customer Approval Process 
+- Apply configuration impact [FD-Conf-MAS-RET-0053](Retailer Creation#FD-Conf-MAS-RET-0053) 
+
+54.[FD-BR-RET-0054](FD-BR-RET-0054)- Customer Approval Process  Generate Unique Code – Upon Approval of Customers
+- If enabled, unique code is genrated on approval customer 
+- Apply configuration impact [FD-Conf-MAS-RET-0054](Retailer Creation#FD-Conf-MAS-RET-0054) 
+
+55.[FD-BR-RET-0055](FD-BR-RET-0055)- Customer Approval Process  Unique Code Start Digit set value to generate unique code start with
+- Apply configuration impact  [FD-Conf-MAS-RET-0055](Retailer Creation#FD-Conf-MAS-RET-0055) 
+
+56.[FD-BR-RET-0056](FD-BR-RET-0056)- Customer Approval Process  Generate Retailer unique code based on state master zone prefix 3 character + state code 2 char+ district code 3 char + division / city / vilage / town code 6 char + 6 decimal length running sequence 
+- Apply configuration impact [FD-Conf-MAS-RET-0056](Retailer Creation#FD-Conf-MAS-RET-0056) 
+
+57.[FD-BR-RET-0057](FD-BR-RET-0057)- Customer Approval Process  
+- If enabled, based on setting unique code will be generated 
+- Apply configuration impact [FD-Conf-MAS-RET-0057](Retailer Creation#FD-Conf-MAS-RET-0057) 
+
+58.[FD-BR-RET-0058](FD-BR-RET-0058)- Customer Approval Process  
+- Unique Code Sequence == set unique code sequence for generation 
+- Apply configuration impact [FD-Conf-MAS-RET-0058](Retailer Creation#FD-Conf-MAS-RET-0058) 
+
+59.[FD-BR-RET-0059](FD-BR-RET-0059)- Allow unapproved customer in all transactions. 
+-  If enabled, unapproved customer are allowed on transaction
+- Apply configuration impact  [FD-Conf-MAS-RET-0059](Retailer Creation#FD-Conf-MAS-RET-0059) 
+
+60.[FD-BR-RET-0060](FD-BR-RET-0060)- Restrict Distributor to edit the following fields in customer master – after approval 
+-  If enabled, set filed column not be editable after customer approval 
+- Apply configuration impact [FD-Conf-MAS-RET-0060](Retailer Creation#FD-Conf-MAS-RET-0060) 
+
+61.[FD-BR-RET-0061](FD-BR-RET-0061)- Enable Channel Classification Configuration Channel Config  User channel classification== set user channel classification types
+- Apply configuration impact  [FD-Conf-MAS-RET-0061](Retailer Creation#FD-Conf-MAS-RET-0061) 
+
+62.[FD-BR-RET-0062](FD-BR-RET-0062)- Enable Channel Classification Configuration Channel Config  User channel classification nextstage == set nextstage status value config respective mapped towards User channel classification 
+- Apply configuration impact [FD-Conf-MAS-RET-0062](Retailer Creation#FD-Conf-MAS-RET-0062) 
 
 
 ### [Domain Object Customer](Domain-Object-Customer)

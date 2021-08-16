@@ -168,9 +168,8 @@ This page list all direct configuration applicable for Purchase Return  & relate
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Purchase Return  are clear. Refer [Purchase Return  ](Purchase Return  ), [Purchase Return  Creation](#creation-of-sales-Return  )   
 
-1. [FD-BR-PR-0001] - User access 
+a) User access 
 
->  FD-BR-PR-0001
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating Purchase Return  transaction 
@@ -179,7 +178,7 @@ This page list all direct configuration applicable for Purchase Return  & relate
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
 
-2. [FD-BR-PR-0002](#FD-BR-PR-0002) - List view of Purchase Return
+b) List view of Purchase Return
     1. Listing page is default landing page, where newly created Purchase return  are listed with selected information.
     1. All listing page related features are to be available for Purchase Invoice  listing Page. 
     1. Retrieve recently created top `20` Purchase Return document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for Purchase Invoice  applicable for all users. 
@@ -197,30 +196,67 @@ This page list all direct configuration applicable for Purchase Return  & relate
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-PR-0003](FD-BR-PR-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of purchase return record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the returns list view, select the desired record. Details view of returns record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-PR-0004](FD-BR-PR-0004) - Create Purchase Return
+d) Create Purchase Return
     1. Allow creation of Purchase Return based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Purchase Return should be restricted to user without distributor association. 
 
-5. [FD-BR-PR-0005](FD-BR-PR-0005) -Allow Back Dated Transaction
-    1.Enable provision to allow user to input Back dated Purchase return transactions
+1.[FD-BR-PR-0001](FD-BR-PR-0001)- Generate alert message - if no tax is configured for the product
+- If enabled, Display alert if tax has not configured with product
+- Apply configuration impact [FD-Conf-MAS-PI-0001](Purchase Return Creation#FD-Conf-MAS-PR-0001)
 
-6. [FD-BR-PR-0006](FD-BR-PR-0006) -Allow only digits on base UOM for return quantity
-    1.Enable provision to allow user to enter only Digits as part of Based UOM 
+2.[FD-BR-PR-0002](FD-BR-PR-0002)-Allow Back Dated Transaction 
+- If enabled, PR transaction is allowed with back dated
+- Apply configuration impact [FD-Conf-MAS-PI-0002](Purchase Return Creation#FD-Conf-MAS-PR-0002)
 
-7. [FD-BR-PR-0007](FD-BR-PR-0007) -TCS applicable for same month return only
-    1.Based on the parameter, TCS will be made applicable for same month purchase return only
+3.[FD-BR-PR-0003](FD-BR-PR-0003)-Hide Free Quantity 
+- If enabled, Free quantity are restricted on PR transaction
+- Apply configuration impact [FD-Conf-MAS-PI-0003](Purchase Return Creation#FD-Conf-MAS-PR-0003)
 
-8. [FD-BR-PR-0008](FD-BR-PR-0008) -Allow multiple PurchaseInvoices in single Purchase Return
-    1.Allow user to select multiple purchase Invoices as part of Single Purchase return transaction
+4.[FD-BR-PR-0004](FD-BR-PR-0004)-Hide Damage Quantity  
+- If enabled, Damage quantity are not allowed in PR transaction
+- Apply configuration impact [FD-Conf-MAS-PI-0004](Purchase Return Creation#FD-Conf-MAS-PR-0004)
 
-9. [FD-BR-PR-0009](FD-BR-PR-0009) -Restriction users from returning invoices older then days
-    1. Set the no of days to allow the user to do  purchase return agaianst the Older purchase Invoices 
+5.[FD-BR-PR-0005](FD-BR-PR-0005)-Hide Damage Quantity by Role 
+- Set role config to restrict damage quantity display based on user role on PR transaction
+- Apply configuration impact [FD-Conf-MAS-PI-0005](Purchase Return Creation#FD-Conf-MAS-PR-0005)
+
+6.[FD-BR-PR-0006](FD-BR-PR-0006)-Validate to allow only digits on base UOM for return quantity 
+- If enabled, UOM quantity is allowed only digits, decimal are restricted
+- Apply configuration impact [FD-Conf-MAS-PI-0006](Purchase Return Creation#FD-Conf-MAS-PR-0006)
+
+7.[FD-BR-PR-0007](FD-BR-PR-0007)-Hide Purchase Return type 
+- If enabled, PR type column on PR transaction screen is disabled
+- Apply configuration impact [FD-Conf-MAS-PI-0007](Purchase Return Creation#FD-Conf-MAS-PR-0007)
+
+8.[FD-BR-PR-0008](FD-BR-PR-0008)-TCS applicable for same month return only 
+- If enabled, PR retirn with same month is applicable for TCS
+- Apply configuration impact [FD-Conf-MAS-PI-0008](Purchase Return Creation#FD-Conf-MAS-PR-0008)
+
+9.[FD-BR-PR-0009](FD-BR-PR-0009)-Allow multiple PurchaseInvoices in single PurchaseReturn 
+- If enabled, multiple PurchaseInvoices in single PurchaseReturn without duplicate invoice on PR transaction
+- Apply configuration impact [FD-Conf-MAS-PI-0009](Purchase Return Creation#FD-Conf-MAS-PR-0009)
+
+10.[FD-BR-PR-0010](FD-BR-PR-0010)-Show alert notification for reason 
+- If enabled, display alert if reason is not selected on PR transaction
+- Apply configuration impact [FD-Conf-MAS-PI-0010](Purchase Return Creation#FD-Conf-MAS-PR-0010)
+
+11.[FD-BR-PR-0011](FD-BR-PR-0011)-Restrict users from returning invoices older then days 
+- If enabled, user can return PI with configured days, if days exceed will not be accepted
+- Apply configuration impact [FD-Conf-MAS-PI-0011](Purchase Return Creation#FD-Conf-MAS-PR-0011)
+
+12.[FD-BR-PR-0012](FD-BR-PR-0012)-Tax Do not compute the tax amount for Purchase Return without reference
+- If enabled tax amount is not compute on PR if type without ref
+- Apply configuration impact [FD-Conf-MAS-PI-0012](Purchase Return Creation#FD-Conf-MAS-PR-0012)
+
+13.[FD-BR-PR-0013](FD-BR-PR-0013)-Tax Do not compute the tax amount for purchase returns with reference if the return is performed after months from invoice date
+- If enabled, set month duration, on PR not to compute the tax amount for purchase returns type with reference
+- Apply configuration impact [FD-Conf-MAS-PI-0013](Purchase Return Creation#FD-Conf-MAS-PR-0013)
 
 ## Rate calculation 
 1. **Purchase Return  Price** is shown in any of the following ways.

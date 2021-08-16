@@ -115,7 +115,7 @@ This page list all direct configuration applicable for GRN & related other modul
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the GRN are clear. Refer [GRN ](GRN ), [GRN Creation](#creation-of-sales-Invoice  )   
 
-1. [FD-BR-GRN-0001] - User access 
+a)  User access 
 
 >  FD-BR-GRN-0001
 
@@ -125,7 +125,7 @@ This page list all direct configuration applicable for GRN & related other modul
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-GRN-0002](#FD-BR-GRN-0002) - List view of GRN 
+b)  List view of GRN 
     1. Listing page is default landing page, where newly created GRN are listed with selected information.
     1. All listing page related features are to be available for GRN listing Page. 
     1. Retrieve recently created top `20` GRN document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for GRN applicable for all users. 
@@ -140,24 +140,44 @@ This page list all direct configuration applicable for GRN & related other modul
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-GRN-0003](FD-BR-GRN-0003) - Detail view actions
+c)  Detail view actions
     1. Detail view of Invoice  record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Invoice  s list view, select the desired record. Details view of Invoice  record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-GRN-0004](FD-BR-GRN-0004) - Create GRN 
+d)  Create GRN 
     1. Allow creation of GRN based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of GRN should be restricted to user without distributor association
 
-5. [FD-BR-GRN-0005](FD-BR-GRN-0005) - Create GRN Transaction Series 
-    1.Set the provison to enable or disable the Transaction series to automate the GRN document series generation 
+1.[FD-BR-GRN-0001](FD-BR-GRN-0001)- Currency Option Enable 
+- If enabled, Currency Option column will be displayed on GRN screen 
+- Apply configuration impact [FD-Conf-MAS-GRN-0001](GRN Creation#FD-Conf-MAS-GRN-0001) 
 
-6. [FD-BR-GRN-0006](FD-BR-GRN-0006) - Create Direct GRN Transaction
-    1.Allow user to create Direct GRN without any sales Invoice reference 
+2.[FD-BR-GRN-0002](FD-BR-GRN-0002)- System Transaction Number 
+- If enabled, allow to generate transaction number based on configured system transaction number for GRN transaction
+-  Apply configuration impact [FD-Conf-MAS-GRN-0002](GRN Creation#FD-Conf-MAS-GRN-0002) 
 
-7. [FD-BR-GRN-0007](FD-BR-GRN-0007) - Create Backdated GRN Transaction
-    1.Allow user to create Back Dated GRN    
+3.[FD-BR-GRN-0003](FD-BR-GRN-0003)- Allow Selection of Vendor  
+- If enabled, vendor column is loaded and allow user to select field data,If not, default vendor will be loaded and selcted 
+-   Apply configuration impact [FD-Conf-MAS-GRN-0003](GRN Creation#FD-Conf-MAS-GRN-0003) 
+
+4.[FD-BR-GRN-0004](FD-BR-GRN-0004)- List Price Editable or Readonly 
+- If enabled, List Price Editable by user.If not, List Price Editable cant be editabled by user
+-   Apply configuration impact [FD-Conf-MAS-GRN-0004](GRN Creation#FD-Conf-MAS-GRN-0004) 
+
+5.[FD-BR-GRN-0005](FD-BR-GRN-0005)- Allow Direct GRN Creation 
+- If enabled, user can create direct GRN.If not, user is restricted on creation of GRN screen 
+-   Apply configuration impact [FD-Conf-MAS-GRN-0005](GRN Creation#FD-Conf-MAS-GRN-0005) 
+
+6.[FD-BR-GRN-0006](FD-BR-GRN-0006)- Allow Back Dated Transaction
+- If enabled, user is allowed to create back dated GRN transaction 
+-   Apply configuration impact [FD-Conf-MAS-GRN-0006](GRN Creation#FD-Conf-MAS-GRN-0006) 
+
+7.[FD-BR-GRN-0007](FD-BR-GRN-0007)- Update Stock based on Purchase bill date in GRN when Date wise Inventory is ON 
+- If enabled, stock updated based on purchase bill date in GRN transaction
+-   Apply configuration impact [FD-Conf-MAS-GRN-0007](GRN Creation#FD-Conf-MAS-GRN-0007) 
+
 
 # Event Flows 
 ## Events at Front End (Create)

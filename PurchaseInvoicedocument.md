@@ -173,9 +173,7 @@ This page list all direct configuration applicable for Purchase Invoice  & relat
 
 > Business rules are listed in the below section which requires Domain understanding, hope the previous sections of the Purchase Invoice  are clear. Refer [Purchase Invoice  ](Purchase Invoice  ), [Purchase Invoice  Creation](#creation-of-sales-Invoice  )   
 
-1. [FD-BR-SO-0001] - User access 
-
->  FD-BR-SO-0001
+a) User access 
 
     1. Login user should has association with a Distributor. 
     1. In case of user associated with multiple user, then distributor selection is require before creating Purchase Invoice  transaction 
@@ -183,7 +181,7 @@ This page list all direct configuration applicable for Purchase Invoice  & relat
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
-2. [FD-BR-SO-0002](#FD-BR-SO-0002) - List view of Purchase Invoice  
+b)  List view of Purchase Invoice  
     1. Listing page is default landing page, where newly created Purchase Invoice  are listed with selected information.
     1. All listing page related features are to be available for Purchase Invoice  listing Page. 
     1. Retrieve recently created top `20` Purchase Invoice  document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for Purchase Invoice  applicable for all users. 
@@ -201,16 +199,259 @@ This page list all direct configuration applicable for Purchase Invoice  & relat
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
-3. [FD-BR-SO-0003](FD-BR-SO-0003) - Detail view actions
+c) Detail view actions
     1. Detail view of Invoice  record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Invoice  s list view, select the desired record. Details view of Invoice  record should follow the Field access rule for the login user related profile. 
 
-4. [FD-BR-SO-0004](FD-BR-SO-0004) - Create Purchase Invoice  
+d) Create Purchase Invoice  
     1. Allow creation of Purchase Invoice  based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
     1. Creation of Purchase Invoice  should be restricted to user without distributor association. 
-   
+
+1.[FD-BR-PI-0001](FD-BR-PI-0001)- Allow Selection of Vendor 
+- If enabled, allow user ti select vendor.If not, default vendor will be loaded 
+- [FD-Conf-MAS-PI-0001](Purchase Invoice  Creation#FD-Conf-MAS-PI-0001) 
+
+2.[FD-BR-PI-0002](FD-BR-PI-0002)- Is BackDated Transactions allowed 
+- If enabled, allow backdated for PI transaction
+- [FD-Conf-MAS-PI-0002](Purchase Invoice  Creation#FD-Conf-MAS-PI-0002) 
+
+3.[FD-BR-PI-0003](FD-BR-PI-0003)- System Transaction Number 
+- If enabled, generate System Transaction Number for PI transaction
+ -[FD-Conf-MAS-PI-0003](Purchase Invoice  Creation#FD-Conf-MAS-PI-0003) 
+
+4.[FD-BR-PI-0004](FD-BR-PI-0004)- Load products those are out of stock
+- If enabled, Load products those are out of stock will be liated on PI 
+- [FD-Conf-MAS-PI-0004](Purchase Invoice  Creation#FD-Conf-MAS-PI-0004) 
+
+5.[FD-BR-PI-0005](FD-BR-PI-0005)- Show Current Stock for each item 
+- If enabled , Show Current Stock for each item on PI line items
+- [FD-Conf-MAS-PI-0005](Purchase Invoice  Creation#FD-Conf-MAS-PI-0005) 
+
+6.[FD-BR-PI-0006](FD-BR-PI-0006)- Adding New Item Allowed
+- I enabled, Add product icon will be displayed on PI screen 
+- [FD-Conf-MAS-PI-0006](Purchase Invoice  Creation#FD-Conf-MAS-PI-0006) 
+
+7.[FD-BR-PI-0007](FD-BR-PI-0007)- Show Error when Stock is Negative 
+- If enabled, if stock is negative, error msg will be notified 
+- [FD-Conf-MAS-PI-0007](Purchase Invoice  Creation#FD-Conf-MAS-PI-0007) 
+
+8.[FD-BR-PI-0008](FD-BR-PI-0008)- Adhoc discount applicable for each item 
+- If enabled, discount is applicable for each line item 
+- [FD-Conf-MAS-PI-0008](Purchase Invoice  Creation#FD-Conf-MAS-PI-0008) 
+
+9.[FD-BR-PI-0009](FD-BR-PI-0009)- Adhoc discount applicable for transaction 
+- If enabled, discount is applicable for PI transaction 
+- [FD-Conf-MAS-PI-0009](Purchase Invoice  Creation#FD-Conf-MAS-PI-0009) 
+
+10.[FD-BR-PI-0010](FD-BR-PI-0010)- Adhoc scheme applicable on transaction 
+- If enabled, scheme discount is applicable PI transaction 
+- [FD-Conf-MAS-PI-0010](Purchase Invoice  Creation#FD-Conf-MAS-PI-0010) 
+
+11.[FD-BR-PI-0011](FD-BR-PI-0011)- List Price is editable
+-  If enabled, user can edit the list price of items on PI 
+- [FD-Conf-MAS-PI-0011](Purchase Invoice  Creation#FD-Conf-MAS-PI-0011) 
+
+12.[FD-BR-PI-0012](FD-BR-PI-0012)- Tax Option Enable
+-  If enabled, Tax column (individual / group) is displayed for tax type compute on PI.If not, individual is for tax type compute on PI
+- [FD-Conf-MAS-PI-0012](Purchase Invoice  Creation#FD-Conf-MAS-PI-0012) 
+
+13.[FD-BR-PI-0013](FD-BR-PI-0013)- Currency Option Enable 
+- If enabled, Currency Option column will be displayed on PI item screen 
+- [FD-Conf-MAS-PI-0013](Purchase Invoice  Creation#FD-Conf-MAS-PI-0013) 
+
+14.[FD-BR-PI-0014](FD-BR-PI-0014)- Shipping Tax Enable  
+- If enabled, shipping tax column is available on PI screen to compute 
+- [FD-Conf-MAS-PI-0014](Purchase Invoice  Creation#FD-Conf-MAS-PI-0014) 
+
+15.[FD-BR-PI-0015](FD-BR-PI-0015)- Credit Limit Popup 
+- If enabled, alert user if any credit limit on PI transaction 
+- [FD-Conf-MAS-PI-0015](Purchase Invoice  Creation#FD-Conf-MAS-PI-0015) 
+
+16.[FD-BR-PI-0016](FD-BR-PI-0016)- Billing Address Editable 
+- If enabled, billing address is editable 
+- [FD-Conf-MAS-PI-0016](Purchase Invoice  Creation#FD-Conf-MAS-PI-0016) 
+
+17.[FD-BR-PI-0017](FD-BR-PI-0017)- Shipping Address Editable 
+- If enabled, shipping address is editable 
+- [FD-Conf-MAS-PI-0017](Purchase Invoice  Creation#FD-Conf-MAS-PI-0017) 
+
+18.[FD-BR-PI-0018](FD-BR-PI-0018)- Enable Credit Limit Alert For Purchase Invoice Screen 
+- If enabled, Credit Limit Alert For Purchase Invoice Screen will be displayed to user
+- [FD-Conf-MAS-PI-0018](Purchase Invoice  Creation#FD-Conf-MAS-PI-0018) 
+
+19.Re[FD-BR-PI-0019](FD-BR-PI-0019)- strict User From Entering Excess Quantity In Purchase Invoice
+-  If enabled, user has restriction on entering the quantity not to exceeed on product 
+- [FD-Conf-MAS-PI-0019](Purchase Invoice  Creation#FD-Conf-MAS-PI-0019) 
+
+20.[FD-BR-PI-0020](FD-BR-PI-0020)- Block Discount popup when converting Receive Purchase Invoice to Purchase Invoice 
+- If enaboed, discount pop will not be vissible on RPI to PI conversion 
+- [FD-Conf-MAS-PI-0020](Purchase Invoice  Creation#FD-Conf-MAS-PI-0020) 
+
+21.[FD-BR-PI-0021](FD-BR-PI-0021)- Allow Direct PI when MRP value as ZERO 
+- If enabled, PI is allowed to create with ZERO mrp value 
+- [FD-Conf-MAS-PI-0021](Purchase Invoice  Creation#FD-Conf-MAS-PI-0021) 
+
+22.[FD-BR-PI-0022](FD-BR-PI-0022)- Disable direct creation of Purchase Invoice 
+- If enabled, direct PI creation is restricted for user ti create 
+- [FD-Conf-MAS-PI-0022](Purchase Invoice  Creation#FD-Conf-MAS-PI-0022) 
+
+23.[FD-BR-PI-0023](FD-BR-PI-0023)- Restrict Free Quantity on Purchase Invoice 
+- If enabled, free quantity will not be populated on PI transaction
+- [FD-Conf-MAS-PI-0023](Purchase Invoice  Creation#FD-Conf-MAS-PI-0023) 
+
+24.[FD-BR-PI-0024](FD-BR-PI-0024)- Apply price based on Product Price 
+- If enabled, mrp, pts and ptr are loaded as applicable for product on PI 
+- [FD-Conf-MAS-PI-0024](Purchase Invoice  Creation#FD-Conf-MAS-PI-0024) 
+
+25.[FD-BR-PI-0025](FD-BR-PI-0025)- Load Suggestions for prices in manual PI  
+- If enabled, PI product are listed with price and not editable 
+- [FD-Conf-MAS-PI-0025](Purchase Invoice  Creation#FD-Conf-MAS-PI-0025) 
+
+26.[FD-BR-PI-0026](FD-BR-PI-0026)- Disable corporate default vendor in manual invoice 
+- If enabled, vendor default loading is restricted on PI 
+- [FD-Conf-MAS-PI-0026](Purchase Invoice  Creation#FD-Conf-MAS-PI-0026)
+ 
+27.[FD-BR-PI-0027](FD-BR-PI-0027)- Load last billed prices in Manual PI
+- If enabled, load latest bill prce for product in PI transaction 
+- [FD-Conf-MAS-PI-0027](Purchase Invoice  Creation#FD-Conf-MAS-PI-0027) 
+
+28.[FD-BR-PI-0028](FD-BR-PI-0028)- Show Net PTS in Batch Grid 
+- If enabled, net pts value will be displayed on product batch grip 
+- [FD-Conf-MAS-PI-0028](Purchase Invoice  Creation#FD-Conf-MAS-PI-0028) 
+
+29.[FD-BR-PI-0029](FD-BR-PI-0029)- Show Orginal PTS in Batch Grid 
+- If enabled, display Orginal PTS in Batch Grid product details 
+- [FD-Conf-MAS-PI-0029](Purchase Invoice  Creation#FD-Conf-MAS-PI-0029) 
+
+30.[FD-BR-PI-0030](FD-BR-PI-0030)- Show PFM in Batch Grid 
+- If enabled, display PFM in Batch Grid product details 
+- [FD-Conf-MAS-PI-0030](Purchase Invoice  Creation#FD-Conf-MAS-PI-0030) 
+
+31.[FD-BR-PI-0031](FD-BR-PI-0031)- Show Other discounts in PI  
+- If enabled,  display Other discounts column in PI
+- [FD-Conf-MAS-PI-0031](Purchase Invoice  Creation#FD-Conf-MAS-PI-0031) 
+
+32.[FD-BR-PI-0032](FD-BR-PI-0032)- Show Secondary Transaction Series 
+- If enabled, Secondary Transaction Series field will be displayed on PI screen
+- [FD-Conf-MAS-PI-0032](Purchase Invoice  Creation#FD-Conf-MAS-PI-0032) 
+
+33.[FD-BR-PI-0033](FD-BR-PI-0033)- Recalculate price in Batch grid based on UOM 
+- If enabled, Recalculate price in Batch grid based on UOM based on UOM and quantity of product
+- [FD-Conf-MAS-PI-0033](Purchase Invoice  Creation#FD-Conf-MAS-PI-0033) 
+
+34.[FD-BR-PI-0034](FD-BR-PI-0034)- Display Purchase Invoice with the status of 
+- Set status to Display PI on screen with configure status 
+- [FD-Conf-MAS-PI-0034](Purchase Invoice  Creation#FD-Conf-MAS-PI-0034) 
+
+35.[FD-BR-PI-0035](FD-BR-PI-0035)- Display Purchase Invoice with the next stage of  
+- Set next stage to Display PI on screen with configure next stage 
+- [FD-Conf-MAS-PI-0035](Purchase Invoice  Creation#FD-Conf-MAS-PI-0035) 
+
+36.[FD-BR-PI-0036](FD-BR-PI-0036)- Update Stock based on Purchase bill date when Date wise Inventory is ON
+-  If enabled, stock updated based on PI bill date.If not, transaction based on PI stock updated on PI date
+- [FD-Conf-MAS-PI-0036](Purchase Invoice  Creation#FD-Conf-MAS-PI-0036) 
+
+37.[FD-BR-PI-0037](FD-BR-PI-0037)- Show price in batch grid based on RPI Price 
+- If enabled, PI price details are listed based on RPI price details 
+- [FD-Conf-MAS-PI-0037](Purchase Invoice  Creation#FD-Conf-MAS-PI-0037) 
+
+38.[FD-BR-PI-0038](FD-BR-PI-0038)- Disable purchase invoice draft creation 
+- If enabled, Draft icon is disabled on PI screen 
+- [FD-Conf-MAS-PI-0038](Purchase Invoice  Creation#FD-Conf-MAS-PI-0038) 
+
+39.[FD-BR-PI-0039](FD-BR-PI-0039)- Enable Reference Number mandatory in Manual and Auto PI 
+- If enabled, Reference Number field is mandatory on PI fields and Auto pi 
+- [FD-Conf-MAS-PI-0039](Purchase Invoice  Creation#FD-Conf-MAS-PI-0039) 
+
+40.[FD-BR-PI-0040](FD-BR-PI-0040)- Unique Validation Configuration For Manual PI 
+- Set configure Unique Validation Configuration For Manual PI based on ref no, ref descripton, ref no+ref description 
+- [FD-Conf-MAS-PI-0040](Purchase Invoice  Creation#FD-Conf-MAS-PI-0040) 
+
+41.[FD-BR-PI-0041](FD-BR-PI-0041)- Unique Validation Configuration For Auto PI  
+- Set configure Unique Validation Configuration For Auto PI based on ref no, ref descripton, ref no+ref description 
+- [FD-Conf-MAS-PI-0041](Purchase Invoice  Creation#FD-Conf-MAS-PI-0041) 
+
+42.[FD-BR-PI-0042](FD-BR-PI-0042)- Update Reference Number with Reference Description value if empty 
+- If enabled, Refer num is updated with ref desc if ref no is empty 
+- [FD-Conf-MAS-PI-0042](Purchase Invoice  Creation#FD-Conf-MAS-PI-0042) 
+
+43.[FD-BR-PI-0043](FD-BR-PI-0043)- Allow zero PTS in Manual Purchase Invoice
+- If enabled, pts zero value is allowed on manual PI 
+- [FD-Conf-MAS-PI-0043](Purchase Invoice  Creation#FD-Conf-MAS-PI-0043) 
+
+44.[FD-BR-PI-0044](FD-BR-PI-0044)- Allow zero PTR in Manual Purchase Invoice 
+- If enabled, ptr zero value is allowed on manual PI 
+- [FD-Conf-MAS-PI-0044](Purchase Invoice  Creation#FD-Conf-MAS-PI-0044) 
+
+45.[FD-BR-PI-0045](FD-BR-PI-0045)- Select False to validate PTR should not be greater than MRP  
+- If false selected, restrict user if ptr is greater then mrp 
+- [FD-Conf-MAS-PI-0045](Purchase Invoice  Creation#FD-Conf-MAS-PI-0045) 
+
+46.[FD-BR-PI-0046](FD-BR-PI-0046)- Allow vendor based credit term 
+- If enabled, vendor based credit term is allowe on PI transaction
+- [FD-Conf-MAS-PI-0046](Purchase Invoice  Creation#FD-Conf-MAS-PI-0046) 
+
+47.[FD-BR-PI-0047](FD-BR-PI-0047)- Allow editing of quantity in batch when creating PI from RPI
+-  If enabled, quantity value can be changed from conversion of RPI to PI 
+- [FD-Conf-MAS-PI-0047](Purchase Invoice  Creation#FD-Conf-MAS-PI-0047) 
+
+48.[FD-BR-PI-0048](FD-BR-PI-0048)- Different Transaction Series For Manual Purchase Invoice
+-  If enabled, allow system to configure other than default transaction series on Manual PI
+- [FD-Conf-MAS-PI-0048](Purchase Invoice  Creation#FD-Conf-MAS-PI-0048) 
+
+ 49..[FD-BR-PI-0049](FD-BR-PI-0049)- Show Net PTR field in Purchase invoice 
+- If enabled, display Net PTR field in Purchase invoice 
+- [FD-Conf-MAS-PI-0049](Purchase Invoice  Creation#FD-Conf-MAS-PI-0049) 
+
+50.[FD-BR-PI-0050](FD-BR-PI-0050)- Enable Shipping to different party 
+- If enabled, new column will be displayed to select party for PI transaction
+- [FD-Conf-MAS-PI-0050](Purchase Invoice  Creation#FD-Conf-MAS-PI-0050) 
+
+51.[FD-BR-PI-0051](FD-BR-PI-0051)- Invoice Level before Tax  
+- If enable, tax compute before invoice level 
+- [FD-Conf-MAS-PI-0051](Purchase Invoice  Creation#FD-Conf-MAS-PI-0051) 
+
+52.[FD-BR-PI-0052](FD-BR-PI-0052)- Generate alert message – if no tax is configured for the product 
+- If enabled, alert message displayed if no tax is configured for the product on PI 
+- [FD-Conf-MAS-PI-0052](Purchase Invoice  Creation#FD-Conf-MAS-PI-0052) 
+
+53.[FD-BR-PI-0053](FD-BR-PI-0053)- Generate alert message 
+- Alert & Continue == alert and continue transaction 
+- [FD-Conf-MAS-PI-0053](Purchase Invoice  Creation#FD-Conf-MAS-PI-0053) 
+
+54.[FD-BR-PI-0054](FD-BR-PI-0054)- Generate alert message  
+- Alert & Stop == alert and stop transaction flow 
+- [FD-Conf-MAS-PI-0054](Purchase Invoice  Creation#FD-Conf-MAS-PI-0054) 
+
+55.[FD-BR-PI-0055](FD-BR-PI-0055)- Allow manual entry/editing of price points during Purchase Invoice 
+- If enabled, price points and editale on PI based on following config 
+- [FD-Conf-MAS-PI-0055](Purchase Invoice  Creation#FD-Conf-MAS-PI-0055) 
+
+56.[FD-BR-PI-0056](FD-BR-PI-0056)- Recompute the PTR based on formula - if formula is configured for PTR Computation 
+- If enabled, PTR is recopute on PI if configred with formula
+- [FD-Conf-MAS-PI-0056](Purchase Invoice  Creation#FD-Conf-MAS-PI-0056) 
+
+57.[FD-BR-PI-0057](FD-BR-PI-0057)- PTS editable in PI 
+- If enabled, PTS editable in PI 
+- [FD-Conf-MAS-PI-0057](Purchase Invoice  Creation#FD-Conf-MAS-PI-0057) 
+
+58.[FD-BR-PI-0058](FD-BR-PI-0058)- PTR editable in PI 
+- If enabled, PTR editable in PI
+- [FD-Conf-MAS-PI-0058](Purchase Invoice  Creation#FD-Conf-MAS-PI-0058) 
+
+59.[FD-BR-PI-0059](FD-BR-PI-0059)- PFM editable in PI
+- If enabled, PFM editable in PI 
+- [FD-Conf-MAS-PI-0059](Purchase Invoice  Creation#FD-Conf-MAS-PI-0059) 
+
+60.[FD-BR-PI-0060](FD-BR-PI-0060)- MRP Per Pack Editable in PI
+- If enabled, MRP Per Pack Editable in PI 
+- [FD-Conf-MAS-PI-0060](Purchase Invoice  Creation#FD-Conf-MAS-PI-0060) 
+
+61.[FD-BR-PI-0061](FD-BR-PI-0061)- ECP editable in PI 
+- If enabled, ECP editable in PI 
+- [FD-Conf-MAS-PI-0061](Purchase Invoice  Creation#FD-Conf-MAS-PI-0061) 
 
 ## Rate calculation 
 1. **Purchase Invoice  Price** is shown in any of the following ways.

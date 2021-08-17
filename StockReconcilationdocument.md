@@ -21,7 +21,7 @@ Stock Reconcilliation process vary based on 2 methods
 ## Stock Reconcilliation  
 
 1. **Stock Reconcilliation  Date** is often set to default current date
-   - There are options to allow backdated Invoice  but date after present date are restricted. 
+   - There are options to allow backdated Document but date after present date are restricted. 
 
 2. **In the Godown field**, enter the name of the existing Godown
    - Stock Reconcilliation are created to evaluate the stock available with the Distributor

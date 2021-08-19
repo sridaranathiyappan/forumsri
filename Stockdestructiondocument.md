@@ -3,7 +3,7 @@ Content
 [[_TOC_]]
 
 `Available for review`
-# Stock DestructionProcess
+# Stock Destruction Process
 Stock Destruction is the process of moving the damaged stock within the Distributor from Main warehouse location  to Damage warehouse location , The actual stocks and the stock in the system should be made accurate based on stock destruction.
 
 ## Precondition for Performing Stock Destruction 
@@ -16,9 +16,7 @@ Before creating a Stock Destruction , you need to
 * Create [Godown](Godown) details 
 * Create [Depot](Depot) details 
 
-Stock Destructionprocess vary based on 2 methods 
-
-## Stock Destruction 
+## Stock Destruction process flow 
 
 1. **Stock Destruction Date** is often set to default current date
    - There are options to allow backdated document but date after present date are restricted. 

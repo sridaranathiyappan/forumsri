@@ -4,7 +4,16 @@ Content
 
 `Available for review`
 # Merchandizing Process
-Merchandizing is the process of managing the visibility of the items in primary and secondary shelf at the retailer place. It gives the provision to record the stock position at  both the shelf.
+Merchandizing is the process of managing the visibility of the items in primary and secondary shelf at the retailer place. It gives the provision to keep traack of the stock display at  both the shelf.
+
+## Who will do the Merchandizing Activity ?
+  Merchandizer from distributor end will create an Merchandize Issue at Customer level and same will get flow to mobility for the merchandizing activity.
+
+## What are all the activities will done by Merchandizer at customer place?
+  Merchandizer will inspect the shelf / stall positioned at the outlet and arrange the shelf as per planogram design and he will take an  image of the arranged shelf and also note the share of shelf of each item
+
+## Where are we showing the transactions that has been captured through mobile app ?
+  Transactions captured through Mobile app to get uploaded to distributor portal. Uploaded transactions should be available for view / download by the respective portal users
 
 ## Precondition for Performing the Merchandizing Activity
 Before creating a Merchandizing part , you need to 

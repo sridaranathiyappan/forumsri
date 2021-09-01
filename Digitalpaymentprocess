@@ -1,0 +1,43 @@
+## Project Scope :
+Digital Payment System is a process to manage the secondary sales payment collections from the retailer & sub distributor through online payment channels like Credit card / Gpay /E-Wallets
+
+### Who are the users of  Digital payment system ?
+The main actors of this digital payment systems are retailer /sub-distributor and salesman 
+
+* Retailer - Retailer already using an retailer app to manage his order placing and tracking the delivery. Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
+through various mode of channels (Credit card / Gpay /E-Wallets ) to the distributor
+
+* Sub distributor - Sub Distributor already using an retailer app to manage his order placing and tracking the delivery from his distributor . Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
+through various mode of channels (Credit card / Gpay /E-Wallets ) to the distributor
+
+* Salesman - Salesman already been using the current mode of collection through (Cash/Cheque). additionally they will given an provision to collect the payment through other channels like Credit card / Gpay /E-Wallets 
+
+### Why we need this digital payment system ? 
+Using Digital payment system , retailer can able to make the Hassles free payment instantly and get the immediate visibility on the outstanding amount. which will certainely enable the distributor to complete the collection reconcillation and plan for the quick order delivery to the retailers / sub distributors 
+
+
+### How to use this digital payment system?
+
+
+
+
+## Existing Solution : 
+Currently , There is no provision to handle the payment collection from retailers through Retailer App. 
+All Pending Invoices are made available for collection through Distributor portal & Mobile app.The Current Availble payments types are (Cash/Cheque) 
+
+### Salesperson Collection process:
+
+ During the Market visit , Salesperson has to collect the payment from the retailer against the pending invoices through Mobile app and upload it to backend 
+ Mode of payment allowed are , Cash collection & Cheque collection. In case of credit customer , system allow to collect the partial payment against Pending Invoices 
+ Based on the collection entry received against Invoice , system will calculate the collection outstanding and update the same in customer ledger / Salesman Ledger 
+
+### Vansale collection process:
+
+ In Ready Van scenario , Vansale  person will do the invoicing on the spot and collect the payment from the retailer against the invoices through Mobile app and upload it to backend 
+Mode of payment allowed are , Cash collection & Cheque collection. In case of credit customer , system allow to collect the partial payment against Pending Invoices 
+ Based on the collection entry received against Invoice , system will calculate the collection outstanding and update the same in customer ledger / Salesman Ledge
+
+## Proposed Solution: 
+
+
+

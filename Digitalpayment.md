@@ -212,5 +212,16 @@ d) Process timeout Exception Handling
 
 1.Whenever there is an delay in getting response from Payment processor , App should validate the time delay of 60 secs and through exception on failed transaction and try again
 
+## Work Flow Events
 
+- Login to Mobile application 
+- Navigate to Beat->Customer selection->Customer Dashboard 
+- Click to Collections Icon in Customer Dashboard Screen
+- User able to see the customer details and Outstanding amount 
+- User can select the Already existing Mode of payments (Cash/Cheque) or Additional payment modes (Credit Card / Debit Card / UPI)
+- In Case of Credit / Debit card payment modes , Enter the Cardnumber / Card Holders Name / Expiry Date / CVV and proceed with the next steps for PIN number Authenciation and complete the Transactions 
+- In Case of UPI payment modes , Select the UPI application  Enter the UPI ID and proceed with the next steps for PIN number Authenciation and complete the Transactions 
+- On Succesfull completion of the Payment process, Received amount should get adjusted against the Outstanding amount and same should get reflect against the customer balance 
+
+## Screen Flows
 

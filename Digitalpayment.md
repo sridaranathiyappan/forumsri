@@ -225,3 +225,36 @@ d) Process timeout Exception Handling
 
 ## Screen Flows
 
+### Collection Screen
+  <img src="https://user-images.githubusercontent.com/84070217/131809162-02fffca6-53f9-435b-95fc-255b76346792.png" alt="Your image title" width="250"/>
+ 
+ 
+### Card Details Entry
+  <img src="https://user-images.githubusercontent.com/84070217/131811675-f2ea3f97-c61c-4ece-9edc-3b59303b0679.png" alt="Your image title" width="250"/>
+
+
+### Card Payment Processing 
+  <img src="https://user-images.githubusercontent.com/84070217/131811703-fd4e86e5-973f-4a66-beae-2f7f4f03de5a.png" alt="Your image title" width="250"/>
+
+
+### Card Payment Confirmation
+  <img src="https://user-images.githubusercontent.com/84070217/131811732-c7d0d0d2-accd-4b5f-94a1-b3bdb40ea180.png" alt="Your image title" width="250"/>
+
+
+### UPI Payment Selection 
+  <img src="https://user-images.githubusercontent.com/84070217/131811757-7284fc3f-0f87-469e-963c-6dc47cf1f784.png" alt="Your image title" width="250"/>
+
+
+### UPI Payment Entry
+  <img src="https://user-images.githubusercontent.com/84070217/131811794-e4984edc-50e3-4318-b2e0-a48b3e89a5f5.png" alt="Your image title" width="250"/>
+
+
+### UPI Payment Processing
+  <img src="https://user-images.githubusercontent.com/84070217/131811822-f5cd59cc-f122-40ef-8e83-994be6ac2825.png" alt="Your image title" width="250"/>
+
+
+### UPI Payment Confirmation
+  <img src="https://user-images.githubusercontent.com/84070217/131811850-0f898cba-8664-4927-983f-6f18441d1bba.png" alt="Your image title" width="250"/>
+
+
+

@@ -49,11 +49,8 @@ through various mode of channels (Credit card / Gpay /E-Wallets ) to the distrib
 Using Digital payment system , retailer can able to make the Hassles free payment instantly and get the immediate visibility on the outstanding amount. which will certainely enable the distributor to complete the collection reconcillation and plan for the quick order delivery to the retailers / sub distributors 
 
 
-### How to use this digital payment system
-
-   [ To be Added]
-
 ## Existing Solution : 
+
 Currently , There is no provision to handle the payment collection from retailers through Retailer App. 
 All Pending Invoices are made available for collection through Distributor portal & Mobile app.The Current Availble payments types are (Cash/Cheque) 
 

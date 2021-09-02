@@ -2,18 +2,18 @@
 Digital Payment System is a process to manage the secondary sales payment collections from the retailer & sub distributor through online payment channels like Credit card / Gpay /E-Wallets/I have paid cheque,Cash
 
 ## Roles
-Each interaction in a Web Payments scenario involves a number of entities. In order to make it clear who the actors are, the following roles are defined:
+Each interaction in a Mobile Payments scenario involves a number of entities. In order to make it clear who the actors are, the following roles are defined:
 
-### payer
+### Payer
 - the entity sending value in a transaction.
 
-### payee
+### Payee
 - the entity receiving value in a transaction.
 
-### buyer
+### Buyer
 - an entity purchasing a product or service.
 
-### merchant
+### Merchant
 - an entity that is offering a product or service for sale.
 
 ### payment processor
@@ -22,28 +22,28 @@ Each interaction in a Web Payments scenario involves a number of entities. In or
 ## Credentials
 - In order to interact, an entity may require one or more pieces of information from another entity. Each of these pieces of information, which may be digitally signed by a 3rd party, are called a credential. The following credentials are commonly used throughout this document:
 
-### identity credential
+### Identity credential
 - An identity credential contains a pseudo-anonymous URL that can be used to uniquely identify an entity. The URI typically doesn't contain any personally identifiable information
 
-### email credential
+### Email credential
 - An email credential contains a verified email address and proves that the entity associated with the credential has verified their email address with a 3rd party.
 
-### payment processor credential
+### Payment processor credential
 - A payment processor credential contains a verified payment processor URL that was assigned to the entity associated with the credential by their payment processor.
-
-### shipping address credential
-- A shipping address credential contains a verified address where shipping deliveries may be made that is also associated with the entity associated with the credential. Typically, organizations that are capable of associating a shipping address with an entity, such as the United States Postal Service, provide these credentials.
 
 ### Who are the users of  Digital payment system
 The main actors of this digital payment systems are retailer /sub-distributor and salesman 
 
-* Retailer - Retailer already using an retailer app to manage his order placing and tracking the delivery. Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
+### Retailer 
+  - Retailer already using an retailer app to manage his order placing and tracking the delivery. Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
 through various mode of channels (Credit card / Gpay /E-Wallets ) to the distributor
 
-* Sub distributor - Sub Distributor already using an retailer app to manage his order placing and tracking the delivery from his distributor . Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
+### Sub distributor 
+  - Sub Distributor already using an retailer app to manage his order placing and tracking the delivery from his distributor . Using this digital payment process he can able to pick the outstanding invoices and do the required payments 
 through various mode of channels (Credit card / Gpay /E-Wallets ) to the distributor
 
-* Salesman - Salesman already been using the current mode of collection through (Cash/Cheque). additionally they will given an provision to collect the payment through other channels like Credit card / Gpay /E-Wallets 
+### Salesman 
+  - Salesman already been using the current mode of collection through (Cash/Cheque). additionally they will given an provision to collect the payment through other channels like Credit card / Gpay /E-Wallets 
 
 ### Why we need this digital payment system
 Using Digital payment system , retailer can able to make the Hassles free payment instantly and get the immediate visibility on the outstanding amount. which will certainely enable the distributor to complete the collection reconcillation and plan for the quick order delivery to the retailers / sub distributors 
@@ -190,22 +190,27 @@ Cancellation to the Credit card details are the event to cancel all the entry in
 
 a) User access 
 
-    1. Login user should has association with a Distributor. 
-    2. In case of user associated with multiple user, then distributor selection is require before doing an Digital payment against the Oustanding Invocies
+1. Login user should has association with a Distributor. 
+2. In case of user associated with multiple user, then distributor selection is require before doing an Digital payment against the Oustanding Invocies
 
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
 b)  View of Payment screen 
-    1. Payment capture screen view with fields for retailer / salesman users  
-       -"Mode of payment"
-       -"Card number"  
-       -"Card Holders's Name"
-       -"Expiry Date"
-       -"CVV"
+ 1. Payment capture screen view with fields for retailer / salesman users  
+
+       - "Mode of payment"
+       - "Card number"  
+       - "Card Holders's Name"
+       - "Expiry Date"
+       - "CVV"
 
 c) Detail view actions
-    1. Detail view of card details record enables you to perform actions like editing, cancel, amend, existing record 
+
+1. Detail view of card details record enables you to perform actions like editing, cancel the existing record 
 
 d) Process timeout Exception Handling
-    1.
+
+1.Whenever there is an delay in getting response from Payment processor , App should validate the time delay of 60 secs and through exception on failed transaction and try again
+
+
 

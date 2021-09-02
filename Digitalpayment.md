@@ -73,9 +73,6 @@ Mode of payment allowed are , Cash collection & Cheque collection. In case of cr
 ### Payment process:
    - There should be an provision for the retailer to make the invoice payment to the distributor bank account using various mode of payment (Credit / Debit Card/UPI/Amazon pay)
 
-![image](https://user-images.githubusercontent.com/84070217/131771632-a5ef0928-4e83-4013-860c-242054e838c6.png)
-
-
 ### Payment gateway portal
    - It connects a bank account to the relevant payment processor.It transmits the transaction information either virtually through web payment services and APIs or in-person through a payment terminal
 

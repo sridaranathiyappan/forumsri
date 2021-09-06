@@ -5,19 +5,19 @@ Digital Payment System is a process to manage the secondary sales payment collec
 Each interaction in a Mobile Payments scenario involves a number of entities. In order to make it clear who the actors are, the following roles are defined:
 
 ### Payer
-- the entity sending value in a transaction.
+- The entity sending value in a transaction.
 
 ### Payee
-- the entity receiving value in a transaction.
+- The entity receiving value in a transaction.
 
 ### Buyer
-- an entity purchasing a product or service.
+- An entity purchasing a product or service.
 
 ### Merchant
-- an entity that is offering a product or service for sale.
+- An entity that is offering a product or service for sale.
 
 ### payment processor
-- an entity that is responsible for transferring value between entities and generating verifiable digital receipts.
+- An entity that is responsible for transferring value between entities and generating verifiable digital receipts.
 
 ## Credentials
 - In order to interact, an entity may require one or more pieces of information from another entity. Each of these pieces of information, which may be digitally signed by a 3rd party, are called a credential. The following credentials are commonly used throughout this document:

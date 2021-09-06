@@ -23,7 +23,7 @@ Each interaction in a Mobile Payments scenario involves a number of entities. In
 - In order to interact, an entity may require one or more pieces of information from another entity. Each of these pieces of information, which may be digitally signed by a 3rd party, are called a credential. The following credentials are commonly used throughout this document:
 
 ### Identity credential
-- An identity credential contains a pseudo-anonymous URL that can be used to uniquely identify an entity. The URI typically doesn't contain any personally identifiable information
+- An identity credential contains a pseudo-anonymous URL that can be used to uniquely identify an entity. The URL typically doesn't contain any personally identifiable information
 
 ### Email credential
 - An email credential contains a verified email address and proves that the entity associated with the credential has verified their email address with a 3rd party.

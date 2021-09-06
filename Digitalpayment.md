@@ -1,4 +1,4 @@
-## Project Scope :
+## Solution Scope :
 Digital Payment System is a process to manage the secondary sales payment collections from the retailer & sub distributor through online payment channels like Credit card / Gpay /E-Wallets/I have paid cheque,Cash
 
 ## Roles

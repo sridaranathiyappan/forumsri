@@ -147,11 +147,14 @@ The Distributor won’t even need to keep all customer data on a file: it can st
 -End-to-end encryption – Designed to render cardholder data unreadable, encrypted at the device.
 - Token vault – Cardholder data is replaced by digital “tokens” and is stored in the secure Global Payments Integrated vault, rather than the merchant environment
 
+
 ## Where to store card details
 - Card details will be tokenized and stored in Vault (Centraised server) . Token Service works by simply replacing a cardholder’s 16-digit account number with a secure token that protects the card number. A payment token can be limited to a specific eCommerce merchant, mobile device, or a certain number of purchases before expiration.
 
 ## Using 3rd party how to manage the payment
 - Some of the 3rd party's are VISA / Google Pay :
+- https://www.visa.co.in/partner-with-us/payment-technology/visa-token-service.html
+- https://usa.visa.com/dam/VCOM/Media%20Kits/PDF/visa-security-tokenization-infographic.pdf
 
 * Step-by-step explanation of how Google Pay tokenization works.
 

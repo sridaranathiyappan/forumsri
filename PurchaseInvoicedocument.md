@@ -192,7 +192,7 @@ b)  List view of Purchase Invoice
     1. Retrieve recently created top `20` Purchase Invoice  document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for Purchase Invoice  applicable for all users. 
     1. Custom filter to be available for all modules
     1. Default list view fields for distributor users  
-    
+
        -"Transaction Number"
        -"Invoice No"
        -"Depot"
@@ -206,9 +206,10 @@ b)  List view of Purchase Invoice
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 c) Detail view actions
+
     1. Detail view of Invoice  record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Invoice  s list view, select the desired record. Details view of Invoice  record should follow the Field access rule for the login user related profile. 
-    
+
         -"Vendorname"
         -"Transaction series" 
         -"Credit Term"
@@ -243,6 +244,7 @@ c) Detail view actions
         -"GSTIN No
 
 d) Create Purchase Invoice  
+
     1. Allow creation of Purchase Invoice  based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 

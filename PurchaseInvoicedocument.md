@@ -9,6 +9,9 @@ Content
 ## Precondition for creating Purchase Invoice  
 Before creating a direct Purchase Invoice  , you need to 
 * Create [Vendor](Vendor) details 
+* Create [Godown](Godown) details 
+* Create [Credit](Credit) details 
+* Create [Depot](Depot) details 
 * Create [Distributor](Distributor) details 
 * Create [Item](Product) details 
 * Create [Pricing](Pricing) details 
@@ -22,7 +25,9 @@ Creation of Purchase Invoice  vary based on type of creation.
 1. **Purchase Invoice  Date** is often set to default current date
    - There are options to allow backdated Invoice  but date after present date are restricted. 
 
-2. **In the Vendor field**, enter the name of an existing Vendor
+2. **In the Godown field**, enter the name of an Godown
+
+3. **In the Vendor field**, enter the name of an existing Vendor
    - Purchase Invoice  are created to document the Primary order to the distributor
    - After Vendor selection, Other related information to be filed in below,  
      - default [Distributor](Distributor), 
@@ -31,13 +36,13 @@ Creation of Purchase Invoice  vary based on type of creation.
 
 > Further, these details are allowed to be modified as necessary.  
 
-3. **[Transaction Series](Transaction Series)**
+4. **[Transaction Series](Transaction Series)**
     - default Purchase Invoice  Transaction Series are loaded, User can change these details as necessary. 
 
-4. **Customer Shipping address** 
+5. **Customer Shipping address** 
     - default Shipping address loaded, User can change these details as necessary. 
 
-5. **Customer Billing address** 
+6. **Customer Billing address** 
     - default Billing address loaded, User can change these details as necessary. 
 
 7. Fill in or Modify the remaining fields on the Purchase Invoice  page as necessary.
@@ -187,21 +192,55 @@ b)  List view of Purchase Invoice
     1. Retrieve recently created top `20` Purchase Invoice  document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for Purchase Invoice  applicable for all users. 
     1. Custom filter to be available for all modules
     1. Default list view fields for distributor users  
-        - "transactionNumber" 
-        - "Purchase Invoice  Date" 
-        - "referencenumber" 
-        - Vendor Name"
-        - "Due date" 
-        - "customername" 
-        - "Bill to party code" 
-        - "Distributor Shipping address,City,State,Pincode"
-        - "Distributor Billing address,City,State,Pincode"
+    
+       -"Transaction Number"
+       -"Invoice No"
+       -"Depot"
+       -"Purchase Invoice date"
+       -"Total"
+       -"Status"
+       -"Next stage Name"
+       -"Display Status"
+       -"Action"
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 c) Detail view actions
     1. Detail view of Invoice  record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Invoice  s list view, select the desired record. Details view of Invoice  record should follow the Field access rule for the login user related profile. 
+    
+        -"Vendorname"
+        -"Transaction series" 
+        -"Credit Term"
+        -"Godown"
+        -"Depot"
+        -"Invoice No" 
+        -"OD No"
+        -"Transaction number"
+        -"Purchase Invoice Date" 
+        -"Due Date" 
+        -"Bill Date" 
+        -"Payment Date" 
+        -"Send to Vendor" 
+        -"Reason"
+        -"Form"
+        -"Customer Code"
+        -"Billing Address pick"
+        -"Billing Contact Person"
+        -"Billing PO Box"
+        -"Billing Address"
+        -"Billing City"
+        -"Billing State"
+        -"Billing Postal Code
+        -"Billing Country
+        -"Shipping Address pick
+        -"Shipping PO Box
+        -"Shipping Address
+        -"Shipping City
+        -"Shipping State
+        -"Shipping Postal Code
+        -"Shipping Country
+        -"GSTIN No
 
 d) Create Purchase Invoice  
     1. Allow creation of Purchase Invoice  based on Profile access configuration. 
@@ -694,7 +733,7 @@ d) Create Purchase Invoice
 - Report related Purchase Invoice  data to be updated through services. 
 
 # See also .. 
-  - [Purchase Invoice  ](Purchase Invoice  )
+  - [Purchase Invoice](Purchase Invoice  )
   - [Purchase Invoice  Configurations](Purchase Invoice  Configurations)
   - [Domain Object Purchase Invoice  ](Domain Object Purchase Invoice  )
   - [Home](Home)

@@ -165,6 +165,7 @@ a) User access
     > Refer User profile, Distributor User, Corporate User Distributor mapping 
 
 b)  List view of Purchase Order 
+
     1. Listing page is default landing page, where newly created Purchase Order are listed with selected information.
     1. All listing page related features are to be available for Purchase Order listing Page. 
     1. Retrieve recently created top `20` Purchase Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Purchase Order applicable for all users. 
@@ -184,6 +185,7 @@ b)  List view of Purchase Order
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 c) Detail view actions
+
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
 
@@ -238,6 +240,7 @@ c) Detail view actions
 -"Net Price"
 
 d)  Create Purchase Order 
+
     1. Allow creation of Purchase Order based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 

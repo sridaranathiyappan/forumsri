@@ -170,22 +170,72 @@ b)  List view of Purchase Order
     1. Retrieve recently created top `20` Purchase Order document with selected field where it belongs to a Distributor and sort with Order date. Default filter for Purchase Order applicable for all users. 
     1. Custom filter to be available for all modules
     1. Default list view fields for distributor users  
-        - "transactionNumber" 
-        - "Purchase Order Date" 
-        - "referencenumber" 
-        - Vendor Name"
-        - "Due date" 
-        - "customername" 
-        - "company salesmanName" 
-        - "Bill to party code" 
-        - "Distributor Shipping address,City,State,Pincode"
-        - "Distributor Billing address,City,State,Pincode"
+
+        -"Transaction Number"
+        -"Sector"
+        -"Purchase Order Date"
+        -"Vendor Name"
+        -"Depot"
+        -"Status"
+        -"Next Stage Name"
+        -"Purchase Order No"
+        -"Action"
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 c) Detail view actions
     1. Detail view of Order record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the Order s list view, select the desired record. Details view of Order record should follow the Field access rule for the login user related profile. 
+
+      -"Reference Number"
+      -"Vendor Name"
+      -"Depot"
+      -"Purchase Order Date"
+      -"Transaction series" 
+      -"Carrier"
+      -"Transaction Number"
+      -"Modified Datetime"
+      -"Created Datetime"
+      -"Due Date"
+      -"Send to Vendor" 
+      -"Distributor"
+      -"Reason"
+      -"Sector"
+      -"Company Salesman"
+      -"Company Salesman Code"
+      -"Closed Call Remarks"
+      -"Customer Name"
+      -"Ship to Party Code"
+      -"Distributor Name"
+      -"Bill to Partly Code"
+      -"Billing Address pick" 
+      -"Billing Contact Person"
+      -"Billing Address"
+      -"Billing PO Box"
+      -"Billing City"
+      -"Billing State"
+      -"Billing Country" 
+      -"Billing Postal Code" 
+      -"Shipping Address pick" 
+      -"Shipping Contact Person"
+      -"Shipping Address"
+      -"Shipping PO Box"
+      -"Shipping City"
+      -"Shipping State"
+      -"Shipping Country" 
+      -"Shipping Postal Code" 
+      -"GSTIN No"
+
+>> Adding Line level field values as listed below 
+
+-"Product Name"
+-"Suggested Order Qty"
+-"Suggested UOM"
+-"Qty"
+-"UOM"
+-"Price"
+-"Total"
+-"Net Price"
 
 d)  Create Purchase Order 
     1. Allow creation of Purchase Order based on Profile access configuration. 

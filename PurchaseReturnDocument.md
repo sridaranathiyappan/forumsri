@@ -179,28 +179,43 @@ a) User access
 
 
 b) List view of Purchase Return
+
     1. Listing page is default landing page, where newly created Purchase return  are listed with selected information.
     1. All listing page related features are to be available for Purchase Invoice  listing Page. 
     1. Retrieve recently created top `20` Purchase Return document with selected field where it belongs to a Distributor and sort with Invoice  date. Default filter for Purchase Invoice  applicable for all users. 
     1. Custom filter to be available for all modules
     1. Default list view fields for distributor users  
-        - "transactionNumber" 
-        - "Purchase Return Date" 
-        - "referencenumber" 
-        - Vendor Name"
-        - "Due date" 
-        - "customername" 
-        - "Bill to party code" 
-        - "Distributor Shipping address,City,State,Pincode"
-        - "Distributor Billing address,City,State,Pincode"
+
+        -"Transaction Series"
+       -"Vendor"
+       -"Internal Ref"
+       -"Initiated Date"
+       -"Transaction No"
+       -"Reason"
+       -"Godown"
+       -"Purchase Return Type"
+       -"Depot"
 
     > Refer [Listing page](Listing Page) functionalities, [Custom Filter](Custom Filter).
 
 c) Detail view actions
+
     1. Detail view of purchase return record enables you to perform actions like editing, cancel, amend, print the existing record in PDF format, all actions are configured through [Workflow](Workflow). 
     1. From the returns list view, select the desired record. Details view of returns record should follow the Field access rule for the login user related profile. 
 
+>> Line Level details are detailed below 
+
+     -"Product"
+     -"Purchase Invoice"
+     -"Batch"
+     -"UOM"
+     -"Saleable Return Quantity"
+     -"Rate"
+     -"Amount"
+     -"Discount "
+
 d) Create Purchase Return
+
     1. Allow creation of Purchase Return based on Profile access configuration. 
     1. User Distributor association is mandatory for creating transaction. 
     1. Corporate User are indirect users create transaction related to specific associated distributor. 
